@@ -21,6 +21,11 @@
 		4133689D1837757300617CC1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4133687F1837757300617CC1 /* UIKit.framework */; };
 		413368A51837757300617CC1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 413368A31837757300617CC1 /* InfoPlist.strings */; };
 		413368A71837757300617CC1 /* DiaBEATitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 413368A61837757300617CC1 /* DiaBEATitTests.m */; };
+		5016155318382EA4003AAD33 /* LogsHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5016155218382EA4003AAD33 /* LogsHomeViewController.m */; };
+		5016155618382EAF003AAD33 /* GraphsHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5016155518382EAF003AAD33 /* GraphsHomeViewController.m */; };
+		5016155918382EB6003AAD33 /* AveragesHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5016155818382EB6003AAD33 /* AveragesHomeViewController.m */; };
+		5016155C18382EBE003AAD33 /* MedicationHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5016155B18382EBE003AAD33 /* MedicationHomeViewController.m */; };
+		5016155F183830C3003AAD33 /* AddLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5016155E183830C3003AAD33 /* AddLogViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,16 @@
 		413368A21837757300617CC1 /* DiaBEATitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DiaBEATitTests-Info.plist"; sourceTree = "<group>"; };
 		413368A41837757300617CC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		413368A61837757300617CC1 /* DiaBEATitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiaBEATitTests.m; sourceTree = "<group>"; };
+		5016155118382EA4003AAD33 /* LogsHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogsHomeViewController.h; sourceTree = "<group>"; };
+		5016155218382EA4003AAD33 /* LogsHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogsHomeViewController.m; sourceTree = "<group>"; };
+		5016155418382EAF003AAD33 /* GraphsHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphsHomeViewController.h; sourceTree = "<group>"; };
+		5016155518382EAF003AAD33 /* GraphsHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphsHomeViewController.m; sourceTree = "<group>"; };
+		5016155718382EB6003AAD33 /* AveragesHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AveragesHomeViewController.h; sourceTree = "<group>"; };
+		5016155818382EB6003AAD33 /* AveragesHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AveragesHomeViewController.m; sourceTree = "<group>"; };
+		5016155A18382EBE003AAD33 /* MedicationHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicationHomeViewController.h; sourceTree = "<group>"; };
+		5016155B18382EBE003AAD33 /* MedicationHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicationHomeViewController.m; sourceTree = "<group>"; };
+		5016155D183830C3003AAD33 /* AddLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddLogViewController.h; sourceTree = "<group>"; };
+		5016155E183830C3003AAD33 /* AddLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddLogViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +130,16 @@
 				4133688A1837757300617CC1 /* AppDelegate.h */,
 				4133688B1837757300617CC1 /* AppDelegate.m */,
 				4133688D1837757300617CC1 /* Main.storyboard */,
+				5016155D183830C3003AAD33 /* AddLogViewController.h */,
+				5016155E183830C3003AAD33 /* AddLogViewController.m */,
+				5016155118382EA4003AAD33 /* LogsHomeViewController.h */,
+				5016155218382EA4003AAD33 /* LogsHomeViewController.m */,
+				5016155418382EAF003AAD33 /* GraphsHomeViewController.h */,
+				5016155518382EAF003AAD33 /* GraphsHomeViewController.m */,
+				5016155718382EB6003AAD33 /* AveragesHomeViewController.h */,
+				5016155818382EB6003AAD33 /* AveragesHomeViewController.m */,
+				5016155A18382EBE003AAD33 /* MedicationHomeViewController.h */,
+				5016155B18382EBE003AAD33 /* MedicationHomeViewController.m */,
 				413368901837757300617CC1 /* ViewController.h */,
 				413368911837757300617CC1 /* ViewController.m */,
 				413368931837757300617CC1 /* Images.xcassets */,
@@ -249,9 +274,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5016155318382EA4003AAD33 /* LogsHomeViewController.m in Sources */,
 				413368921837757300617CC1 /* ViewController.m in Sources */,
 				4133688C1837757300617CC1 /* AppDelegate.m in Sources */,
+				5016155F183830C3003AAD33 /* AddLogViewController.m in Sources */,
+				5016155918382EB6003AAD33 /* AveragesHomeViewController.m in Sources */,
+				5016155618382EAF003AAD33 /* GraphsHomeViewController.m in Sources */,
 				413368881837757300617CC1 /* main.m in Sources */,
+				5016155C18382EBE003AAD33 /* MedicationHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +494,7 @@
 				413368AC1837757300617CC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		413368AD1837757300617CC1 /* Build configuration list for PBXNativeTarget "DiaBEATitTests" */ = {
 			isa = XCConfigurationList;
@@ -472,6 +503,7 @@
 				413368AF1837757300617CC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
