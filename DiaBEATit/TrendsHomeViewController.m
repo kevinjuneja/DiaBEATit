@@ -29,7 +29,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    ((SDSegmentedControl *)_segmentedControl).arrowHeightFactor *= -1.0;
+    self.segmentedControl.arrowHeightFactor *= -1.0;
     self.segmentedControl.scrollView.contentOffset = CGPointMake(0,65);
     self.segmentedControl.scrollView.scrollEnabled = NO;
 }
