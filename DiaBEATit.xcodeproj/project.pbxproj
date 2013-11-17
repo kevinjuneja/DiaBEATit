@@ -21,8 +21,6 @@
 		413368A51837757300617CC1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 413368A31837757300617CC1 /* InfoPlist.strings */; };
 		413368A71837757300617CC1 /* DiaBEATitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 413368A61837757300617CC1 /* DiaBEATitTests.m */; };
 		5016155318382EA4003AAD33 /* LogsHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5016155218382EA4003AAD33 /* LogsHomeViewController.m */; };
-		5016155618382EAF003AAD33 /* GraphsHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5016155518382EAF003AAD33 /* GraphsHomeViewController.m */; };
-		5016155918382EB6003AAD33 /* AveragesHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5016155818382EB6003AAD33 /* AveragesHomeViewController.m */; };
 		5016155C18382EBE003AAD33 /* MedicationHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5016155B18382EBE003AAD33 /* MedicationHomeViewController.m */; };
 		5016155F183830C3003AAD33 /* AddLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5016155E183830C3003AAD33 /* AddLogViewController.m */; };
 		5016156218384016003AAD33 /* SDSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5016156118384016003AAD33 /* SDSegmentedControl.m */; };
@@ -36,6 +34,11 @@
 		5056748F1838D0B300842CC0 /* 122-stats.png in Resources */ = {isa = PBXBuildFile; fileRef = 5056748E1838D0B300842CC0 /* 122-stats.png */; };
 		505674911838D11A00842CC0 /* 111-user.png in Resources */ = {isa = PBXBuildFile; fileRef = 505674901838D11A00842CC0 /* 111-user.png */; };
 		505674941838D79B00842CC0 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505674931838D79B00842CC0 /* ProfileViewController.m */; };
+		5056749D1838E8FF00842CC0 /* TrendsHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5056749C1838E8FF00842CC0 /* TrendsHomeViewController.m */; };
+		505674A31838E98900842CC0 /* Medication.m in Sources */ = {isa = PBXBuildFile; fileRef = 505674A21838E98900842CC0 /* Medication.m */; };
+		505674A61838E9DD00842CC0 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 505674A51838E9DD00842CC0 /* Profile.m */; };
+		505674AA1838EA2000842CC0 /* DiabetesLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 505674A91838EA2000842CC0 /* DiabetesLog.m */; };
+		505674AD1838EAB400842CC0 /* HypertensionLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 505674AC1838EAB400842CC0 /* HypertensionLog.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +63,7 @@
 		4133688A1837757300617CC1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4133688B1837757300617CC1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4133688E1837757300617CC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		413368931837757300617CC1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		413368931837757300617CC1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = DiaBEATit/Images.xcassets; sourceTree = "<group>"; };
 		413368991837757300617CC1 /* DiaBEATitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiaBEATitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4133689A1837757300617CC1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		413368A21837757300617CC1 /* DiaBEATitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DiaBEATitTests-Info.plist"; sourceTree = "<group>"; };
@@ -68,10 +71,6 @@
 		413368A61837757300617CC1 /* DiaBEATitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiaBEATitTests.m; sourceTree = "<group>"; };
 		5016155118382EA4003AAD33 /* LogsHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogsHomeViewController.h; sourceTree = "<group>"; };
 		5016155218382EA4003AAD33 /* LogsHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogsHomeViewController.m; sourceTree = "<group>"; };
-		5016155418382EAF003AAD33 /* GraphsHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphsHomeViewController.h; sourceTree = "<group>"; };
-		5016155518382EAF003AAD33 /* GraphsHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphsHomeViewController.m; sourceTree = "<group>"; };
-		5016155718382EB6003AAD33 /* AveragesHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AveragesHomeViewController.h; sourceTree = "<group>"; };
-		5016155818382EB6003AAD33 /* AveragesHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AveragesHomeViewController.m; sourceTree = "<group>"; };
 		5016155A18382EBE003AAD33 /* MedicationHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicationHomeViewController.h; sourceTree = "<group>"; };
 		5016155B18382EBE003AAD33 /* MedicationHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicationHomeViewController.m; sourceTree = "<group>"; };
 		5016155D183830C3003AAD33 /* AddLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddLogViewController.h; sourceTree = "<group>"; };
@@ -93,6 +92,17 @@
 		505674901838D11A00842CC0 /* 111-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "111-user.png"; sourceTree = "<group>"; };
 		505674921838D79B00842CC0 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		505674931838D79B00842CC0 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		5056749B1838E8FF00842CC0 /* TrendsHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrendsHomeViewController.h; sourceTree = "<group>"; };
+		5056749C1838E8FF00842CC0 /* TrendsHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrendsHomeViewController.m; sourceTree = "<group>"; };
+		505674A11838E98900842CC0 /* Medication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Medication.h; sourceTree = "<group>"; };
+		505674A21838E98900842CC0 /* Medication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Medication.m; sourceTree = "<group>"; };
+		505674A41838E9DD00842CC0 /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
+		505674A51838E9DD00842CC0 /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
+		505674A71838EA0C00842CC0 /* Log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Log.h; sourceTree = "<group>"; };
+		505674A81838EA2000842CC0 /* DiabetesLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiabetesLog.h; sourceTree = "<group>"; };
+		505674A91838EA2000842CC0 /* DiabetesLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiabetesLog.m; sourceTree = "<group>"; };
+		505674AB1838EAB400842CC0 /* HypertensionLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HypertensionLog.h; sourceTree = "<group>"; };
+		505674AC1838EAB400842CC0 /* HypertensionLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HypertensionLog.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				413368811837757300617CC1 /* DiaBEATit */,
+				413368931837757300617CC1 /* Images.xcassets */,
 				413368A01837757300617CC1 /* DiaBEATitTests */,
 				4133687A1837757300617CC1 /* Frameworks */,
 				413368791837757300617CC1 /* Products */,
@@ -154,30 +165,15 @@
 		413368811837757300617CC1 /* DiaBEATit */ = {
 			isa = PBXGroup;
 			children = (
-				501615631838401C003AAD33 /* External Libraries */,
 				4133688D1837757300617CC1 /* Main.storyboard */,
 				505674841838A89100842CC0 /* SplashScreenViewController.h */,
 				505674851838A89100842CC0 /* SplashScreenViewController.m */,
-				5016155D183830C3003AAD33 /* AddLogViewController.h */,
-				5016155E183830C3003AAD33 /* AddLogViewController.m */,
-				5016155118382EA4003AAD33 /* LogsHomeViewController.h */,
-				5016155218382EA4003AAD33 /* LogsHomeViewController.m */,
-				5016155418382EAF003AAD33 /* GraphsHomeViewController.h */,
-				5016155518382EAF003AAD33 /* GraphsHomeViewController.m */,
-				5016155718382EB6003AAD33 /* AveragesHomeViewController.h */,
-				5016155818382EB6003AAD33 /* AveragesHomeViewController.m */,
-				5016155A18382EBE003AAD33 /* MedicationHomeViewController.h */,
-				5016155B18382EBE003AAD33 /* MedicationHomeViewController.m */,
-				5056747B18386E2300842CC0 /* MedicationTableViewController.h */,
-				5056747C18386E2300842CC0 /* MedicationTableViewController.m */,
-				5056747E18386EEF00842CC0 /* MedicationTableViewCell.h */,
-				5056747F18386EEF00842CC0 /* MedicationTableViewCell.m */,
-				50567481183873C000842CC0 /* AddMedicationViewController.h */,
-				50567482183873C000842CC0 /* AddMedicationViewController.m */,
-				505674921838D79B00842CC0 /* ProfileViewController.h */,
-				505674931838D79B00842CC0 /* ProfileViewController.m */,
-				413368931837757300617CC1 /* Images.xcassets */,
-				505674901838D11A00842CC0 /* 111-user.png */,
+				5056749E1838E92800842CC0 /* Logs */,
+				505674A01838E94300842CC0 /* Trends */,
+				505674971838E89A00842CC0 /* Medication */,
+				5056749F1838E93A00842CC0 /* Profile */,
+				505674951838E84700842CC0 /* Model */,
+				501615631838401C003AAD33 /* External Libraries */,
 				413368821837757300617CC1 /* Supporting Files */,
 			);
 			path = DiaBEATit;
@@ -186,6 +182,7 @@
 		413368821837757300617CC1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				505674901838D11A00842CC0 /* 111-user.png */,
 				5056748E1838D0B300842CC0 /* 122-stats.png */,
 				5056748C1838D09000842CC0 /* 94-pill.png */,
 				5056748A1838D07F00842CC0 /* 179-notepad.png */,
@@ -224,6 +221,66 @@
 				5016156118384016003AAD33 /* SDSegmentedControl.m */,
 			);
 			name = "External Libraries";
+			sourceTree = "<group>";
+		};
+		505674951838E84700842CC0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				505674A11838E98900842CC0 /* Medication.h */,
+				505674A21838E98900842CC0 /* Medication.m */,
+				505674A41838E9DD00842CC0 /* Profile.h */,
+				505674A51838E9DD00842CC0 /* Profile.m */,
+				505674A71838EA0C00842CC0 /* Log.h */,
+				505674A81838EA2000842CC0 /* DiabetesLog.h */,
+				505674A91838EA2000842CC0 /* DiabetesLog.m */,
+				505674AB1838EAB400842CC0 /* HypertensionLog.h */,
+				505674AC1838EAB400842CC0 /* HypertensionLog.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		505674971838E89A00842CC0 /* Medication */ = {
+			isa = PBXGroup;
+			children = (
+				5016155A18382EBE003AAD33 /* MedicationHomeViewController.h */,
+				5016155B18382EBE003AAD33 /* MedicationHomeViewController.m */,
+				5056747B18386E2300842CC0 /* MedicationTableViewController.h */,
+				5056747C18386E2300842CC0 /* MedicationTableViewController.m */,
+				5056747E18386EEF00842CC0 /* MedicationTableViewCell.h */,
+				5056747F18386EEF00842CC0 /* MedicationTableViewCell.m */,
+				50567481183873C000842CC0 /* AddMedicationViewController.h */,
+				50567482183873C000842CC0 /* AddMedicationViewController.m */,
+			);
+			name = Medication;
+			sourceTree = "<group>";
+		};
+		5056749E1838E92800842CC0 /* Logs */ = {
+			isa = PBXGroup;
+			children = (
+				5016155D183830C3003AAD33 /* AddLogViewController.h */,
+				5016155E183830C3003AAD33 /* AddLogViewController.m */,
+				5016155118382EA4003AAD33 /* LogsHomeViewController.h */,
+				5016155218382EA4003AAD33 /* LogsHomeViewController.m */,
+			);
+			name = Logs;
+			sourceTree = "<group>";
+		};
+		5056749F1838E93A00842CC0 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				505674921838D79B00842CC0 /* ProfileViewController.h */,
+				505674931838D79B00842CC0 /* ProfileViewController.m */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		505674A01838E94300842CC0 /* Trends */ = {
+			isa = PBXGroup;
+			children = (
+				5056749B1838E8FF00842CC0 /* TrendsHomeViewController.h */,
+				5056749C1838E8FF00842CC0 /* TrendsHomeViewController.m */,
+			);
+			name = Trends;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,13 +385,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				5056748018386EEF00842CC0 /* MedicationTableViewCell.m in Sources */,
+				5056749D1838E8FF00842CC0 /* TrendsHomeViewController.m in Sources */,
 				5016155318382EA4003AAD33 /* LogsHomeViewController.m in Sources */,
+				505674A31838E98900842CC0 /* Medication.m in Sources */,
 				4133688C1837757300617CC1 /* AppDelegate.m in Sources */,
+				505674A61838E9DD00842CC0 /* Profile.m in Sources */,
+				505674AD1838EAB400842CC0 /* HypertensionLog.m in Sources */,
 				5016155F183830C3003AAD33 /* AddLogViewController.m in Sources */,
-				5016155918382EB6003AAD33 /* AveragesHomeViewController.m in Sources */,
 				505674861838A89100842CC0 /* SplashScreenViewController.m in Sources */,
-				5016155618382EAF003AAD33 /* GraphsHomeViewController.m in Sources */,
 				5056747D18386E2300842CC0 /* MedicationTableViewController.m in Sources */,
+				505674AA1838EA2000842CC0 /* DiabetesLog.m in Sources */,
 				413368881837757300617CC1 /* main.m in Sources */,
 				505674941838D79B00842CC0 /* ProfileViewController.m in Sources */,
 				5016156218384016003AAD33 /* SDSegmentedControl.m in Sources */,

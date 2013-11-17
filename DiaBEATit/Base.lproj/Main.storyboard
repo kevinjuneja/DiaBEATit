@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Graphs Home View Controller - Trends-->
+        <!--Trends Home View Controller - Trends-->
         <scene sceneID="zQL-Qm-lJv">
             <objects>
-                <viewController id="9LJ-3M-3ll" customClass="GraphsHomeViewController" sceneMemberID="viewController">
+                <viewController id="9LJ-3M-3ll" customClass="TrendsHomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9aD-ZW-df7"/>
                         <viewControllerLayoutGuide type="bottom" id="N4N-tB-qFb"/>
@@ -236,7 +236,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hzZ-3T-wHh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1743" y="1210"/>
+            <point key="canvasLocation" x="2269" y="1246"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="gD7-oc-rDK">
@@ -265,6 +265,34 @@
             </objects>
             <point key="canvasLocation" x="2769" y="533"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="HNu-7A-dnn">
+            <objects>
+                <tableViewController id="khT-1q-tau" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="wNI-P1-6Z1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="417"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="dSJ-uP-47P">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dSJ-uP-47P" id="dvG-N4-7DN">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="khT-1q-tau" id="lV1-BO-oeE"/>
+                            <outlet property="delegate" destination="khT-1q-tau" id="je8-2e-c4z"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g9U-gl-BBu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1769" y="-1493"/>
+        </scene>
         <!--Logs Home View Controller - Logs-->
         <scene sceneID="tL6-y2-c3o">
             <objects>
@@ -286,6 +314,14 @@
                                     <segment title="Hypertension"/>
                                 </segments>
                             </segmentedControl>
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z3p-aX-OCI">
+                                <rect key="frame" x="0.0" y="101" width="320" height="417"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="khT-1q-tau" kind="embed" id="FXA-2D-Zgx"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -302,7 +338,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mrh-1l-xic" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1236" y="-794"/>
+            <point key="canvasLocation" x="1762" y="-832"/>
         </scene>
         <!--Add Log View Controller-->
         <scene sceneID="VQD-XI-gRd">
@@ -343,7 +379,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="boN-en-nfN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1743" y="-794"/>
+            <point key="canvasLocation" x="2269" y="-832"/>
         </scene>
         <!--Navigation Controller - Trends-->
         <scene sceneID="UYY-xk-F3m">
@@ -404,7 +440,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LFl-Qx-abb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1236" y="1210"/>
+            <point key="canvasLocation" x="1762" y="1246"/>
         </scene>
         <!--Navigation Controller - Logs-->
         <scene sceneID="b0Y-nU-WLO">
@@ -426,7 +462,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tm8-4M-x18" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="710" y="-794"/>
+            <point key="canvasLocation" x="1236" y="-832"/>
         </scene>
         <!--Navigation Controller - Profile-->
         <scene sceneID="zuq-3U-zGb">
@@ -447,7 +483,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ah-hL-RuL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="710" y="1210"/>
+            <point key="canvasLocation" x="1236" y="1246"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EOR-xk-D3G">

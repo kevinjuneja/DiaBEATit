@@ -1,18 +1,18 @@
 //
-//  AveragesHomeViewController.m
+//  TrendsHomeViewController.m
 //  DiaBEATit
 //
-//  Created by Kevin Juneja on 11/16/13.
+//  Created by Kevin Juneja on 11/17/13.
 //  Copyright (c) 2013 App Jam. All rights reserved.
 //
 
-#import "AveragesHomeViewController.h"
+#import "TrendsHomeViewController.h"
 
-@interface AveragesHomeViewController ()
+@interface TrendsHomeViewController ()
 
 @end
 
-@implementation AveragesHomeViewController
+@implementation TrendsHomeViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
