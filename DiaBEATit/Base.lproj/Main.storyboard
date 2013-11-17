@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Graphs Home View Controller-->
+        <!--Graphs Home View Controller - Trends-->
         <scene sceneID="zQL-Qm-lJv">
             <objects>
                 <viewController id="9LJ-3M-3ll" customClass="GraphsHomeViewController" sceneMemberID="viewController">
@@ -28,7 +28,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="feB-I7-TND"/>
+                    <navigationItem key="navigationItem" title="Trends" id="feB-I7-TND"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S1P-K9-CNd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -87,7 +87,7 @@
             </objects>
             <point key="canvasLocation" x="668" y="208"/>
         </scene>
-        <!--Medication Home View Controller-->
+        <!--Medication Home View Controller - Medication-->
         <scene sceneID="UpR-EU-gW0">
             <objects>
                 <viewController id="eLj-8A-1wc" customClass="MedicationHomeViewController" sceneMemberID="viewController">
@@ -110,7 +110,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Ins-SE-i58">
+                    <navigationItem key="navigationItem" title="Medication" id="Ins-SE-i58">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="HfI-9m-dCJ">
                             <connections>
                                 <segue destination="Y9K-a2-Gy2" kind="modal" id="bJp-FQ-DVB"/>
@@ -265,7 +265,7 @@
             </objects>
             <point key="canvasLocation" x="2769" y="533"/>
         </scene>
-        <!--Logs Home View Controller-->
+        <!--Logs Home View Controller - Logs-->
         <scene sceneID="tL6-y2-c3o">
             <objects>
                 <viewController id="ZzK-tW-qRf" customClass="LogsHomeViewController" sceneMemberID="viewController">
@@ -289,8 +289,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="SB9-Pb-Sxi">
-                        <nil key="title"/>
+                    <navigationItem key="navigationItem" title="Logs" id="SB9-Pb-Sxi">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="sw6-f1-Mf8">
                             <connections>
                                 <segue destination="ftJ-qe-MZl" kind="modal" id="jaZ-zC-SQ0"/>
@@ -350,8 +349,8 @@
         <scene sceneID="UYY-xk-F3m">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Yp0-2x-pgz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Trends" id="WUk-Jx-08m">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-4"/>
+                    <tabBarItem key="tabBarItem" title="Trends" image="122-stats.png" id="WUk-Jx-08m">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-2"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Md-RK-WBH">
@@ -371,8 +370,8 @@
         <scene sceneID="D3Z-jL-ocy">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kpm-aY-gTS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Medication" id="pnG-TK-F7E">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-4"/>
+                    <tabBarItem key="tabBarItem" title="Medication" image="94-pill.png" id="pnG-TK-F7E">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-2"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="y84-vU-hL6">
@@ -388,10 +387,10 @@
             </objects>
             <point key="canvasLocation" x="1236" y="533"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller - Profile-->
         <scene sceneID="kC6-zP-m04">
             <objects>
-                <viewController id="IRO-tO-LiB" sceneMemberID="viewController">
+                <viewController id="IRO-tO-LiB" customClass="ProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BFZ-74-YI3"/>
                         <viewControllerLayoutGuide type="bottom" id="NRu-Jp-C4D"/>
@@ -401,7 +400,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="NlC-bb-2dk"/>
+                    <navigationItem key="navigationItem" title="Profile" id="NlC-bb-2dk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LFl-Qx-abb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -412,8 +411,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kx6-Uc-6Q8" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <tabBarItem key="tabBarItem" title="Logs" id="FHh-gz-OYu">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-4"/>
+                    <tabBarItem key="tabBarItem" title="Logs" image="179-notepad.png" id="FHh-gz-OYu">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-2"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tAD-hF-o3p">
@@ -433,8 +432,8 @@
         <scene sceneID="zuq-3U-zGb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jho-bX-cPo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="0GX-4v-KeY">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-4"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="111-user.png" id="0GX-4v-KeY">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-2"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bbo-bG-rxx">
@@ -469,6 +468,12 @@
             <point key="canvasLocation" x="-349" y="208"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="111-user.png" width="24" height="21"/>
+        <image name="122-stats.png" width="27" height="19"/>
+        <image name="179-notepad.png" width="22" height="28"/>
+        <image name="94-pill.png" width="30" height="12"/>
+    </resources>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

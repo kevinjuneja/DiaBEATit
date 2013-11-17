@@ -1,20 +1,18 @@
 //
-//  LogsHomeViewController.m
+//  ProfileViewController.m
 //  DiaBEATit
 //
-//  Created by Kevin Juneja on 11/16/13.
+//  Created by Kevin Juneja on 11/17/13.
 //  Copyright (c) 2013 App Jam. All rights reserved.
 //
 
-#import "LogsHomeViewController.h"
-#import "SDSegmentedControl.h"
+#import "ProfileViewController.h"
 
-@interface LogsHomeViewController ()
-@property (weak, nonatomic) IBOutlet SDSegmentedControl *segmentedControl;
+@interface ProfileViewController ()
 
 @end
 
-@implementation LogsHomeViewController
+@implementation ProfileViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,9 +27,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    ((SDSegmentedControl *)_segmentedControl).arrowHeightFactor *= -1.0;
-    self.segmentedControl.scrollView.contentOffset = CGPointMake(0,65);
-    self.segmentedControl.scrollView.scrollEnabled = NO;
 }
 
 - (void)didReceiveMemoryWarning

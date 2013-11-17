@@ -31,6 +31,11 @@
 		5056748018386EEF00842CC0 /* MedicationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5056747F18386EEF00842CC0 /* MedicationTableViewCell.m */; };
 		50567483183873C000842CC0 /* AddMedicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50567482183873C000842CC0 /* AddMedicationViewController.m */; };
 		505674861838A89100842CC0 /* SplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505674851838A89100842CC0 /* SplashScreenViewController.m */; };
+		5056748B1838D07F00842CC0 /* 179-notepad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5056748A1838D07F00842CC0 /* 179-notepad.png */; };
+		5056748D1838D09000842CC0 /* 94-pill.png in Resources */ = {isa = PBXBuildFile; fileRef = 5056748C1838D09000842CC0 /* 94-pill.png */; };
+		5056748F1838D0B300842CC0 /* 122-stats.png in Resources */ = {isa = PBXBuildFile; fileRef = 5056748E1838D0B300842CC0 /* 122-stats.png */; };
+		505674911838D11A00842CC0 /* 111-user.png in Resources */ = {isa = PBXBuildFile; fileRef = 505674901838D11A00842CC0 /* 111-user.png */; };
+		505674941838D79B00842CC0 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505674931838D79B00842CC0 /* ProfileViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +87,12 @@
 		50567482183873C000842CC0 /* AddMedicationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMedicationViewController.m; sourceTree = "<group>"; };
 		505674841838A89100842CC0 /* SplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashScreenViewController.h; sourceTree = "<group>"; };
 		505674851838A89100842CC0 /* SplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashScreenViewController.m; sourceTree = "<group>"; };
+		5056748A1838D07F00842CC0 /* 179-notepad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "179-notepad.png"; sourceTree = "<group>"; };
+		5056748C1838D09000842CC0 /* 94-pill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "94-pill.png"; sourceTree = "<group>"; };
+		5056748E1838D0B300842CC0 /* 122-stats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "122-stats.png"; sourceTree = "<group>"; };
+		505674901838D11A00842CC0 /* 111-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "111-user.png"; sourceTree = "<group>"; };
+		505674921838D79B00842CC0 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		505674931838D79B00842CC0 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,7 +174,10 @@
 				5056747F18386EEF00842CC0 /* MedicationTableViewCell.m */,
 				50567481183873C000842CC0 /* AddMedicationViewController.h */,
 				50567482183873C000842CC0 /* AddMedicationViewController.m */,
+				505674921838D79B00842CC0 /* ProfileViewController.h */,
+				505674931838D79B00842CC0 /* ProfileViewController.m */,
 				413368931837757300617CC1 /* Images.xcassets */,
+				505674901838D11A00842CC0 /* 111-user.png */,
 				413368821837757300617CC1 /* Supporting Files */,
 			);
 			path = DiaBEATit;
@@ -172,6 +186,9 @@
 		413368821837757300617CC1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5056748E1838D0B300842CC0 /* 122-stats.png */,
+				5056748C1838D09000842CC0 /* 94-pill.png */,
+				5056748A1838D07F00842CC0 /* 179-notepad.png */,
 				4133688A1837757300617CC1 /* AppDelegate.h */,
 				4133688B1837757300617CC1 /* AppDelegate.m */,
 				413368831837757300617CC1 /* DiaBEATit-Info.plist */,
@@ -286,8 +303,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				413368941837757300617CC1 /* Images.xcassets in Resources */,
+				5056748D1838D09000842CC0 /* 94-pill.png in Resources */,
 				413368861837757300617CC1 /* InfoPlist.strings in Resources */,
+				5056748F1838D0B300842CC0 /* 122-stats.png in Resources */,
 				4133688F1837757300617CC1 /* Main.storyboard in Resources */,
+				5056748B1838D07F00842CC0 /* 179-notepad.png in Resources */,
+				505674911838D11A00842CC0 /* 111-user.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +336,7 @@
 				5016155618382EAF003AAD33 /* GraphsHomeViewController.m in Sources */,
 				5056747D18386E2300842CC0 /* MedicationTableViewController.m in Sources */,
 				413368881837757300617CC1 /* main.m in Sources */,
+				505674941838D79B00842CC0 /* ProfileViewController.m in Sources */,
 				5016156218384016003AAD33 /* SDSegmentedControl.m in Sources */,
 				50567483183873C000842CC0 /* AddMedicationViewController.m in Sources */,
 				5016155C18382EBE003AAD33 /* MedicationHomeViewController.m in Sources */,
