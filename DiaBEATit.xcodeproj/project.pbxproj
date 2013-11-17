@@ -30,6 +30,7 @@
 		5056747D18386E2300842CC0 /* MedicationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5056747C18386E2300842CC0 /* MedicationTableViewController.m */; };
 		5056748018386EEF00842CC0 /* MedicationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5056747F18386EEF00842CC0 /* MedicationTableViewCell.m */; };
 		50567483183873C000842CC0 /* AddMedicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50567482183873C000842CC0 /* AddMedicationViewController.m */; };
+		505674861838A89100842CC0 /* SplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505674851838A89100842CC0 /* SplashScreenViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,8 @@
 		5056747F18386EEF00842CC0 /* MedicationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicationTableViewCell.m; sourceTree = "<group>"; };
 		50567481183873C000842CC0 /* AddMedicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMedicationViewController.h; sourceTree = "<group>"; };
 		50567482183873C000842CC0 /* AddMedicationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMedicationViewController.m; sourceTree = "<group>"; };
+		505674841838A89100842CC0 /* SplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashScreenViewController.h; sourceTree = "<group>"; };
+		505674851838A89100842CC0 /* SplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashScreenViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +145,8 @@
 			children = (
 				501615631838401C003AAD33 /* External Libraries */,
 				4133688D1837757300617CC1 /* Main.storyboard */,
+				505674841838A89100842CC0 /* SplashScreenViewController.h */,
+				505674851838A89100842CC0 /* SplashScreenViewController.m */,
 				5016155D183830C3003AAD33 /* AddLogViewController.h */,
 				5016155E183830C3003AAD33 /* AddLogViewController.m */,
 				5016155118382EA4003AAD33 /* LogsHomeViewController.h */,
@@ -306,6 +311,7 @@
 				4133688C1837757300617CC1 /* AppDelegate.m in Sources */,
 				5016155F183830C3003AAD33 /* AddLogViewController.m in Sources */,
 				5016155918382EB6003AAD33 /* AveragesHomeViewController.m in Sources */,
+				505674861838A89100842CC0 /* SplashScreenViewController.m in Sources */,
 				5016155618382EAF003AAD33 /* GraphsHomeViewController.m in Sources */,
 				5056747D18386E2300842CC0 /* MedicationTableViewController.m in Sources */,
 				413368881837757300617CC1 /* main.m in Sources */,
