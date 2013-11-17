@@ -39,6 +39,9 @@
 		505674A61838E9DD00842CC0 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 505674A51838E9DD00842CC0 /* Profile.m */; };
 		505674AA1838EA2000842CC0 /* DiabetesLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 505674A91838EA2000842CC0 /* DiabetesLog.m */; };
 		505674AD1838EAB400842CC0 /* HypertensionLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 505674AC1838EAB400842CC0 /* HypertensionLog.m */; };
+		505674BD1838EDF200842CC0 /* diabeetus_29.png in Resources */ = {isa = PBXBuildFile; fileRef = 505674BA1838EDF200842CC0 /* diabeetus_29.png */; };
+		505674BE1838EDF200842CC0 /* diabeetus_40.png in Resources */ = {isa = PBXBuildFile; fileRef = 505674BB1838EDF200842CC0 /* diabeetus_40.png */; };
+		505674BF1838EDF200842CC0 /* diabeetus_60.png in Resources */ = {isa = PBXBuildFile; fileRef = 505674BC1838EDF200842CC0 /* diabeetus_60.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +106,9 @@
 		505674A91838EA2000842CC0 /* DiabetesLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiabetesLog.m; sourceTree = "<group>"; };
 		505674AB1838EAB400842CC0 /* HypertensionLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HypertensionLog.h; sourceTree = "<group>"; };
 		505674AC1838EAB400842CC0 /* HypertensionLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HypertensionLog.m; sourceTree = "<group>"; };
+		505674BA1838EDF200842CC0 /* diabeetus_29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diabeetus_29.png; sourceTree = "<group>"; };
+		505674BB1838EDF200842CC0 /* diabeetus_40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diabeetus_40.png; sourceTree = "<group>"; };
+		505674BC1838EDF200842CC0 /* diabeetus_60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diabeetus_60.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +189,9 @@
 			isa = PBXGroup;
 			children = (
 				505674901838D11A00842CC0 /* 111-user.png */,
+				505674BA1838EDF200842CC0 /* diabeetus_29.png */,
+				505674BB1838EDF200842CC0 /* diabeetus_40.png */,
+				505674BC1838EDF200842CC0 /* diabeetus_60.png */,
 				5056748E1838D0B300842CC0 /* 122-stats.png */,
 				5056748C1838D09000842CC0 /* 94-pill.png */,
 				5056748A1838D07F00842CC0 /* 179-notepad.png */,
@@ -362,9 +371,12 @@
 				413368941837757300617CC1 /* Images.xcassets in Resources */,
 				5056748D1838D09000842CC0 /* 94-pill.png in Resources */,
 				413368861837757300617CC1 /* InfoPlist.strings in Resources */,
+				505674BD1838EDF200842CC0 /* diabeetus_29.png in Resources */,
 				5056748F1838D0B300842CC0 /* 122-stats.png in Resources */,
 				4133688F1837757300617CC1 /* Main.storyboard in Resources */,
+				505674BE1838EDF200842CC0 /* diabeetus_40.png in Resources */,
 				5056748B1838D07F00842CC0 /* 179-notepad.png in Resources */,
+				505674BF1838EDF200842CC0 /* diabeetus_60.png in Resources */,
 				505674911838D11A00842CC0 /* 111-user.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

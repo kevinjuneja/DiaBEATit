@@ -112,6 +112,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Medication" id="Ins-SE-i58">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="HfI-9m-dCJ">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="Y9K-a2-Gy2" kind="modal" id="bJp-FQ-DVB"/>
                             </connections>
@@ -327,6 +328,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Logs" id="SB9-Pb-Sxi">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="sw6-f1-Mf8">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="ftJ-qe-MZl" kind="modal" id="jaZ-zC-SQ0"/>
                             </connections>
@@ -392,6 +394,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Md-RK-WBH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.50196081399917603" green="0.0" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -413,6 +419,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="y84-vU-hL6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -454,6 +464,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tAD-hF-o3p">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -475,6 +489,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bbo-bG-rxx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
