@@ -7,8 +7,10 @@
 //
 
 #import "LogsHomeViewController.h"
+#import "SDSegmentedControl.h"
 
 @interface LogsHomeViewController ()
+@property (weak, nonatomic) IBOutlet SDSegmentedControl *segmentedControl;
 
 @end
 

@@ -14,7 +14,6 @@
 		413368881837757300617CC1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 413368871837757300617CC1 /* main.m */; };
 		4133688C1837757300617CC1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4133688B1837757300617CC1 /* AppDelegate.m */; };
 		4133688F1837757300617CC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4133688D1837757300617CC1 /* Main.storyboard */; };
-		413368921837757300617CC1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 413368911837757300617CC1 /* ViewController.m */; };
 		413368941837757300617CC1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 413368931837757300617CC1 /* Images.xcassets */; };
 		4133689B1837757300617CC1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4133689A1837757300617CC1 /* XCTest.framework */; };
 		4133689C1837757300617CC1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4133687B1837757300617CC1 /* Foundation.framework */; };
@@ -26,6 +25,11 @@
 		5016155918382EB6003AAD33 /* AveragesHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5016155818382EB6003AAD33 /* AveragesHomeViewController.m */; };
 		5016155C18382EBE003AAD33 /* MedicationHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5016155B18382EBE003AAD33 /* MedicationHomeViewController.m */; };
 		5016155F183830C3003AAD33 /* AddLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5016155E183830C3003AAD33 /* AddLogViewController.m */; };
+		5016156218384016003AAD33 /* SDSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5016156118384016003AAD33 /* SDSegmentedControl.m */; };
+		501615651838408D003AAD33 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501615641838408D003AAD33 /* QuartzCore.framework */; };
+		5056747D18386E2300842CC0 /* MedicationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5056747C18386E2300842CC0 /* MedicationTableViewController.m */; };
+		5056748018386EEF00842CC0 /* MedicationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5056747F18386EEF00842CC0 /* MedicationTableViewCell.m */; };
+		50567483183873C000842CC0 /* AddMedicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50567482183873C000842CC0 /* AddMedicationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,8 +54,6 @@
 		4133688A1837757300617CC1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4133688B1837757300617CC1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4133688E1837757300617CC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		413368901837757300617CC1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		413368911837757300617CC1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		413368931837757300617CC1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		413368991837757300617CC1 /* DiaBEATitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiaBEATitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4133689A1837757300617CC1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -68,6 +70,15 @@
 		5016155B18382EBE003AAD33 /* MedicationHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicationHomeViewController.m; sourceTree = "<group>"; };
 		5016155D183830C3003AAD33 /* AddLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddLogViewController.h; sourceTree = "<group>"; };
 		5016155E183830C3003AAD33 /* AddLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddLogViewController.m; sourceTree = "<group>"; };
+		5016156018384016003AAD33 /* SDSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDSegmentedControl.h; sourceTree = "<group>"; };
+		5016156118384016003AAD33 /* SDSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDSegmentedControl.m; sourceTree = "<group>"; };
+		501615641838408D003AAD33 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5056747B18386E2300842CC0 /* MedicationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicationTableViewController.h; sourceTree = "<group>"; };
+		5056747C18386E2300842CC0 /* MedicationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicationTableViewController.m; sourceTree = "<group>"; };
+		5056747E18386EEF00842CC0 /* MedicationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicationTableViewCell.h; sourceTree = "<group>"; };
+		5056747F18386EEF00842CC0 /* MedicationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicationTableViewCell.m; sourceTree = "<group>"; };
+		50567481183873C000842CC0 /* AddMedicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMedicationViewController.h; sourceTree = "<group>"; };
+		50567482183873C000842CC0 /* AddMedicationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMedicationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				501615651838408D003AAD33 /* QuartzCore.framework in Frameworks */,
 				4133687E1837757300617CC1 /* CoreGraphics.framework in Frameworks */,
 				413368801837757300617CC1 /* UIKit.framework in Frameworks */,
 				4133687C1837757300617CC1 /* Foundation.framework in Frameworks */,
@@ -116,6 +128,7 @@
 		4133687A1837757300617CC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				501615641838408D003AAD33 /* QuartzCore.framework */,
 				4133687B1837757300617CC1 /* Foundation.framework */,
 				4133687D1837757300617CC1 /* CoreGraphics.framework */,
 				4133687F1837757300617CC1 /* UIKit.framework */,
@@ -127,8 +140,7 @@
 		413368811837757300617CC1 /* DiaBEATit */ = {
 			isa = PBXGroup;
 			children = (
-				4133688A1837757300617CC1 /* AppDelegate.h */,
-				4133688B1837757300617CC1 /* AppDelegate.m */,
+				501615631838401C003AAD33 /* External Libraries */,
 				4133688D1837757300617CC1 /* Main.storyboard */,
 				5016155D183830C3003AAD33 /* AddLogViewController.h */,
 				5016155E183830C3003AAD33 /* AddLogViewController.m */,
@@ -140,8 +152,12 @@
 				5016155818382EB6003AAD33 /* AveragesHomeViewController.m */,
 				5016155A18382EBE003AAD33 /* MedicationHomeViewController.h */,
 				5016155B18382EBE003AAD33 /* MedicationHomeViewController.m */,
-				413368901837757300617CC1 /* ViewController.h */,
-				413368911837757300617CC1 /* ViewController.m */,
+				5056747B18386E2300842CC0 /* MedicationTableViewController.h */,
+				5056747C18386E2300842CC0 /* MedicationTableViewController.m */,
+				5056747E18386EEF00842CC0 /* MedicationTableViewCell.h */,
+				5056747F18386EEF00842CC0 /* MedicationTableViewCell.m */,
+				50567481183873C000842CC0 /* AddMedicationViewController.h */,
+				50567482183873C000842CC0 /* AddMedicationViewController.m */,
 				413368931837757300617CC1 /* Images.xcassets */,
 				413368821837757300617CC1 /* Supporting Files */,
 			);
@@ -151,6 +167,8 @@
 		413368821837757300617CC1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4133688A1837757300617CC1 /* AppDelegate.h */,
+				4133688B1837757300617CC1 /* AppDelegate.m */,
 				413368831837757300617CC1 /* DiaBEATit-Info.plist */,
 				413368841837757300617CC1 /* InfoPlist.strings */,
 				413368871837757300617CC1 /* main.m */,
@@ -175,6 +193,15 @@
 				413368A31837757300617CC1 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		501615631838401C003AAD33 /* External Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				5016156018384016003AAD33 /* SDSegmentedControl.h */,
+				5016156118384016003AAD33 /* SDSegmentedControl.m */,
+			);
+			name = "External Libraries";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,13 +301,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5056748018386EEF00842CC0 /* MedicationTableViewCell.m in Sources */,
 				5016155318382EA4003AAD33 /* LogsHomeViewController.m in Sources */,
-				413368921837757300617CC1 /* ViewController.m in Sources */,
 				4133688C1837757300617CC1 /* AppDelegate.m in Sources */,
 				5016155F183830C3003AAD33 /* AddLogViewController.m in Sources */,
 				5016155918382EB6003AAD33 /* AveragesHomeViewController.m in Sources */,
 				5016155618382EAF003AAD33 /* GraphsHomeViewController.m in Sources */,
+				5056747D18386E2300842CC0 /* MedicationTableViewController.m in Sources */,
 				413368881837757300617CC1 /* main.m in Sources */,
+				5016156218384016003AAD33 /* SDSegmentedControl.m in Sources */,
+				50567483183873C000842CC0 /* AddMedicationViewController.m in Sources */,
 				5016155C18382EBE003AAD33 /* MedicationHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

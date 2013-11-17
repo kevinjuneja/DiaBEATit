@@ -1,20 +1,21 @@
 //
-//  AddLogViewController.m
+//  AddMedicationViewController.m
 //  DiaBEATit
 //
 //  Created by Kevin Juneja on 11/16/13.
 //  Copyright (c) 2013 App Jam. All rights reserved.
 //
 
-#import "AddLogViewController.h"
+#import "AddMedicationViewController.h"
 
-@interface AddLogViewController ()
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
+@interface AddMedicationViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *nameField;
+@property (weak, nonatomic) IBOutlet UITextField *dosageField;
+@property (weak, nonatomic) IBOutlet UITextField *quantityField;
 
 @end
 
-@implementation AddLogViewController
+@implementation AddMedicationViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,6 +30,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.nameField.delegate = self; //self references the viewcontroller or view your textField is on
+    self.dosageField.delegate = self;
+    self.quantityField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,7 +46,13 @@
 }
 
 - (IBAction)saveButton:(UIBarButtonItem *)sender {
-    // save actions go here
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    
+    return YES;
 }
 
 @end

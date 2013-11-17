@@ -38,7 +38,7 @@
         <scene sceneID="eyj-K0-0GC">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="9Ha-NW-XlJ" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="QoY-vm-GOB">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -85,13 +85,172 @@
                     <view key="view" contentMode="scaleToFill" id="IUM-FK-zDl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9vY-Yh-9OW">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="eDu-dD-qzm" kind="embed" id="utq-Ml-AJ8"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Ins-SE-i58"/>
+                    <navigationItem key="navigationItem" id="Ins-SE-i58">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="HfI-9m-dCJ">
+                            <connections>
+                                <segue destination="Y9K-a2-Gy2" kind="modal" id="bJp-FQ-DVB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dFx-fi-HJB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1202" y="1200"/>
+        </scene>
+        <!--Medication Table View Controller-->
+        <scene sceneID="1sj-EF-ssf">
+            <objects>
+                <tableViewController id="eDu-dD-qzm" customClass="MedicationTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="hHG-LN-720">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="medicationCell" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="medicationCell" id="L1u-ms-Z9k" customClass="MedicationTableViewCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L1u-ms-Z9k" id="6Ik-IG-KYE">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="59"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Medication Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njS-y5-PNV">
+                                            <rect key="frame" x="9" y="4" width="302" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dosage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3D-Rj-eQ5">
+                                            <rect key="frame" x="9" y="33" width="134" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quantity" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhL-qH-VcR">
+                                            <rect key="frame" x="148" y="33" width="139" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="medicationDosageLabel" destination="E3D-Rj-eQ5" id="Flf-sD-KAa"/>
+                                    <outlet property="medicationNameLabel" destination="njS-y5-PNV" id="1zo-iv-7r5"/>
+                                    <outlet property="medicationQuantityLabel" destination="dhL-qH-VcR" id="xm0-zn-NVy"/>
+                                    <segue destination="GnJ-HI-IX4" kind="push" id="LC4-5q-1bB"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="eDu-dD-qzm" id="BDD-rj-qOA"/>
+                            <outlet property="delegate" destination="eDu-dD-qzm" id="RDy-y5-6xB"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sj7-CG-fNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1723" y="1200"/>
+        </scene>
+        <!--Add Medication View Controller-->
+        <scene sceneID="vvp-IR-jgW">
+            <objects>
+                <viewController id="Y9K-a2-Gy2" customClass="AddMedicationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N9C-1q-Spe"/>
+                        <viewControllerLayoutGuide type="bottom" id="xZi-KZ-8wW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HRn-DU-CR2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kRC-g3-whb">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Add New Medication" id="Zsb-8p-viX">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="kRU-3R-WMO">
+                                            <connections>
+                                                <action selector="cancelButton:" destination="Y9K-a2-Gy2" id="GSG-4w-e5R"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="EvG-S5-gKy">
+                                            <connections>
+                                                <action selector="saveButton:" destination="Y9K-a2-Gy2" id="FyD-nI-M0c"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Medication Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Xm-mH-wQ4">
+                                <rect key="frame" x="20" y="109" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dosage" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DA5-9h-KHo">
+                                <rect key="frame" x="20" y="161" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quantity" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bzs-l4-DDl">
+                                <rect key="frame" x="20" y="213" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="dosageField" destination="DA5-9h-KHo" id="Pcc-dd-N0k"/>
+                        <outlet property="nameField" destination="5Xm-mH-wQ4" id="Xn4-gi-R9x"/>
+                        <outlet property="quantityField" destination="bzs-l4-DDl" id="Twh-OF-1xt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hzZ-3T-wHh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1723" y="1877"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gD7-oc-rDK">
+            <objects>
+                <viewController id="GnJ-HI-IX4" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dXI-eY-gXg"/>
+                        <viewControllerLayoutGuide type="bottom" id="CUu-kN-C8n"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LQQ-19-NHK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Temporary Page" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uv5-9n-uaa">
+                                <rect key="frame" x="97" y="273" width="126" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3i0-ef-mF6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Obv-Nj-yz6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2219" y="1200"/>
         </scene>
         <!--Logs Home View Controller-->
         <scene sceneID="tL6-y2-c3o">
@@ -105,11 +264,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vDx-zp-orb">
-                                <rect key="frame" x="11" y="72" width="298" height="29"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vDx-zp-orb" customClass="SDSegmentedControl">
+                                <rect key="frame" x="0.0" y="65" width="320" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
-                                    <segment title="Both"/>
+                                    <segment title="All"/>
                                     <segment title="Diabetes"/>
                                     <segment title="Hypertension"/>
                                 </segments>
@@ -118,12 +277,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="SB9-Pb-Sxi">
+                        <nil key="title"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="sw6-f1-Mf8">
                             <connections>
                                 <segue destination="ftJ-qe-MZl" kind="modal" id="jaZ-zC-SQ0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="segmentedControl" destination="vDx-zp-orb" id="irr-mi-ahF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mrh-1l-xic" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -174,7 +337,9 @@
         <scene sceneID="UYY-xk-F3m">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Yp0-2x-pgz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Graphs" id="WUk-Jx-08m"/>
+                    <tabBarItem key="tabBarItem" title="Graphs" id="WUk-Jx-08m">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-4"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Md-RK-WBH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -193,7 +358,9 @@
         <scene sceneID="GxF-CF-f2K">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1Tc-eM-fRK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Averages" id="F1N-cC-mkK"/>
+                    <tabBarItem key="tabBarItem" title="Averages" id="F1N-cC-mkK">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-4"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MlN-iy-z6K">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -212,7 +379,9 @@
         <scene sceneID="D3Z-jL-ocy">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kpm-aY-gTS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Medication" id="pnG-TK-F7E"/>
+                    <tabBarItem key="tabBarItem" title="Medication" id="pnG-TK-F7E">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-4"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="y84-vU-hL6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -231,7 +400,10 @@
         <scene sceneID="b0Y-nU-WLO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kx6-Uc-6Q8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Logs" id="FHh-gz-OYu"/>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <tabBarItem key="tabBarItem" title="Logs" id="FHh-gz-OYu">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-4"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tAD-hF-o3p">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
