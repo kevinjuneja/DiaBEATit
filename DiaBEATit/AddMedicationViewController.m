@@ -46,6 +46,10 @@
 }
 
 - (IBAction)saveButton:(UIBarButtonItem *)sender {
+    // database writing goes here
+    
+    // dismisses the modal after saving the info
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField

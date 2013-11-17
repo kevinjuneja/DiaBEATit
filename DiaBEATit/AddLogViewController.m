@@ -42,7 +42,10 @@
 }
 
 - (IBAction)saveButton:(UIBarButtonItem *)sender {
-    // save actions go here
+    // database writing goes here
+    
+    // dismisses the modal after saving the info
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
