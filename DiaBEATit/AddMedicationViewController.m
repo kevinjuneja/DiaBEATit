@@ -33,6 +33,8 @@
     self.nameField.delegate = self; //self references the viewcontroller or view your textField is on
     self.dosageField.delegate = self;
     self.quantityField.delegate = self;
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,6 +45,7 @@
 
 - (IBAction)cancelButton:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
 }
 
 - (IBAction)saveButton:(UIBarButtonItem *)sender {
@@ -50,6 +53,7 @@
     
     // dismisses the modal after saving the info
     [self dismissViewControllerAnimated:YES completion:nil];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
