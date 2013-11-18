@@ -23,10 +23,22 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    NSError *__autoreleasing*error = NULL;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *path = [documentsDirectory stringByAppendingPathComponent: @"diaBEATit.db"];
+    
+    NSLog(@"%@", path);
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    if (![fileManager fileExistsAtPath: path])
+    {
+        NSString *bundle = [[ NSBundle mainBundle] pathForResource:@"diaBEATit" ofType:@"sqlite3"];
+        [fileManager copyItemAtPath: bundle toPath:path error:error];
+    }
 }
 
 - (void)didReceiveMemoryWarning
