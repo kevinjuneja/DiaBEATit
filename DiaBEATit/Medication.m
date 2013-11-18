@@ -10,4 +10,11 @@
 
 @implementation Medication
 
+-(int) saveMedicationWithName:(NSString *)name dosage:(NSString *)dosage quantity:(NSString *)quantity comments:(NSString *)comments {
+    
+    
+    
+    return 0;
+}
+
 @end

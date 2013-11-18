@@ -10,4 +10,11 @@
 
 @interface Medication : NSObject
 
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *dosage;
+@property (nonatomic, strong) NSString *quantity;
+@property (nonatomic, strong) NSString *comments;
+
+-(int) saveMedicationWithName:(NSString *)name dosage:(NSString *)dosage quantity:(NSString *)quantity comments:(NSString *)comments;
+
 @end

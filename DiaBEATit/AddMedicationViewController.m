@@ -7,11 +7,15 @@
 //
 
 #import "AddMedicationViewController.h"
+#import "Medication.h"
 
 @interface AddMedicationViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *dosageField;
 @property (weak, nonatomic) IBOutlet UITextField *quantityField;
+@property (weak, nonatomic) IBOutlet UITextField *commentsField;
+
+@property (nonatomic) int saveResponse;
 
 @end
 
@@ -50,6 +54,8 @@
 
 - (IBAction)saveButton:(UIBarButtonItem *)sender {
     // database writing goes here
+    Medication *m = [[Medication alloc] init];
+    self.saveResponse = [m saveMedicationWithName:self.nameField.text dosage:self.dosageField.text quantity:self.quantityField.text comments:self.commentsField.text];
     
     // dismisses the modal after saving the info
     [self dismissViewControllerAnimated:YES completion:nil];

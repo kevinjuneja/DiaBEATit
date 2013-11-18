@@ -13,7 +13,7 @@
                         <viewControllerLayoutGuide type="bottom" id="N4N-tB-qFb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vMw-LL-TSu">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pFs-Dl-p2t" customClass="SDSegmentedControl">
@@ -51,11 +51,11 @@
                         <viewControllerLayoutGuide type="bottom" id="0uf-ii-rou"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Tqc-iV-KEf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cx-2A-uo6">
-                                <rect key="frame" x="97" y="269" width="126" height="30"/>
+                                <rect key="frame" x="97" y="225" width="126" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Go to main screen">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -110,11 +110,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Ei1-Ey-VN8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IUM-FK-zDl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9vY-Yh-9OW">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
@@ -148,7 +148,7 @@
             <objects>
                 <tableViewController id="eDu-dD-qzm" customClass="MedicationTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="hHG-LN-720">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -223,7 +223,7 @@
                         <viewControllerLayoutGuide type="bottom" id="xZi-KZ-8wW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="HRn-DU-CR2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kRC-g3-whb">
@@ -262,6 +262,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Comments" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jw0-s6-Tor">
+                                <rect key="frame" x="20" y="262" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -269,17 +275,21 @@
                             <constraint firstItem="kRC-g3-whb" firstAttribute="leading" secondItem="HRn-DU-CR2" secondAttribute="leading" id="3pf-bE-sEI"/>
                             <constraint firstItem="bzs-l4-DDl" firstAttribute="leading" secondItem="DA5-9h-KHo" secondAttribute="leading" id="4to-Xs-dps"/>
                             <constraint firstItem="kRC-g3-whb" firstAttribute="top" secondItem="N9C-1q-Spe" secondAttribute="bottom" id="6MD-cz-5SS"/>
+                            <constraint firstItem="jw0-s6-Tor" firstAttribute="leading" secondItem="bzs-l4-DDl" secondAttribute="leading" id="6QJ-KO-XQ9"/>
                             <constraint firstItem="bzs-l4-DDl" firstAttribute="centerX" secondItem="kRC-g3-whb" secondAttribute="centerX" id="Dsd-qs-Cbm"/>
                             <constraint firstAttribute="trailing" secondItem="kRC-g3-whb" secondAttribute="trailing" id="VVd-JJ-ml7"/>
                             <constraint firstItem="bzs-l4-DDl" firstAttribute="top" secondItem="DA5-9h-KHo" secondAttribute="bottom" constant="22" id="YqV-dX-QDP"/>
                             <constraint firstItem="5Xm-mH-wQ4" firstAttribute="top" secondItem="kRC-g3-whb" secondAttribute="bottom" constant="45" id="bZu-qF-XNa"/>
                             <constraint firstItem="DA5-9h-KHo" firstAttribute="trailing" secondItem="5Xm-mH-wQ4" secondAttribute="trailing" id="lRu-Hd-y6k"/>
+                            <constraint firstItem="jw0-s6-Tor" firstAttribute="trailing" secondItem="bzs-l4-DDl" secondAttribute="trailing" id="nq3-gc-XCp"/>
                             <constraint firstItem="DA5-9h-KHo" firstAttribute="leading" secondItem="5Xm-mH-wQ4" secondAttribute="leading" id="oz3-GS-iiO"/>
+                            <constraint firstItem="jw0-s6-Tor" firstAttribute="top" secondItem="bzs-l4-DDl" secondAttribute="bottom" constant="19" id="pD6-ub-vdt"/>
                             <constraint firstItem="DA5-9h-KHo" firstAttribute="top" secondItem="5Xm-mH-wQ4" secondAttribute="bottom" constant="22" id="twU-gh-WyJ"/>
                             <constraint firstItem="bzs-l4-DDl" firstAttribute="trailing" secondItem="DA5-9h-KHo" secondAttribute="trailing" id="wGj-Vq-Gr1"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="commentsField" destination="jw0-s6-Tor" id="qwc-Uv-OHM"/>
                         <outlet property="dosageField" destination="DA5-9h-KHo" id="Pcc-dd-N0k"/>
                         <outlet property="nameField" destination="5Xm-mH-wQ4" id="Xn4-gi-R9x"/>
                         <outlet property="quantityField" destination="bzs-l4-DDl" id="Twh-OF-1xt"/>
@@ -298,11 +308,11 @@
                         <viewControllerLayoutGuide type="bottom" id="CUu-kN-C8n"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LQQ-19-NHK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temporary Page" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uv5-9n-uaa">
-                                <rect key="frame" x="97" y="274" width="126" height="21"/>
+                                <rect key="frame" x="97" y="230" width="126" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -325,7 +335,7 @@
             <objects>
                 <tableViewController id="khT-1q-tau" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="wNI-P1-6Z1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="417"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="329"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -357,7 +367,7 @@
                         <viewControllerLayoutGuide type="bottom" id="uB0-T4-MCK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UPQ-UO-GPr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vDx-zp-orb" customClass="SDSegmentedControl">
@@ -370,7 +380,7 @@
                                 </segments>
                             </segmentedControl>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z3p-aX-OCI">
-                                <rect key="frame" x="0.0" y="101" width="320" height="417"/>
+                                <rect key="frame" x="0.0" y="101" width="320" height="329"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
@@ -414,7 +424,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Kam-SV-dd4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5kX-Jd-bh9">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R1y-EA-TrK">
@@ -512,7 +522,7 @@
                         <viewControllerLayoutGuide type="bottom" id="NRu-Jp-C4D"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Yyy-4O-qA3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -604,6 +614,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>
