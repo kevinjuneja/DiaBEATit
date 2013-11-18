@@ -11,7 +11,7 @@
 
 @interface LogsHomeViewController ()
 @property (weak, nonatomic) IBOutlet SDSegmentedControl *segmentedControl;
-
+@property (strong, nonatomic) NSString *segueId;
 @end
 
 @implementation LogsHomeViewController
@@ -40,4 +40,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)addLogButton:(UIBarButtonItem *)sender {
+    self.segueId = (self.segmentedControl.selectedSegmentIndex == 0) ? @"addDiabetesLogSegue" : @"addHypertensionLogSegue";
+    [self performSegueWithIdentifier:self.segueId sender:sender];
+}
 @end

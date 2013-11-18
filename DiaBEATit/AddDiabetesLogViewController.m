@@ -1,20 +1,18 @@
 //
-//  AddLogViewController.m
+//  AddDiabetesLogViewController.m
 //  DiaBEATit
 //
-//  Created by Kevin Juneja on 11/16/13.
+//  Created by Kevin Juneja on 11/17/13.
 //  Copyright (c) 2013 App Jam. All rights reserved.
 //
 
-#import "AddLogViewController.h"
+#import "AddDiabetesLogViewController.h"
 
-@interface AddLogViewController ()
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
+@interface AddDiabetesLogViewController ()
 
 @end
 
-@implementation AddLogViewController
+@implementation AddDiabetesLogViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,7 +35,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 - (IBAction)cancelButton:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
@@ -50,5 +47,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
 }
+
+
 
 @end

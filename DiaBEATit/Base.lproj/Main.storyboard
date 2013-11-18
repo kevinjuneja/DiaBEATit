@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="65" width="320" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
-                                    <segment title="Both"/>
+                                    <segment title="All"/>
                                     <segment title="Diabetes"/>
                                     <segment title="Hypertension"/>
                                 </segments>
@@ -356,7 +356,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g9U-gl-BBu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1769" y="-1493"/>
+            <point key="canvasLocation" x="2273" y="-681"/>
         </scene>
         <!--Logs Home View Controller - Logs-->
         <scene sceneID="tL6-y2-c3o">
@@ -370,11 +370,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vDx-zp-orb" customClass="SDSegmentedControl">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vDx-zp-orb" customClass="SDSegmentedControl">
                                 <rect key="frame" x="0.0" y="65" width="320" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
-                                    <segment title="All"/>
                                     <segment title="Diabetes"/>
                                     <segment title="Hypertension"/>
                                 </segments>
@@ -403,22 +402,24 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="sw6-f1-Mf8">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="ftJ-qe-MZl" kind="modal" id="jaZ-zC-SQ0"/>
+                                <action selector="addLogButton:" destination="ZzK-tW-qRf" id="rkf-69-waX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="segmentedControl" destination="vDx-zp-orb" id="irr-mi-ahF"/>
+                        <segue destination="Oes-VK-Cov" kind="modal" identifier="addHypertensionLogSegue" id="XFX-gR-nRN"/>
+                        <segue destination="ftJ-qe-MZl" kind="modal" identifier="addDiabetesLogSegue" id="baG-AA-COK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mrh-1l-xic" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1762" y="-832"/>
         </scene>
-        <!--Add Log View Controller-->
+        <!--Add Diabetes Log View Controller-->
         <scene sceneID="VQD-XI-gRd">
             <objects>
-                <viewController id="ftJ-qe-MZl" customClass="AddLogViewController" sceneMemberID="viewController">
+                <viewController id="ftJ-qe-MZl" customClass="AddDiabetesLogViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TUQ-ES-EV4"/>
                         <viewControllerLayoutGuide type="bottom" id="Kam-SV-dd4"/>
@@ -431,35 +432,90 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Add New Log" id="H3P-c5-m3B">
+                                    <navigationItem title="New Diabetes Log" id="H3P-c5-m3B">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="1jV-xl-qaH">
                                             <connections>
-                                                <action selector="cancelButton:" destination="ftJ-qe-MZl" id="i2K-Ft-jMb"/>
+                                                <action selector="cancelButton:" destination="ftJ-qe-MZl" id="IyY-Gz-0nv"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="FCO-TW-Zio">
                                             <connections>
-                                                <action selector="saveButton:" destination="ftJ-qe-MZl" id="fbZ-vB-sbY"/>
+                                                <action selector="saveButton:" destination="ftJ-qe-MZl" id="UZQ-Rk-i6S"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Blood glucose level" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yZo-dt-p7c">
+                                <rect key="frame" x="20" y="269" width="147" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insulin" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iDx-zn-YZT">
+                                <rect key="frame" x="20" y="307" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="2B0-WM-5mL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="time for both" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GGa-ga-8y6">
+                                <rect key="frame" x="133" y="225" width="108" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="108" id="z5Y-BX-5re"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="am/pm" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="azq-6t-ILO">
+                                <rect key="frame" x="20" y="345" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="before/after/fasting" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XXn-s7-69C">
+                                <rect key="frame" x="20" y="383" width="147" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Comments" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LbP-wi-8GN">
+                                <rect key="frame" x="20" y="421" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="XXn-s7-69C" firstAttribute="top" secondItem="azq-6t-ILO" secondAttribute="bottom" constant="8" symbolic="YES" id="8Qp-Jt-BVD"/>
                             <constraint firstItem="R1y-EA-TrK" firstAttribute="top" secondItem="TUQ-ES-EV4" secondAttribute="bottom" id="BDD-QL-6h5"/>
+                            <constraint firstItem="azq-6t-ILO" firstAttribute="top" secondItem="iDx-zn-YZT" secondAttribute="bottom" constant="8" symbolic="YES" id="CiA-eM-zZe"/>
                             <constraint firstItem="R1y-EA-TrK" firstAttribute="leading" secondItem="5kX-Jd-bh9" secondAttribute="leading" id="Kvi-Vu-m4Y"/>
+                            <constraint firstItem="azq-6t-ILO" firstAttribute="trailing" secondItem="iDx-zn-YZT" secondAttribute="trailing" id="MuY-0m-4eZ"/>
                             <constraint firstAttribute="trailing" secondItem="R1y-EA-TrK" secondAttribute="trailing" id="NUc-SK-njT"/>
+                            <constraint firstItem="iDx-zn-YZT" firstAttribute="leading" secondItem="yZo-dt-p7c" secondAttribute="leading" id="Rfh-gs-Fa6"/>
+                            <constraint firstItem="XXn-s7-69C" firstAttribute="leading" secondItem="LbP-wi-8GN" secondAttribute="leading" id="SmL-AR-TyW"/>
+                            <constraint firstItem="azq-6t-ILO" firstAttribute="leading" secondItem="XXn-s7-69C" secondAttribute="leading" id="YGm-hV-71a"/>
+                            <constraint firstItem="LbP-wi-8GN" firstAttribute="top" secondItem="XXn-s7-69C" secondAttribute="bottom" constant="8" symbolic="YES" id="YtI-wM-3iE"/>
+                            <constraint firstItem="yZo-dt-p7c" firstAttribute="trailing" secondItem="XXn-s7-69C" secondAttribute="trailing" id="bXf-H3-CmS"/>
+                            <constraint firstItem="iDx-zn-YZT" firstAttribute="leading" secondItem="azq-6t-ILO" secondAttribute="leading" id="cXK-6u-9ib"/>
+                            <constraint firstItem="LbP-wi-8GN" firstAttribute="trailing" secondItem="azq-6t-ILO" secondAttribute="trailing" id="fJT-p1-u4C"/>
+                            <constraint firstItem="yZo-dt-p7c" firstAttribute="top" secondItem="GGa-ga-8y6" secondAttribute="bottom" constant="14" id="gHW-jL-dzn"/>
+                            <constraint firstItem="iDx-zn-YZT" firstAttribute="top" secondItem="yZo-dt-p7c" secondAttribute="bottom" constant="8" symbolic="YES" id="mim-FF-4vR"/>
+                            <constraint firstAttribute="trailing" secondItem="GGa-ga-8y6" secondAttribute="trailing" constant="79" id="oj9-Db-TBM"/>
+                            <constraint firstItem="yZo-dt-p7c" firstAttribute="leading" secondItem="5kX-Jd-bh9" secondAttribute="leading" constant="20" symbolic="YES" id="qJC-wV-DKj"/>
+                            <constraint firstItem="GGa-ga-8y6" firstAttribute="centerY" secondItem="5kX-Jd-bh9" secondAttribute="centerY" id="upx-1u-D1Y"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="cancelButton" destination="1jV-xl-qaH" id="7HK-9F-fcs"/>
-                    </connections>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="boN-en-nfN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2269" y="-832"/>
+            <point key="canvasLocation" x="2273" y="-1951"/>
         </scene>
         <!--Navigation Controller - Trends-->
         <scene sceneID="UYY-xk-F3m">
@@ -602,6 +658,112 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5NK-dS-cBi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-349" y="208"/>
+        </scene>
+        <!--Add Hypertension Log View Controller-->
+        <scene sceneID="8qS-1T-gLq">
+            <objects>
+                <viewController id="Oes-VK-Cov" customClass="AddHypertensionLogViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O9A-Cb-SqP"/>
+                        <viewControllerLayoutGuide type="bottom" id="GE9-lt-ARQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Beb-g3-WeK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LaE-2f-wnI">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="New Hypertension Log" id="ZEu-uu-Ynp">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="kK1-hv-BMG">
+                                            <connections>
+                                                <action selector="cancelButton:" destination="Oes-VK-Cov" id="4ra-yE-2ej"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="hUh-bn-ah2">
+                                            <connections>
+                                                <action selector="saveButton:" destination="Oes-VK-Cov" id="o3X-Xo-7xb"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Systolic BP" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eFM-Et-qWq">
+                                <rect key="frame" x="20" y="97" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="hDk-Vf-k4R"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Diastolic BP" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cq6-sc-mS8">
+                                <rect key="frame" x="139" y="97" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Heart Rate" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XhI-k0-I65">
+                                <rect key="frame" x="20" y="135" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Comments" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gOh-0E-UaD">
+                                <rect key="frame" x="20" y="173" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8uz-7r-gqL">
+                                <rect key="frame" x="125" y="101" width="6" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="6" id="cj3-sI-o9O"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="time for both" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cNY-I9-2f8">
+                                <rect key="frame" x="20" y="216" width="108" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="108" id="VXe-e1-uVJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XhI-k0-I65" firstAttribute="leading" secondItem="gOh-0E-UaD" secondAttribute="leading" id="0xs-g9-1nu"/>
+                            <constraint firstItem="8uz-7r-gqL" firstAttribute="top" secondItem="LaE-2f-wnI" secondAttribute="bottom" constant="37" id="2eF-sI-9xM"/>
+                            <constraint firstItem="gOh-0E-UaD" firstAttribute="leading" secondItem="cNY-I9-2f8" secondAttribute="leading" id="3iE-lt-DhM"/>
+                            <constraint firstItem="LaE-2f-wnI" firstAttribute="leading" secondItem="Beb-g3-WeK" secondAttribute="leading" id="9b4-4K-yXV"/>
+                            <constraint firstItem="gOh-0E-UaD" firstAttribute="top" secondItem="XhI-k0-I65" secondAttribute="bottom" constant="8" symbolic="YES" id="Ec9-j9-BfI"/>
+                            <constraint firstItem="cq6-sc-mS8" firstAttribute="baseline" secondItem="eFM-Et-qWq" secondAttribute="baseline" id="GnK-Jh-fGZ"/>
+                            <constraint firstAttribute="trailing" secondItem="cq6-sc-mS8" secondAttribute="trailing" constant="84" id="JiV-dS-z6Y"/>
+                            <constraint firstItem="XhI-k0-I65" firstAttribute="trailing" secondItem="eFM-Et-qWq" secondAttribute="trailing" id="O4D-cz-WIQ"/>
+                            <constraint firstItem="XhI-k0-I65" firstAttribute="leading" secondItem="eFM-Et-qWq" secondAttribute="leading" id="QeT-kb-s9g"/>
+                            <constraint firstItem="XhI-k0-I65" firstAttribute="top" secondItem="eFM-Et-qWq" secondAttribute="bottom" constant="8" symbolic="YES" id="cBh-0K-KCw"/>
+                            <constraint firstItem="cq6-sc-mS8" firstAttribute="leading" secondItem="8uz-7r-gqL" secondAttribute="trailing" constant="8" symbolic="YES" id="i4m-X5-leG"/>
+                            <constraint firstItem="eFM-Et-qWq" firstAttribute="leading" secondItem="Beb-g3-WeK" secondAttribute="leading" constant="20" symbolic="YES" id="kJE-bM-iQf"/>
+                            <constraint firstItem="8uz-7r-gqL" firstAttribute="leading" secondItem="eFM-Et-qWq" secondAttribute="trailing" constant="8" symbolic="YES" id="rS4-KB-fuY"/>
+                            <constraint firstItem="LaE-2f-wnI" firstAttribute="top" secondItem="O9A-Cb-SqP" secondAttribute="bottom" id="tj0-VB-KIs"/>
+                            <constraint firstItem="eFM-Et-qWq" firstAttribute="top" secondItem="LaE-2f-wnI" secondAttribute="bottom" constant="33" id="ufR-py-p6W"/>
+                            <constraint firstItem="cNY-I9-2f8" firstAttribute="top" secondItem="gOh-0E-UaD" secondAttribute="bottom" constant="13" id="xOM-Jc-Aeo"/>
+                            <constraint firstAttribute="trailing" secondItem="LaE-2f-wnI" secondAttribute="trailing" id="zsf-m8-qwy"/>
+                            <constraint firstItem="XhI-k0-I65" firstAttribute="trailing" secondItem="gOh-0E-UaD" secondAttribute="trailing" id="zzu-Dz-Ci9"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yCG-So-CH5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2273" y="-1313"/>
         </scene>
     </scenes>
     <resources>
