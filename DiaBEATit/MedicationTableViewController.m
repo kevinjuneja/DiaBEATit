@@ -37,7 +37,6 @@
     
     Medication *med = [[Medication alloc] init];
     self.medications = [med retrieveMedications];
-    
 }
 
 - (void)didReceiveMemoryWarning
