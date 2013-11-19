@@ -46,6 +46,73 @@
     return sqlCheck;
 }
 
+-(int) editMedicationWithId:(int)idCode name:(NSString *)name dosage:(NSString *)dosage quantity:(NSString *)quantity comments:(NSString *)comments
+{
+    sqlite3_stmt *statement;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *pathToDatabase = [documentsDirectory stringByAppendingPathComponent: @"diaBEATit.db"];
+    const char *dbpath= [pathToDatabase UTF8String];
+    int sqlCheck = 1;
+    
+    if (sqlite3_open(dbpath, &_diaBEATitDB) == SQLITE_OK)
+    {
+        
+        NSString *insertSQL = [NSString stringWithFormat:
+                               @"UPDATE MEDICINES SET name = '\"%@\"', dosage = '\"%@\"', quantity = '\"%@\"', comments = '\"%@\"' WHERE id = '\"%i\"'",
+                               name, dosage, quantity, comments, idCode];
+        
+        
+        const char *insert_stmt = [insertSQL UTF8String];
+        sqlite3_prepare_v2(_diaBEATitDB, insert_stmt,
+                           -1, &statement, NULL);
+        sqlCheck = sqlite3_step(statement);
+        if (sqlCheck == SQLITE_DONE)
+        {
+            NSLog(@"SUCCEEDED");
+        } else {
+            NSLog(@"FAILED");
+        }
+        sqlite3_finalize(statement);
+        sqlite3_close(_diaBEATitDB);
+    }
+    
+    return sqlCheck;
+}
+
+-(int) removeMedicationWithId:(int)idCode
+{
+    sqlite3_stmt *statement;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *pathToDatabase = [documentsDirectory stringByAppendingPathComponent: @"diaBEATit.db"];
+    const char *dbpath= [pathToDatabase UTF8String];
+    int sqlCheck = 1;
+    
+    if (sqlite3_open(dbpath, &_diaBEATitDB) == SQLITE_OK)
+    {
+        
+        NSString *insertSQL = [NSString stringWithFormat:
+                               @"DELETE FROM MEDICINES WHERE id = '\"%i\"'", idCode];
+        
+        
+        const char *insert_stmt = [insertSQL UTF8String];
+        sqlite3_prepare_v2(_diaBEATitDB, insert_stmt,
+                           -1, &statement, NULL);
+        sqlCheck = sqlite3_step(statement);
+        if (sqlCheck == SQLITE_DONE)
+        {
+            NSLog(@"SUCCEEDED");
+        } else {
+            NSLog(@"FAILED");
+        }
+        sqlite3_finalize(statement);
+        sqlite3_close(_diaBEATitDB);
+    }
+    
+    return 0;
+}
+
 -(NSArray *) retrieveMedications {
     NSMutableArray *medications = [[NSMutableArray alloc] init];
     
@@ -72,6 +139,10 @@
             {
                 NSLog(@"Entered while");
                 Medication *m = [[Medication alloc] init];
+                
+                int idField = sqlite3_column_int(statement, 0);
+                m.idCode = idField;
+                NSLog(@"%i", m.idCode);
                 
                 NSString *nameField = [[NSString alloc]
                                        initWithUTF8String:(const char *) sqlite3_column_text(statement, 0)];

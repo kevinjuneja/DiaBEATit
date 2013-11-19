@@ -11,6 +11,7 @@
 
 @interface Medication : NSObject
 
+@property (nonatomic) int idCode;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *dosage;
 @property (nonatomic, strong) NSString *quantity;
@@ -19,6 +20,11 @@
 
 
 -(int) saveMedicationWithName:(NSString *)name dosage:(NSString *)dosage quantity:(NSString *)quantity comments:(NSString *)comments;
+
+//Do not allow editing of idCode.
+-(int) editMedicationWithId:(int)idCode name:(NSString *)name dosage:(NSString *)dosage quantity:(NSString *)quantity comments:(NSString *)comments;
+
+-(int) removeMedicationWithId:(int)idCode;
 
 -(NSArray *) retrieveMedications;
 
