@@ -50,11 +50,54 @@
     NSMutableArray *medications = [[NSMutableArray alloc] init];
     
     // sql query to get medications
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *pathToDatabase = [documentsDirectory stringByAppendingPathComponent: @"diaBEATit.db"];
+    const char *dbpath = [pathToDatabase UTF8String];
+    sqlite3_stmt *statement;
     
-    // parsing
-    Medication *m = [[Medication alloc] init];
-    
-    [medications addObject:m];
+    if (sqlite3_open(dbpath, &_diaBEATitDB) == SQLITE_OK)
+    {
+        NSString *querySQL = [NSString stringWithFormat:
+                              @"SELECT name, dosage, quantity, comments FROM medications"];
+        
+        const char *query_stmt = [querySQL UTF8String];
+        
+        if (sqlite3_prepare_v2(_diaBEATitDB,
+                               query_stmt, -1, &statement, NULL) == SQLITE_OK)
+        {
+            while (sqlite3_step(statement) == SQLITE_ROW)
+            {
+                Medication *m = [[Medication alloc] init];
+                
+                NSString *nameField = [[NSString alloc]
+                                       initWithUTF8String:(const char *) sqlite3_column_text(statement, 0)];
+                
+                m.name = nameField;
+                
+                NSString *dosageField = [[NSString alloc]
+                                          initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
+                
+                m.dosage = dosageField;
+                
+                NSString *quantityField = [[NSString alloc]
+                                        initWithUTF8String:(const char *)
+                                        sqlite3_column_text(statement, 2)];
+                
+                m.quantity = quantityField;
+                
+                NSString *commentsField = [[NSString alloc]
+                                           initWithUTF8String:(const char *)
+                                           sqlite3_column_text(statement, 3)];
+                
+                m.comments = commentsField;
+                
+                [medications addObject:m];
+            }
+            sqlite3_finalize(statement);
+        }
+        sqlite3_close(_diaBEATitDB);
+    }
     
     return medications;
 }
