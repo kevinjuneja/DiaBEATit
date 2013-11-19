@@ -11,6 +11,7 @@
 
 @interface Profile : NSObject
 
+@property (nonatomic) int idCode;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *age;
 @property (nonatomic, strong) NSString *gender;
@@ -24,5 +25,11 @@
 @property (nonatomic) sqlite3 *diaBEATitDB;
 
 -(int) saveProfileLogWithName:(NSString *)name age:(NSString *)age gender:(NSString *)gender height:(NSString *)height weight:(NSString *)weight insulinDependency:(NSString *)insulinDepdency targetGlucose:(NSString *)targetGlucose targetSystolicBP:(NSString *)targetSystolicBP targetDiastolicBP:(NSString *)targetDiastolicBP;
+
+-(int) editProfileLogWithId:(int)idCode name:(NSString *)name age:(NSString *)age gender:(NSString *)gender height:(NSString *)height weight:(NSString *)weight insulinDependency:(NSString *)insulinDepdency targetGlucose:(NSString *)targetGlucose targetSystolicBP:(NSString *)targetSystolicBP targetDiastolicBP:(NSString *)targetDiastolicBP;
+
+-(NSArray *) retrieveProfiles;
+
+
 
 @end

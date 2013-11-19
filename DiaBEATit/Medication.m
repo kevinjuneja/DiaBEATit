@@ -145,27 +145,27 @@
                 NSLog(@"ID: %i", m.idCode);
                 
                 NSString *nameField = [[NSString alloc]
-                                       initWithUTF8String:(const char *) sqlite3_column_text(statement, 0)];
+                                       initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
                 
                 m.name = nameField;
                 NSLog(@"Name: %@", m.name);
                 
                 NSString *dosageField = [[NSString alloc]
-                                          initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
+                                          initWithUTF8String:(const char *) sqlite3_column_text(statement, 2)];
                 
                 m.dosage = dosageField;
                 NSLog(@"Dosage: %@", m.dosage);
                 
                 NSString *quantityField = [[NSString alloc]
                                         initWithUTF8String:(const char *)
-                                        sqlite3_column_text(statement, 2)];
+                                        sqlite3_column_text(statement, 3)];
                 
                 m.quantity = quantityField;
                 NSLog(@"Quantity: %@", m.quantity);
                 
                 NSString *commentsField = [[NSString alloc]
                                            initWithUTF8String:(const char *)
-                                           sqlite3_column_text(statement, 3)];
+                                           sqlite3_column_text(statement, 4)];
                 
                 m.comments = commentsField;
                 NSLog(@"Comments: %@", m.comments);
