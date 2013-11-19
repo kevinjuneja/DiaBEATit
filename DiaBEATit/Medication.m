@@ -142,7 +142,7 @@
                 
                 int idField = sqlite3_column_int(statement, 0);
                 m.idCode = idField;
-                NSLog(@"%i", m.idCode);
+                NSLog(@"ID: %i", m.idCode);
                 
                 NSString *nameField = [[NSString alloc]
                                        initWithUTF8String:(const char *) sqlite3_column_text(statement, 0)];

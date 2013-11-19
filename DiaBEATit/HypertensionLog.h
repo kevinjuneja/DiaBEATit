@@ -29,5 +29,6 @@
 -(int) removeHypertensionLogWithId:(int)idCode;
 
 -(NSArray *) retrieveHypertensionLogs;
+-(NSArray *) retrieveHypertensionLogsWithConstraints:(NSString *)constraints;
 
 @end

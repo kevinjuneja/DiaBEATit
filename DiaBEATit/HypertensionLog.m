@@ -139,6 +139,11 @@
                 //NSLog(@"Entered while");
                 HypertensionLog *h = [[HypertensionLog alloc] init];
                 
+                int idField = sqlite3_column_int(statement, 0);
+                
+                h.idCode = idField;
+                NSLog(@"ID: %i", h.idCode);
+                
                 NSString *systolicField = [[NSString alloc]
                                           initWithUTF8String:(const char *) sqlite3_column_text(statement, 0)];
                 
@@ -154,6 +159,95 @@
                 NSString *heartrateField = [[NSString alloc]
                                       initWithUTF8String:(const char *)
                                       sqlite3_column_text(statement, 2)];
+                
+                h.heartRate = heartrateField;
+                NSLog(@"Heartrate: %@", h.heartRate);
+                
+                NSString *timeOfDayField = [[NSString alloc]
+                                            initWithUTF8String:(const char *)
+                                            sqlite3_column_text(statement, 3)];
+                
+                h.timeOfDay = timeOfDayField;
+                NSLog(@"Time of Day: %@", h.timeOfDay);
+                
+                NSString *timestampField = [[NSString alloc]
+                                            initWithUTF8String:(const char *)
+                                            sqlite3_column_text(statement, 4)];
+                
+                h.timestamp = timestampField;
+                NSLog(@"Timestamp: %@", h.timestamp);
+                
+                NSString *commentsField = [[NSString alloc]
+                                           initWithUTF8String:(const char *)
+                                           sqlite3_column_text(statement, 5)];
+                
+                h.comments = commentsField;
+                NSLog(@"Comments: %@", h.comments);
+                
+                [hypertensionlogs addObject:h];
+            }
+            sqlite3_finalize(statement);
+        }
+        sqlite3_close(_diaBEATitDB);
+    }
+    
+    //    NSMutableArray *temp = [[NSMutableArray alloc] init];
+    //    int tempPtr = 0;
+    //    for (int i = [medications count]; i >= 0; i--, tempPtr++) {
+    //        [temp addObject:[medications objectAtIndex:i]];
+    //    }
+    
+    return hypertensionlogs;
+}
+
+-(NSArray *) retrieveHypertensionLogsWithConstraints:(NSString *)constraints
+{
+    NSMutableArray *hypertensionlogs = [[NSMutableArray alloc] init];
+    
+    // sql query to get medications
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *pathToDatabase = [documentsDirectory stringByAppendingPathComponent: @"diaBEATit.db"];
+    const char *dbpath = [pathToDatabase UTF8String];
+    sqlite3_stmt *statement;
+    //NSLog(@"Entered function");
+    if (sqlite3_open(dbpath, &_diaBEATitDB) == SQLITE_OK)
+    {
+        //NSLog(@"Entered 1st if");
+        NSString *querySQL = [[NSString stringWithFormat:
+                              @"SELECT systolic, diastolic, heartrate, timeofday, timestamp, comments FROM hypertensionlogs "] stringByAppendingString:constraints];
+        
+        const char *query_stmt = [querySQL UTF8String];
+        int check = sqlite3_prepare_v2(_diaBEATitDB, query_stmt, -1, &statement, NULL);
+        //NSLog(@"%i", check);
+        if (check == SQLITE_OK)
+        {
+            //NSLog(@"Entered 2nd if");
+            while (sqlite3_step(statement) == SQLITE_ROW)
+            {
+                //NSLog(@"Entered while");
+                HypertensionLog *h = [[HypertensionLog alloc] init];
+                
+                int idField = sqlite3_column_int(statement, 0);
+                
+                h.idCode = idField;
+                NSLog(@"ID: %i", h.idCode);
+                
+                NSString *systolicField = [[NSString alloc]
+                                           initWithUTF8String:(const char *) sqlite3_column_text(statement, 0)];
+                
+                h.systolic = systolicField;
+                NSLog(@"Systolic: %@", h.systolic);
+                
+                NSString *diastolicField = [[NSString alloc]
+                                            initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
+                
+                h.diastolic = diastolicField;
+                NSLog(@"Diastolic: %@", h.diastolic);
+                
+                NSString *heartrateField = [[NSString alloc]
+                                            initWithUTF8String:(const char *)
+                                            sqlite3_column_text(statement, 2)];
                 
                 h.heartRate = heartrateField;
                 NSLog(@"Heartrate: %@", h.heartRate);

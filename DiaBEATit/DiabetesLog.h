@@ -30,5 +30,6 @@
 -(int) removeDiabetesLogWithId:(int)idCode;
 
 -(NSArray *) retrieveDiabetesLogs;
+-(NSArray *) retrieveDiabetesLogsWithConstraints:(NSString *)constraints;
 
 @end
