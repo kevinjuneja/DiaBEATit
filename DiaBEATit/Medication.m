@@ -110,7 +110,7 @@
         sqlite3_close(_diaBEATitDB);
     }
     
-    return 0;
+    return sqlCheck;
 }
 
 -(NSArray *) retrieveMedications {
@@ -125,19 +125,19 @@
     NSLog(@"Entered function");
     if (sqlite3_open(dbpath, &_diaBEATitDB) == SQLITE_OK)
     {
-        NSLog(@"Entered 1st if");
+        //NSLog(@"Entered 1st if");
         NSString *querySQL = [NSString stringWithFormat:
                               @"SELECT name, dosage, quantity, comments FROM medicines"];
         
         const char *query_stmt = [querySQL UTF8String];
         int check = sqlite3_prepare_v2(_diaBEATitDB, query_stmt, -1, &statement, NULL);
-        NSLog(@"%i", check);
+        //NSLog(@"%i", check);
         if (check == SQLITE_OK)
         {
-            NSLog(@"Entered 2nd if");
+            //NSLog(@"Entered 2nd if");
             while (sqlite3_step(statement) == SQLITE_ROW)
             {
-                NSLog(@"Entered while");
+                //NSLog(@"Entered while");
                 Medication *m = [[Medication alloc] init];
                 
                 int idField = sqlite3_column_int(statement, 0);

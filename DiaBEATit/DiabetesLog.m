@@ -46,10 +46,76 @@
     return sqlCheck;
 }
 
--(NSArray *) retrieveDiabetesLogs {
+-(int) editDiabetesLogWithId:(int)idCode glucose:(NSString *)glucose insulin:(NSString *)insulin a1c:(NSString *)a1c timeOfDay:(NSString *)timeOfDay mealTiming:(NSString *)mealTiming timestamp:(NSString *)timestamp comments:(NSString *)comments
+{
+    sqlite3_stmt *statement;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *pathToDatabase = [documentsDirectory stringByAppendingPathComponent: @"diaBEATit.db"];
+    const char *dbpath= [pathToDatabase UTF8String];
+    int sqlCheck = 1;
+    
+    if (sqlite3_open(dbpath, &_diaBEATitDB) == SQLITE_OK)
+    {
+        
+        NSString *insertSQL = [NSString stringWithFormat:
+                               @"UPDATE DIABETESLOGS SET glucose = '\"%@\"', insulin = '\"%@\"', a1c = '\"%@\"', timeofday = '\"%@\"', mealtiming = '\"%@\"',  timestamp = '\"%@\"',  comments = '\"%@\"' WHERE id = '\"%i\"'",
+                               glucose, insulin, a1c, timeOfDay, mealTiming, timestamp, comments, idCode];
+        
+        
+        const char *insert_stmt = [insertSQL UTF8String];
+        sqlite3_prepare_v2(_diaBEATitDB, insert_stmt,
+                           -1, &statement, NULL);
+        sqlCheck = sqlite3_step(statement);
+        if (sqlCheck == SQLITE_DONE)
+        {
+            NSLog(@"SUCCEEDED");
+        } else {
+            NSLog(@"FAILED");
+        }
+        sqlite3_finalize(statement);
+        sqlite3_close(_diaBEATitDB);
+    }
+    
+    return sqlCheck;
+}
+
+-(int) removeDiabetesLogWithId:(int)idCode
+{
+    sqlite3_stmt *statement;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *pathToDatabase = [documentsDirectory stringByAppendingPathComponent: @"diaBEATit.db"];
+    const char *dbpath= [pathToDatabase UTF8String];
+    int sqlCheck = 1;
+    
+    if (sqlite3_open(dbpath, &_diaBEATitDB) == SQLITE_OK)
+    {
+        
+        NSString *insertSQL = [NSString stringWithFormat:
+                               @"DELETE FROM DIABETESLOGS WHERE id = '\"%i\"'", idCode];
+        
+        
+        const char *insert_stmt = [insertSQL UTF8String];
+        sqlite3_prepare_v2(_diaBEATitDB, insert_stmt,
+                           -1, &statement, NULL);
+        sqlCheck = sqlite3_step(statement);
+        if (sqlCheck == SQLITE_DONE)
+        {
+            NSLog(@"SUCCEEDED");
+        } else {
+            NSLog(@"FAILED");
+        }
+        sqlite3_finalize(statement);
+        sqlite3_close(_diaBEATitDB);
+    }
+    return sqlCheck;
+}
+
+-(NSArray *) retrieveDiabetesLogs
+    {
     NSMutableArray *diabeteslogs = [[NSMutableArray alloc] init];
     
-    // sql query to get medications
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *pathToDatabase = [documentsDirectory stringByAppendingPathComponent: @"diaBEATit.db"];
@@ -67,10 +133,10 @@
         //NSLog(@"%i", check);
         if (check == SQLITE_OK)
         {
-            NSLog(@"Entered 2nd if");
+            //NSLog(@"Entered 2nd if");
             while (sqlite3_step(statement) == SQLITE_ROW)
             {
-                NSLog(@"Entered while");
+                //NSLog(@"Entered while");
                 DiabetesLog *d = [[DiabetesLog alloc] init];
                 
                 NSString *glucoseField = [[NSString alloc]

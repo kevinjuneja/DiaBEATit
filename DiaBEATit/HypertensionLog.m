@@ -67,10 +67,10 @@
         //NSLog(@"%i", check);
         if (check == SQLITE_OK)
         {
-            NSLog(@"Entered 2nd if");
+            //NSLog(@"Entered 2nd if");
             while (sqlite3_step(statement) == SQLITE_ROW)
             {
-                NSLog(@"Entered while");
+                //NSLog(@"Entered while");
                 HypertensionLog *h = [[HypertensionLog alloc] init];
                 
                 NSString *systolicField = [[NSString alloc]

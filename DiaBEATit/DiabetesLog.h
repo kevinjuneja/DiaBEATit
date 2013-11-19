@@ -12,6 +12,7 @@
 
 @interface DiabetesLog : NSObject
 
+@property (nonatomic) int idCode;
 @property (nonatomic, strong) NSString *glucose;
 @property (nonatomic, strong) NSString *insulin;
 @property (nonatomic, strong) NSString *a1c;
@@ -24,5 +25,10 @@
 
 -(int) saveDiabetesLogWithGlucose:(NSString *)glucose insulin:(NSString *)insulin a1c:(NSString *)a1c timeOfDay:(NSString *)timeOfDay mealTiming:(NSString *)mealTiming timestamp:(NSString *)timestamp comments:(NSString *)comments;
 
+-(int) editDiabetesLogWithId:(int)idCode glucose:(NSString *)glucose insulin:(NSString *)insulin a1c:(NSString *)a1c timeOfDay:(NSString *)timeOfDay mealTiming:(NSString *)mealTiming timestamp:(NSString *)timestamp comments:(NSString *)comments;
+
+-(int) removeDiabetesLogWithId:(int)idCode;
+
 -(NSArray *) retrieveDiabetesLogs;
+
 @end
