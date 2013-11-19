@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <sqlite3.h>
 
 @interface Profile : NSObject
 
@@ -20,6 +21,8 @@
 @property (nonatomic, strong) NSString *targetSystolicBP;
 @property (nonatomic, strong) NSString *targetDiastolicBP;
 
--(void) saveProfileLogWithName:(NSString *)name age:(NSString *)age gender:(NSString *)gender height:(NSString *)height weight:(NSString *)weight insulinDependency:(NSString *)insulinDepdency targetGlucose:(NSString *)targetGlucose targetSystolicBP:(NSString *)targetSystolicBP targetDiastolicBP:(NSString *)targetDiastolicDP;
+@property (nonatomic) sqlite3 *diaBEATitDB;
+
+-(int) saveProfileLogWithName:(NSString *)name age:(NSString *)age gender:(NSString *)gender height:(NSString *)height weight:(NSString *)weight insulinDependency:(NSString *)insulinDepdency targetGlucose:(NSString *)targetGlucose targetSystolicBP:(NSString *)targetSystolicBP targetDiastolicBP:(NSString *)targetDiastolicBP;
 
 @end

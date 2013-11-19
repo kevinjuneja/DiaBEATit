@@ -17,6 +17,7 @@
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *pathToDatabase = [documentsDirectory stringByAppendingPathComponent: @"diaBEATit.db"];
     const char *dbpath= [pathToDatabase UTF8String];
+    int sqlCheck = 1;
     
     if (sqlite3_open(dbpath, &_diaBEATitDB) == SQLITE_OK)
     {
@@ -29,7 +30,8 @@
         const char *insert_stmt = [insertSQL UTF8String];
         sqlite3_prepare_v2(_diaBEATitDB, insert_stmt,
                            -1, &statement, NULL);
-        if (sqlite3_step(statement) == SQLITE_DONE)
+        sqlCheck = sqlite3_step(statement);
+        if (sqlCheck == SQLITE_DONE)
         {
             NSLog(@"SUCCEEDED");
         } else {
@@ -41,7 +43,7 @@
     }
     
     
-    return SQLITE_OK;
+    return sqlCheck;
 }
 
 @end
