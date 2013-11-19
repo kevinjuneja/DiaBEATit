@@ -612,6 +612,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Z8H-zh-fII"/>
+                    <connections>
+                        <outlet property="cell1" destination="YG9-T7-VU8" id="tQ1-mC-rch"/>
+                        <outlet property="cell2" destination="byT-lA-S9v" id="rgb-dM-eZV"/>
+                        <outlet property="cell3" destination="8zN-TL-Kbl" id="anv-Ss-VUN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q9n-qs-tHK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

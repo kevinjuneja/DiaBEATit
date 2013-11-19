@@ -34,6 +34,10 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    Medication *med = [[Medication alloc] init];
+    self.medications = [med retrieveMedications];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,13 +59,13 @@
 {
 
     // Return the number of rows in the section.
-    return 1;
+    return [self.medications count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = nil;
-    //NSUInteger row = indexPath.row;
+    NSUInteger row = indexPath.row;
     
     static NSString *CellIdentifier = @"medicationCell";
     MedicationTableViewCell *tempCell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -71,12 +75,19 @@
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier:CellIdentifier];
     }
-    tempCell.medicationNameLabel.text = @"Lipitor";
-    tempCell.medicationDosageLabel .text = @"20mg";
-    tempCell.medicationQuantityLabel.text = @"50 pills";
+    
+    Medication *toAdd = [self.medications objectAtIndex:row];
+    tempCell.medicationNameLabel.text = toAdd.name;
+    tempCell.medicationDosageLabel .text = toAdd.dosage;
+    tempCell.medicationQuantityLabel.text = toAdd.quantity;
     cell = tempCell;
     
     return cell;
+    
+//    tempCell.cappegoryTitle.text = [c title];
+//    tempCell.followerCount.text = [NSString stringWithFormat:@"%i", [[c followers] count]];
+//    tempCell.likeCount.text = @"0"; //need some way to get likes from Cappegory object
+//    tempCell.appCount.text = [NSString stringWithFormat:@"%i", [[c cappegoryApps] count]];
 }
 
 /*
