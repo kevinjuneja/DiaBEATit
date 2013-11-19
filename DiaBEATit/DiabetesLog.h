@@ -23,4 +23,6 @@
 @property (nonatomic) sqlite3 *diaBEATitDB;
 
 -(int) saveDiabetesLogWithGlucose:(NSString *)glucose insulin:(NSString *)insulin a1c:(NSString *)a1c timeOfDay:(NSString *)timeOfDay mealTiming:(NSString *)mealTiming timestamp:(NSString *)timestamp comments:(NSString *)comments;
+
+-(NSArray *) retrieveDiabetesLogs;
 @end

@@ -23,4 +23,6 @@
 
 -(int) saveHypertensionLogWithSystolicBP:(NSString *)systolic diastolicBP:(NSString *)diastolic heartRate:(NSString *)heartRate timeOfDay:(NSString *)timeOfDay timestamp:(NSString *)timestamp comments:(NSString *)comments;
 
+-(NSArray *) retrieveHypertensionLogs;
+
 @end
