@@ -10,4 +10,8 @@
 
 @implementation Profile
 
+-(void) saveProfileLogWithName:(NSString *)name age:(NSString *)age gender:(NSString *)gender height:(NSString *)height weight:(NSString *)weight insulinDependency:(NSString *)insulinDepdency targetGlucose:(NSString *)targetGlucose targetSystolicBP:(NSString *)targetSystolicBP targetDiastolicBP:(NSString *)targetDiastolicDP {
+    
+}
+
 @end

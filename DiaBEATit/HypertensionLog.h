@@ -9,6 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "Log.h"
 
-@interface HypertensionLog : NSObject <Log>
+@interface HypertensionLog : NSObject
+
+@property (nonatomic, strong) NSString *systolic;
+@property (nonatomic, strong) NSString *diastolic;
+@property (nonatomic, strong) NSString *heartRate;
+@property (nonatomic, strong) NSString *timeOfDay;
+@property (nonatomic, strong) NSString *timestamp;
+@property (nonatomic, strong) NSString *comments;
+
+-(void) saveHypertensionLogWithSystolicBP:(NSString *)systolic diastolicBP:(NSString *)diastolic heartRate:(NSString *)heartRate timeOfDay:(NSString *)timeOfDay timestamp:(NSString *)timestamp comments:(NSString *)comments;
 
 @end
