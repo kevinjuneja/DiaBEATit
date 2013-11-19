@@ -20,4 +20,6 @@
 
 -(int) saveMedicationWithName:(NSString *)name dosage:(NSString *)dosage quantity:(NSString *)quantity comments:(NSString *)comments;
 
+-(NSArray *) retrieveMedications;
+
 @end

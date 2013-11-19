@@ -46,4 +46,17 @@
     return sqlCheck;
 }
 
+-(NSArray *) retrieveMedications {
+    NSMutableArray *medications = [[NSMutableArray alloc] init];
+    
+    // sql query to get medications
+    
+    // parsing
+    Medication *m = [[Medication alloc] init];
+    
+    [medications addObject:m];
+    
+    return medications;
+}
+
 @end

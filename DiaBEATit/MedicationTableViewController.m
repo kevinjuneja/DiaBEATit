@@ -8,9 +8,10 @@
 
 #import "MedicationTableViewController.h"
 #import "MedicationTableViewCell.h"
+#import "Medication.h"
 
 @interface MedicationTableViewController ()
-
+@property (nonatomic, strong) NSArray *medications;
 @end
 
 @implementation MedicationTableViewController
