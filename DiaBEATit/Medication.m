@@ -41,7 +41,7 @@
     }
     
     
-    return 0;
+    return SQLITE_OK;
 }
 
 @end
