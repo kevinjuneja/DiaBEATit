@@ -12,6 +12,7 @@
 
 @interface HypertensionLog : NSObject
 
+@property (nonatomic) int idCode;
 @property (nonatomic, strong) NSString *systolic;
 @property (nonatomic, strong) NSString *diastolic;
 @property (nonatomic, strong) NSString *heartRate;
@@ -22,6 +23,10 @@
 @property (nonatomic) sqlite3 *diaBEATitDB;
 
 -(int) saveHypertensionLogWithSystolicBP:(NSString *)systolic diastolicBP:(NSString *)diastolic heartRate:(NSString *)heartRate timeOfDay:(NSString *)timeOfDay timestamp:(NSString *)timestamp comments:(NSString *)comments;
+
+-(int) editHypertensionLogWithId:(int)idCode systolicBP:(NSString *)systolic diastolicBP:(NSString *)diastolic heartRate:(NSString *)heartRate timeOfDay:(NSString *)timeOfDay timestamp:(NSString *)timestamp comments:(NSString *)comments;
+
+-(int) removeHypertensionLogWithId:(int)idCode;
 
 -(NSArray *) retrieveHypertensionLogs;
 
