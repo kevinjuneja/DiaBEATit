@@ -23,6 +23,6 @@
 
 -(int) editExamWithID:(int)idCode date:(NSString *)date;
 
--(Exam *) retrieveExamsWithID:(int)idCode;
+-(NSArray *) retrieveExams;
 
 @end

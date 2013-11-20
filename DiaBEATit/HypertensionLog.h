@@ -31,4 +31,9 @@
 -(NSArray *) retrieveHypertensionLogs;
 -(NSArray *) retrieveHypertensionLogsWithConstraints:(NSString *)constraints;
 
+-(NSArray *) returnSystolicWithLogs:(NSArray *)logs;
+-(NSArray *) returnDiastolicWithLogs:(NSArray *)logs;
+-(NSArray *) returnDatesWithLogs:(NSArray *)logs;
+
+
 @end

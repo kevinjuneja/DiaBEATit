@@ -293,4 +293,52 @@
     return hypertensionlogs;
 }
 
+-(NSArray *) returnSystolicWithLogs:(NSArray *)logs
+{
+    NSMutableArray *values = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < [logs count]; i++)
+    {
+        HypertensionLog *h = [logs objectAtIndex:i];
+        NSString *tempString = h.systolic;
+        NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+        [f setNumberStyle:NSNumberFormatterDecimalStyle];
+        NSNumber *tempValue = [f numberFromString:tempString];
+        [values addObject:tempValue];
+    }
+    
+    return values;
+}
+
+-(NSArray *) returnDiastolicWithLogs:(NSArray *)logs
+{
+    NSMutableArray *values = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < [logs count]; i++)
+    {
+        HypertensionLog *h = [logs objectAtIndex:i];
+        NSString *tempString = h.diastolic;
+        NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+        [f setNumberStyle:NSNumberFormatterDecimalStyle];
+        NSNumber *tempValue = [f numberFromString:tempString];
+        [values addObject:tempValue];
+    }
+    
+    return values;
+}
+
+-(NSArray *) returnDatesWithLogs:(NSArray *)logs
+{
+    NSMutableArray *dates = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < [logs count]; i++)
+    {
+        HypertensionLog *h = [logs objectAtIndex:i];
+        NSString *tempString = h.timestamp;
+        [dates addObject:tempString];
+    }
+    
+    return dates;
+}
+
 @end

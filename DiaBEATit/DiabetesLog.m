@@ -327,5 +327,21 @@
     return values;
 }
 
+-(NSArray *) returnDatesWithLogs:(NSArray *)logs
+{
+    NSMutableArray *dates = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < [logs count]; i++)
+    {
+        DiabetesLog *d = [logs objectAtIndex:i];
+        NSString *tempString = d.timestamp;
+        [dates addObject:tempString];
+    }
+    
+    return dates;
+}
+
+
+
 
 @end

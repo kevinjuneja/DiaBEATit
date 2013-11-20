@@ -42,8 +42,10 @@
     return sqlCheck;
 }
 
--(Exam *) retrieveExamsWithID:(int)idCode
+-(NSArray *) retrieveExams
 {
+    NSMutableArray *dates = [[NSMutableArray alloc] init];
+    
     // sql query to get medications
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -51,12 +53,11 @@
     const char *dbpath = [pathToDatabase UTF8String];
     sqlite3_stmt *statement;
     //NSLog(@"Entered function");
-    Exam *e;
     if (sqlite3_open(dbpath, &_diaBEATitDB) == SQLITE_OK)
     {
         //NSLog(@"Entered 1st if");
         NSString *querySQL = [NSString stringWithFormat:
-                              @"SELECT id, name, date FROM exams WHERE id = '\"%i\"'", idCode];
+                              @"SELECT date FROM exams"];
         
         const char *query_stmt = [querySQL UTF8String];
         int check = sqlite3_prepare_v2(_diaBEATitDB, query_stmt, -1, &statement, NULL);
@@ -64,26 +65,16 @@
         if (check == SQLITE_OK)
         {
             //NSLog(@"Entered 2nd if");
-            if (sqlite3_step(statement) == SQLITE_ROW)
+            while (sqlite3_step(statement) == SQLITE_ROW)
             {
                 //NSLog(@"Entered while");
-                e = [[Exam alloc] init];
-                
-                int idField = sqlite3_column_int(statement, 0);
-                e.idCode = idField;
-                NSLog(@"ID: %i", e.idCode);
-                
-                NSString *nameField = [[NSString alloc]
-                                       initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
-                
-                e.name = nameField;
-                NSLog(@"Name: %@", e.name);
                 
                 NSString *dateField = [[NSString alloc]
-                                         initWithUTF8String:(const char *) sqlite3_column_text(statement, 2)];
+                                         initWithUTF8String:(const char *) sqlite3_column_text(statement, 0)];
                 
-                e.date = dateField;
-                NSLog(@"Date: %@", e.date);
+                [dates addObject:dateField];
+                
+                NSLog(@"Date: %@", dateField);
                 
                 
             }
@@ -92,7 +83,7 @@
         sqlite3_close(_diaBEATitDB);
     }
     
-    return e;
+    return dates;
 
 }
 

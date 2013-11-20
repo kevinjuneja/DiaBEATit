@@ -35,5 +35,6 @@
 -(NSArray *) retrieveDiabetesLogsWithConstraints:(NSString *)constraints;
 
 -(NSArray *) returnGlucoseWithLogs:(NSArray *)logs;
+-(NSArray *) returnDatesWithLogs:(NSArray *)logs;
 
 @end
