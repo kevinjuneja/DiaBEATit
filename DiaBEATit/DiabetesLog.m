@@ -310,5 +310,22 @@
     return diabeteslogs;
 }
 
+-(NSArray *) returnGlucoseWithLogs:(NSArray *)logs
+{
+    NSMutableArray *values = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < [logs count]; i++)
+    {
+        DiabetesLog *d = [logs objectAtIndex:i];
+        NSString *tempString = d.glucose;
+        NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+        [f setNumberStyle:NSNumberFormatterDecimalStyle];
+        NSNumber *tempValue = [f numberFromString:tempString];
+        [values addObject:tempValue];
+    }
+    
+    return values;
+}
+
 
 @end
