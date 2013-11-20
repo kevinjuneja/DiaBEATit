@@ -34,9 +34,17 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.tableView.delegate = self;
     
     Medication *med = [[Medication alloc] init];
     self.medications = [med retrieveMedications];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    // need to reset medications array
+    Medication *med = [[Medication alloc] init];
+    self.medications = [med retrieveMedications];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning

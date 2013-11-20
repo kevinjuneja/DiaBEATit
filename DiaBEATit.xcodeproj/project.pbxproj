@@ -44,11 +44,11 @@
 		505674BD1838EDF200842CC0 /* diabeetus_29.png in Resources */ = {isa = PBXBuildFile; fileRef = 505674BA1838EDF200842CC0 /* diabeetus_29.png */; };
 		505674BE1838EDF200842CC0 /* diabeetus_40.png in Resources */ = {isa = PBXBuildFile; fileRef = 505674BB1838EDF200842CC0 /* diabeetus_40.png */; };
 		505674BF1838EDF200842CC0 /* diabeetus_60.png in Resources */ = {isa = PBXBuildFile; fileRef = 505674BC1838EDF200842CC0 /* diabeetus_60.png */; };
-		505674C51839A2F000842CC0 /* AddDiabetesLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505674C41839A2F000842CC0 /* AddDiabetesLogViewController.m */; };
 		505674C81839A2FB00842CC0 /* AddHypertensionLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505674C71839A2FB00842CC0 /* AddHypertensionLogViewController.m */; };
 		505674CB183A491000842CC0 /* FormTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 505674CA183A491000842CC0 /* FormTextFieldCell.m */; };
 		505674CF183AD86100842CC0 /* FormPredefinedChoicesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 505674CE183AD86100842CC0 /* FormPredefinedChoicesCell.m */; };
-		505674D2183AE4B100842CC0 /* SecondaryAddLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505674D1183AE4B100842CC0 /* SecondaryAddLogViewController.m */; };
+		505674D9183BE11100842CC0 /* SecondaryLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505674D8183BE11100842CC0 /* SecondaryLogViewController.m */; };
+		505674DC183C2F4E00842CC0 /* AddDiabetesLogTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505674DB183C2F4E00842CC0 /* AddDiabetesLogTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,16 +118,16 @@
 		505674BA1838EDF200842CC0 /* diabeetus_29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diabeetus_29.png; sourceTree = "<group>"; };
 		505674BB1838EDF200842CC0 /* diabeetus_40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diabeetus_40.png; sourceTree = "<group>"; };
 		505674BC1838EDF200842CC0 /* diabeetus_60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diabeetus_60.png; sourceTree = "<group>"; };
-		505674C31839A2F000842CC0 /* AddDiabetesLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDiabetesLogViewController.h; sourceTree = "<group>"; };
-		505674C41839A2F000842CC0 /* AddDiabetesLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDiabetesLogViewController.m; sourceTree = "<group>"; };
 		505674C61839A2FB00842CC0 /* AddHypertensionLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddHypertensionLogViewController.h; sourceTree = "<group>"; };
 		505674C71839A2FB00842CC0 /* AddHypertensionLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddHypertensionLogViewController.m; sourceTree = "<group>"; };
 		505674C9183A491000842CC0 /* FormTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormTextFieldCell.h; sourceTree = "<group>"; };
 		505674CA183A491000842CC0 /* FormTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormTextFieldCell.m; sourceTree = "<group>"; };
 		505674CD183AD86100842CC0 /* FormPredefinedChoicesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormPredefinedChoicesCell.h; sourceTree = "<group>"; };
 		505674CE183AD86100842CC0 /* FormPredefinedChoicesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormPredefinedChoicesCell.m; sourceTree = "<group>"; };
-		505674D0183AE4B100842CC0 /* SecondaryAddLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondaryAddLogViewController.h; sourceTree = "<group>"; };
-		505674D1183AE4B100842CC0 /* SecondaryAddLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondaryAddLogViewController.m; sourceTree = "<group>"; };
+		505674D7183BE11100842CC0 /* SecondaryLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondaryLogViewController.h; sourceTree = "<group>"; };
+		505674D8183BE11100842CC0 /* SecondaryLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondaryLogViewController.m; sourceTree = "<group>"; };
+		505674DA183C2F4E00842CC0 /* AddDiabetesLogTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDiabetesLogTableViewController.h; sourceTree = "<group>"; };
+		505674DB183C2F4E00842CC0 /* AddDiabetesLogTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDiabetesLogTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,12 +293,12 @@
 			children = (
 				5016155118382EA4003AAD33 /* LogsHomeViewController.h */,
 				5016155218382EA4003AAD33 /* LogsHomeViewController.m */,
-				505674C31839A2F000842CC0 /* AddDiabetesLogViewController.h */,
-				505674C41839A2F000842CC0 /* AddDiabetesLogViewController.m */,
 				505674C61839A2FB00842CC0 /* AddHypertensionLogViewController.h */,
 				505674C71839A2FB00842CC0 /* AddHypertensionLogViewController.m */,
-				505674D0183AE4B100842CC0 /* SecondaryAddLogViewController.h */,
-				505674D1183AE4B100842CC0 /* SecondaryAddLogViewController.m */,
+				505674D7183BE11100842CC0 /* SecondaryLogViewController.h */,
+				505674D8183BE11100842CC0 /* SecondaryLogViewController.m */,
+				505674DA183C2F4E00842CC0 /* AddDiabetesLogTableViewController.h */,
+				505674DB183C2F4E00842CC0 /* AddDiabetesLogTableViewController.m */,
 			);
 			name = Logs;
 			sourceTree = "<group>";
@@ -440,6 +440,7 @@
 				5056748018386EEF00842CC0 /* MedicationTableViewCell.m in Sources */,
 				5056749D1838E8FF00842CC0 /* TrendsHomeViewController.m in Sources */,
 				505674CF183AD86100842CC0 /* FormPredefinedChoicesCell.m in Sources */,
+				505674DC183C2F4E00842CC0 /* AddDiabetesLogTableViewController.m in Sources */,
 				5016155318382EA4003AAD33 /* LogsHomeViewController.m in Sources */,
 				505674A31838E98900842CC0 /* Medication.m in Sources */,
 				4133688C1837757300617CC1 /* AppDelegate.m in Sources */,
@@ -452,9 +453,9 @@
 				41AE2F9A183C5C9A0048B41B /* Exam.m in Sources */,
 				505674D2183AE4B100842CC0 /* SecondaryAddLogViewController.m in Sources */,
 				413368881837757300617CC1 /* main.m in Sources */,
-				505674C51839A2F000842CC0 /* AddDiabetesLogViewController.m in Sources */,
 				505674941838D79B00842CC0 /* ProfileViewController.m in Sources */,
 				5016156218384016003AAD33 /* SDSegmentedControl.m in Sources */,
+				505674D9183BE11100842CC0 /* SecondaryLogViewController.m in Sources */,
 				505674CB183A491000842CC0 /* FormTextFieldCell.m in Sources */,
 				50567483183873C000842CC0 /* AddMedicationViewController.m in Sources */,
 				5016155C18382EBE003AAD33 /* MedicationHomeViewController.m in Sources */,
