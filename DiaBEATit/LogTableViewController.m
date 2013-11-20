@@ -1,20 +1,17 @@
 //
-//  MedicationTableViewController.m
+//  LogTableViewController.m
 //  DiaBEATit
 //
-//  Created by Kevin Juneja on 11/16/13.
+//  Created by Kevin Juneja on 11/19/13.
 //  Copyright (c) 2013 App Jam. All rights reserved.
 //
 
-#import "MedicationTableViewController.h"
-#import "MedicationTableViewCell.h"
-#import "Medication.h"
+#import "LogTableViewController.h"
 
-@interface MedicationTableViewController ()
-@property (nonatomic, strong) NSArray *medications;
+@interface LogTableViewController ()
 @end
 
-@implementation MedicationTableViewController
+@implementation LogTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -34,69 +31,36 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.tableView.delegate = self;
-    
-    Medication *med = [[Medication alloc] init];
-    self.medications = [med retrieveMedications];
-}
-
--(void)viewWillAppear:(BOOL)animated {
-    // need to reset medications array
-    Medication *med = [[Medication alloc] init];
-    self.medications = [med retrieveMedications];
-    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-    
-    
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
     // Return the number of rows in the section.
-    return [self.medications count];
+    return [self.logs count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = nil;
-    NSUInteger row = indexPath.row;
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    static NSString *CellIdentifier = @"medicationCell";
-    MedicationTableViewCell *tempCell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (tempCell == nil) {
-        NSLog(@"not nil");
-        cell = [[MedicationTableViewCell alloc]
-                initWithStyle:UITableViewCellStyleDefault
-                reuseIdentifier:CellIdentifier];
-    }
-    
-    Medication *toAdd = [self.medications objectAtIndex:row];
-    tempCell.medicationNameLabel.text = toAdd.name;
-    tempCell.medicationDosageLabel .text = [toAdd.dosage stringByAppendingString: @" mg"];
-    tempCell.medicationQuantityLabel.text = [toAdd.quantity stringByAppendingString: @" count"];
-    cell = tempCell;
+    // Configure the cell...
     
     return cell;
-    
-//    tempCell.cappegoryTitle.text = [c title];
-//    tempCell.followerCount.text = [NSString stringWithFormat:@"%i", [[c followers] count]];
-//    tempCell.likeCount.text = @"0"; //need some way to get likes from Cappegory object
-//    tempCell.appCount.text = [NSString stringWithFormat:@"%i", [[c cappegoryApps] count]];
 }
 
 /*

@@ -44,4 +44,7 @@
     self.segueId = (self.segmentedControl.selectedSegmentIndex == 0) ? @"addDiabetesLogSegue" : @"addHypertensionLogSegue";
     [self performSegueWithIdentifier:self.segueId sender:sender];
 }
+
+- (IBAction)segmentSwitch:(UISegmentedControl *)sender {
+}
 @end

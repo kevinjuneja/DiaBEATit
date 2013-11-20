@@ -20,8 +20,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *commentsText;
 
-@property (strong, nonatomic) DiabetesLog *log;
-
 @end
 
 @implementation AddDiabetesLogTableViewController
@@ -43,7 +41,6 @@
 //    self.glucoseCell.selectionStyle = UITableViewCellSelectionStyleNone;
 //    self.insulinCell.selectionStyle = UITableViewCellSelectionStyleNone;
 //    self.a1cCell.selectionStyle = UITableViewCellSelectionStyleNone;
-    self.log = [[DiabetesLog alloc] init];
     self.timeOfDay = -1;
     self.mealTiming = -1;
 }
@@ -52,17 +49,14 @@
     switch (self.timeOfDay) {
         case 0:
             self.timeOfDayLabel.text = @"Morning";
-            self.log.timeOfDay = @"Morning";
             break;
             
         case 1:
             self.timeOfDayLabel.text = @"Afternoon";
-            self.log.timeOfDay = @"Afternoon";
             break;
             
         case 2:
             self.timeOfDayLabel.text = @"Night";
-            self.log.timeOfDay = @"Night";
             break;
             
         default:
@@ -73,17 +67,14 @@
     switch (self.mealTiming) {
         case 0:
             self.mealTimingLabel.text = @"Before Meal";
-            self.log.mealTiming = @"Before Meal";
             break;
             
         case 1:
             self.mealTimingLabel.text = @"After Meal";
-            self.log.mealTiming = @"After Meal";
             break;
             
         case 2:
             self.mealTimingLabel.text = @"No Meal";
-            self.log.mealTiming = @"No Meal";
             break;
             
         default:
@@ -105,7 +96,8 @@
 
 - (IBAction)saveButton:(UIBarButtonItem *)sender {
     // database writing goes here
-    int saveResponse = [self.log saveDiabetesLogWithDiabetesObject:self.log];
+    DiabetesLog *dl = [[DiabetesLog alloc] init];
+    /*int saveResponse = */[dl saveDiabetesLogWithGlucose:self.glucoseField.text insulin:self.insulinField.text a1c:self.a1cField.text timeOfDay:self.timeOfDayLabel.text mealTiming:self.mealTimingLabel.text timestamp:@"tempstring" comments:@"tempstring"];
     
     // dismisses the modal after saving the info
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -127,15 +119,21 @@
     }
 }
 
-// Textfield value changed, store the new value.
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-	if ( textField == self.glucoseField ) {
-		self.log.glucose = textField.text ;
-	} else if ( textField == self.insulinField ) {
-		self.log.insulin = textField.text ;
-	} else if ( textField == self.a1cField ) {
-		self.log.a1c = textField.text ;
-	}
-}
+//// Textfield value changed, store the new value.
+//- (void)textFieldDidEndEditing:(UITextField *)textField {
+//	if ( textField == self.glucoseField ) {
+//		self.log.glucose = textField.text ;
+//	} else if ( textField == self.insulinField ) {
+//		self.log.insulin = textField.text ;
+//	} else if ( textField == self.a1cField ) {
+//		self.log.a1c = textField.text ;
+//	}
+//}
+
+//- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+//{
+//    [textField resignFirstResponder];
+//    return YES;
+//}
 
 @end

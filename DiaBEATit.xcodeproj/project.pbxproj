@@ -27,6 +27,9 @@
 		5016155C18382EBE003AAD33 /* MedicationHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5016155B18382EBE003AAD33 /* MedicationHomeViewController.m */; };
 		5016156218384016003AAD33 /* SDSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5016156118384016003AAD33 /* SDSegmentedControl.m */; };
 		501615651838408D003AAD33 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501615641838408D003AAD33 /* QuartzCore.framework */; };
+		50312DF8183C701800717B6E /* LogTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50312DF7183C701800717B6E /* LogTableViewController.m */; };
+		50312DFB183C7B2600717B6E /* 10-medical.png in Resources */ = {isa = PBXBuildFile; fileRef = 50312DFA183C7B2600717B6E /* 10-medical.png */; };
+		50312DFE183C7C3F00717B6E /* ExamTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50312DFD183C7C3F00717B6E /* ExamTableViewController.m */; };
 		5056747D18386E2300842CC0 /* MedicationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5056747C18386E2300842CC0 /* MedicationTableViewController.m */; };
 		5056748018386EEF00842CC0 /* MedicationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5056747F18386EEF00842CC0 /* MedicationTableViewCell.m */; };
 		50567483183873C000842CC0 /* AddMedicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50567482183873C000842CC0 /* AddMedicationViewController.m */; };
@@ -90,6 +93,11 @@
 		5016156018384016003AAD33 /* SDSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDSegmentedControl.h; sourceTree = "<group>"; };
 		5016156118384016003AAD33 /* SDSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDSegmentedControl.m; sourceTree = "<group>"; };
 		501615641838408D003AAD33 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		50312DF6183C701800717B6E /* LogTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogTableViewController.h; sourceTree = "<group>"; };
+		50312DF7183C701800717B6E /* LogTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogTableViewController.m; sourceTree = "<group>"; };
+		50312DFA183C7B2600717B6E /* 10-medical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "10-medical.png"; sourceTree = "<group>"; };
+		50312DFC183C7C3F00717B6E /* ExamTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamTableViewController.h; sourceTree = "<group>"; };
+		50312DFD183C7C3F00717B6E /* ExamTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamTableViewController.m; sourceTree = "<group>"; };
 		5056747B18386E2300842CC0 /* MedicationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicationTableViewController.h; sourceTree = "<group>"; };
 		5056747C18386E2300842CC0 /* MedicationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicationTableViewController.m; sourceTree = "<group>"; };
 		5056747E18386EEF00842CC0 /* MedicationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicationTableViewCell.h; sourceTree = "<group>"; };
@@ -199,6 +207,7 @@
 				5056749E1838E92800842CC0 /* Logs */,
 				505674A01838E94300842CC0 /* Trends */,
 				505674971838E89A00842CC0 /* Medication */,
+				50312DFF183C7C4200717B6E /* Exams */,
 				5056749F1838E93A00842CC0 /* Profile */,
 				505674CC183A491400842CC0 /* FormCells */,
 				505674951838E84700842CC0 /* Model */,
@@ -211,6 +220,7 @@
 		413368821837757300617CC1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				50312DFA183C7B2600717B6E /* 10-medical.png */,
 				505674901838D11A00842CC0 /* 111-user.png */,
 				505674BA1838EDF200842CC0 /* diabeetus_29.png */,
 				505674BB1838EDF200842CC0 /* diabeetus_40.png */,
@@ -253,6 +263,15 @@
 				5016156118384016003AAD33 /* SDSegmentedControl.m */,
 			);
 			name = "External Libraries";
+			sourceTree = "<group>";
+		};
+		50312DFF183C7C4200717B6E /* Exams */ = {
+			isa = PBXGroup;
+			children = (
+				50312DFC183C7C3F00717B6E /* ExamTableViewController.h */,
+				50312DFD183C7C3F00717B6E /* ExamTableViewController.m */,
+			);
+			name = Exams;
 			sourceTree = "<group>";
 		};
 		505674951838E84700842CC0 /* Model */ = {
@@ -299,6 +318,8 @@
 				505674D8183BE11100842CC0 /* SecondaryLogViewController.m */,
 				505674DA183C2F4E00842CC0 /* AddDiabetesLogTableViewController.h */,
 				505674DB183C2F4E00842CC0 /* AddDiabetesLogTableViewController.m */,
+				50312DF6183C701800717B6E /* LogTableViewController.h */,
+				50312DF7183C701800717B6E /* LogTableViewController.m */,
 			);
 			name = Logs;
 			sourceTree = "<group>";
@@ -418,6 +439,7 @@
 				505674BE1838EDF200842CC0 /* diabeetus_40.png in Resources */,
 				5056748B1838D07F00842CC0 /* 179-notepad.png in Resources */,
 				505674BF1838EDF200842CC0 /* diabeetus_60.png in Resources */,
+				50312DFB183C7B2600717B6E /* 10-medical.png in Resources */,
 				505674911838D11A00842CC0 /* 111-user.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,12 +469,13 @@
 				505674C81839A2FB00842CC0 /* AddHypertensionLogViewController.m in Sources */,
 				505674A61838E9DD00842CC0 /* Profile.m in Sources */,
 				505674AD1838EAB400842CC0 /* HypertensionLog.m in Sources */,
+				50312DF8183C701800717B6E /* LogTableViewController.m in Sources */,
 				505674861838A89100842CC0 /* SplashScreenViewController.m in Sources */,
 				5056747D18386E2300842CC0 /* MedicationTableViewController.m in Sources */,
 				505674AA1838EA2000842CC0 /* DiabetesLog.m in Sources */,
 				41AE2F9A183C5C9A0048B41B /* Exam.m in Sources */,
-				505674D2183AE4B100842CC0 /* SecondaryAddLogViewController.m in Sources */,
 				413368881837757300617CC1 /* main.m in Sources */,
+				50312DFE183C7C3F00717B6E /* ExamTableViewController.m in Sources */,
 				505674941838D79B00842CC0 /* ProfileViewController.m in Sources */,
 				5016156218384016003AAD33 /* SDSegmentedControl.m in Sources */,
 				505674D9183BE11100842CC0 /* SecondaryLogViewController.m in Sources */,
