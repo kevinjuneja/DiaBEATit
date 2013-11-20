@@ -37,6 +37,10 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+-(void) viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -73,8 +77,8 @@
         
         DiabetesLog *toAdd = [self.logs objectAtIndex:row];
         tempCell.testLabel.text = toAdd.glucose;
+        tempCell.dID = toAdd.idCode;
         cell = tempCell;
-
     } else {
         static NSString *CellIdentifier = @"hypertensionLogCell";
        HypertensionLogCell *tempCell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -86,20 +90,38 @@
         
         HypertensionLog *toAdd = [self.logs objectAtIndex:row];
         tempCell.testLabel.text = toAdd.systolic;
+        tempCell.hID = toAdd.idCode;
         cell = tempCell;
     }
     
     return cell;
 }
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.logs removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        if (self.type == 0) {
+            DiabetesLog *dl = [[DiabetesLog alloc]init];
+            DiabetesLogCell *dlc = (DiabetesLogCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+            [dl removeDiabetesLogWithId:dlc.dID];
+        } else {
+            HypertensionLog *hl = [[HypertensionLog alloc]init];
+            HypertensionLogCell *hlc = (HypertensionLogCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+            NSLog(@"%i",hlc.hID);
+            [hl removeHypertensionLogWithId:hlc.hID];
+        }
+    }
+}
 
 /*
 // Override to support editing the table view.
