@@ -77,8 +77,8 @@
     
     Medication *toAdd = [self.medications objectAtIndex:row];
     tempCell.medicationNameLabel.text = toAdd.name;
-    tempCell.medicationDosageLabel .text = toAdd.dosage;
-    tempCell.medicationQuantityLabel.text = toAdd.quantity;
+    tempCell.medicationDosageLabel .text = [toAdd.dosage stringByAppendingString: @" mg"];
+    tempCell.medicationQuantityLabel.text = [toAdd.quantity stringByAppendingString: @" count"];
     cell = tempCell;
     
     return cell;
