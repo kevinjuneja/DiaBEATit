@@ -145,7 +145,7 @@
                 NSLog(@"ID: %i", h.idCode);
                 
                 NSString *systolicField = [[NSString alloc]
-                                          initWithUTF8String:(const char *) sqlite3_column_text(statement, 0)];
+                                          initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
                 
                 h.systolic = systolicField;
                 NSLog(@"Systolic: %@", h.systolic);
@@ -192,12 +192,14 @@
     }
     
     //Reverse array
-    NSMutableArray *temp = [[NSMutableArray alloc] init];
-    int tempPtr = 0;
-    for (int i = [hypertensionlogs count]; i >= 0; i--, tempPtr++)
-    {
-        [temp addObject:[hypertensionlogs objectAtIndex:i]];
-    }
+//    if ([hypertensionlogs count] > 1) {
+//        NSMutableArray *temp = [[NSMutableArray alloc] init];
+//        int tempPtr = 0;
+//        for (int i = [hypertensionlogs count]; i >= 0; i--, tempPtr++)
+//        {
+//            [temp addObject:[hypertensionlogs objectAtIndex:i]];
+//        }
+//    }
     
     return hypertensionlogs;
 }

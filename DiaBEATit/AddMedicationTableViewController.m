@@ -1,29 +1,27 @@
 //
-//  AddMedicationViewController.m
+//  AddMedicationTableViewController.m
 //  DiaBEATit
 //
-//  Created by Kevin Juneja on 11/16/13.
+//  Created by Kevin Juneja on 11/20/13.
 //  Copyright (c) 2013 App Jam. All rights reserved.
 //
 
-#import "AddMedicationViewController.h"
+#import "AddMedicationTableViewController.h"
 #import "Medication.h"
 
-@interface AddMedicationViewController ()
+@interface AddMedicationTableViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *dosageField;
 @property (weak, nonatomic) IBOutlet UITextField *quantityField;
-@property (weak, nonatomic) IBOutlet UITextField *commentsField;
-
-@property (nonatomic) int saveResponse;
+@property (weak, nonatomic) IBOutlet UITextView *commentsText;
 
 @end
 
-@implementation AddMedicationViewController
+@implementation AddMedicationTableViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
     }
@@ -33,12 +31,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+ 
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+    
     self.nameField.delegate = self; //self references the viewcontroller or view your textField is on
     self.dosageField.delegate = self;
     self.quantityField.delegate = self;
-    
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,7 +58,7 @@
 - (IBAction)saveButton:(UIBarButtonItem *)sender {
     // database writing goes here
     Medication *m = [[Medication alloc] init];
-    self.saveResponse = [m saveMedicationWithName:self.nameField.text dosage:self.dosageField.text quantity:self.quantityField.text comments:self.commentsField.text];
+    /*int saveResponse = */[m saveMedicationWithName:self.nameField.text dosage:self.dosageField.text quantity:self.quantityField.text comments:@"tempstring"];
     
     // dismisses the modal after saving the info
     [self dismissViewControllerAnimated:YES completion:nil];

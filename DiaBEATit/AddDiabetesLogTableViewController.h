@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddDiabetesLogTableViewController : UITableViewController
+@interface AddDiabetesLogTableViewController : UITableViewController <UITextFieldDelegate>
 
 @property (nonatomic) NSInteger timeOfDay;
 @property (nonatomic) NSInteger mealTiming;

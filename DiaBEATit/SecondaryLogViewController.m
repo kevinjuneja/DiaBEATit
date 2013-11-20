@@ -44,7 +44,6 @@
     self.cell2Label.text = [self.labels objectAtIndex:1];
     self.cell3Label.text = [self.labels objectAtIndex:2];
     
-//    [self.tableView
 }
 
 -(void) viewWillDisappear:(BOOL)animated {

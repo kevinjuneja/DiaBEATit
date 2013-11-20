@@ -92,11 +92,6 @@
     cell = tempCell;
     
     return cell;
-    
-//    tempCell.cappegoryTitle.text = [c title];
-//    tempCell.followerCount.text = [NSString stringWithFormat:@"%i", [[c followers] count]];
-//    tempCell.likeCount.text = @"0"; //need some way to get likes from Cappegory object
-//    tempCell.appCount.text = [NSString stringWithFormat:@"%i", [[c cappegoryApps] count]];
 }
 
 /*

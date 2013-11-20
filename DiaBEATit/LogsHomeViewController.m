@@ -8,10 +8,20 @@
 
 #import "LogsHomeViewController.h"
 #import "SDSegmentedControl.h"
+#import "DiabetesLog.h"
+#import "HypertensionLog.h"
+#import "LogTableViewController.h"
 
 @interface LogsHomeViewController ()
 @property (weak, nonatomic) IBOutlet SDSegmentedControl *segmentedControl;
 @property (strong, nonatomic) NSString *segueId;
+@property (strong, nonatomic) LogTableViewController *logTable;
+
+@property (strong, nonatomic) NSArray *logs;
+@property (strong, nonatomic) DiabetesLog *dLog;
+@property (strong, nonatomic) HypertensionLog *hLog;
+
+@property (nonatomic) NSInteger segmentIndex;
 @end
 
 @implementation LogsHomeViewController
@@ -30,8 +40,28 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.segmentedControl.arrowHeightFactor *= -1.0;
-    self.segmentedControl.scrollView.contentOffset = CGPointMake(0,65);
     self.segmentedControl.scrollView.scrollEnabled = NO;
+
+    self.dLog = [[DiabetesLog alloc] init];
+    self.hLog = [[HypertensionLog alloc] init];
+}
+
+-(void) viewWillAppear:(BOOL)animated {
+    [self.segmentedControl.scrollView setContentOffset:CGPointMake(0,64) animated:YES];
+    self.segmentIndex = self.segmentedControl.selectedSegmentIndex;
+    if (self.segmentIndex == 0) {
+        self.logTable.logs = [self.dLog retrieveDiabetesLogs];
+        self.logTable.type = 0;
+        [self.logTable.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+    } else {
+        self.logTable.logs = [self.hLog retrieveHypertensionLogs];
+        self.logTable.type = 1;
+        [self.logTable.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+
+-(void) viewDidAppear:(BOOL)animated {
+    [self.segmentedControl.scrollView setContentOffset:CGPointMake(0,0) animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,6 +75,24 @@
     [self performSegueWithIdentifier:self.segueId sender:sender];
 }
 
-- (IBAction)segmentSwitch:(UISegmentedControl *)sender {
+- (IBAction)segmentSwitch:(SDSegmentedControl *)sender {
+    if (sender.selectedSegmentIndex == 0) {
+        self.logTable.logs = [self.dLog retrieveDiabetesLogs];
+        self.logTable.type = 0;
+        [self.logTable.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+    } else {
+        self.logTable.logs = [self.hLog retrieveHypertensionLogs];
+        self.logTable.type = 1;
+        [self.logTable.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+    }
+    
+    self.segmentIndex = sender.selectedSegmentIndex;
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"logTableViewEmbedSegue"]) {
+        self.logTable = segue.destinationViewController;
+    }
 }
 @end

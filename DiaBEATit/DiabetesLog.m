@@ -146,54 +146,54 @@
                 int idField = sqlite3_column_int(statement, 0);
                 
                 d.idCode = idField;
-                NSLog(@"ID: %i", d.idCode);
+//                NSLog(@"ID: %i", d.idCode);
                 
                 NSString *glucoseField = [[NSString alloc]
                                        initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
                 
                 d.glucose = glucoseField;
-                NSLog(@"Glucose: %@", d.glucose);
+//                NSLog(@"Glucose: %@", d.glucose);
                 
                 NSString *insulinField = [[NSString alloc]
                                          initWithUTF8String:(const char *) sqlite3_column_text(statement, 2)];
                 
                 d.insulin = insulinField;
-                NSLog(@"Insulin: %@", d.insulin);
+//                NSLog(@"Insulin: %@", d.insulin);
                 
                 NSString *a1cField = [[NSString alloc]
                                            initWithUTF8String:(const char *)
                                            sqlite3_column_text(statement, 3)];
                 
                 d.a1c = a1cField;
-                NSLog(@"A1C: %@", d.a1c);
+//                NSLog(@"A1C: %@", d.a1c);
                 
                 NSString *timeOfDayField = [[NSString alloc]
                                            initWithUTF8String:(const char *)
                                            sqlite3_column_text(statement, 4)];
                 
                 d.timeOfDay = timeOfDayField;
-                NSLog(@"Time of Day: %@", d.timeOfDay);
+//                NSLog(@"Time of Day: %@", d.timeOfDay);
                 
                 NSString *mealTimingField = [[NSString alloc]
                                             initWithUTF8String:(const char *)
                                             sqlite3_column_text(statement, 5)];
                 
                 d.mealTiming = mealTimingField;
-                NSLog(@"Meal Timing: %@", d.mealTiming);
+//                NSLog(@"Meal Timing: %@", d.mealTiming);
                 
                 NSString *timestampField = [[NSString alloc]
                                             initWithUTF8String:(const char *)
                                             sqlite3_column_text(statement, 6)];
                 
                 d.timestamp = timestampField;
-                NSLog(@"Timestamp: %@", d.timestamp);
+//                NSLog(@"Timestamp: %@", d.timestamp);
                 
                 NSString *commentsField = [[NSString alloc]
                                             initWithUTF8String:(const char *)
                                             sqlite3_column_text(statement, 7)];
                 
                 d.comments = commentsField;
-                NSLog(@"Comments: %@", d.comments);
+//                NSLog(@"Comments: %@", d.comments);
                 
                 [diabeteslogs addObject:d];
             }
@@ -202,13 +202,16 @@
         sqlite3_close(_diaBEATitDB);
     }
     
-    //Reverse array
-    NSMutableArray *temp = [[NSMutableArray alloc] init];
-    int tempPtr = 0;
-    for (int i = [diabeteslogs count]; i >= 0; i--, tempPtr++)
-    {
-        [temp addObject:[diabeteslogs objectAtIndex:i]];
-    }
+        //FIX. IS BROKEN
+//    //Reverse array
+//    if ([diabeteslogs count] > 1) {
+//        NSMutableArray *temp = [[NSMutableArray alloc] init];
+//        int tempPtr = 0;
+//        for (int i = [diabeteslogs count]; i >= 0; i--, tempPtr++)
+//        {
+//            [temp addObject:[diabeteslogs objectAtIndex:i]];
+//        }
+//    }
     
     return diabeteslogs;
 }

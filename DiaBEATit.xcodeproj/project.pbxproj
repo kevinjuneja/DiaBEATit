@@ -30,9 +30,15 @@
 		50312DF8183C701800717B6E /* LogTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50312DF7183C701800717B6E /* LogTableViewController.m */; };
 		50312DFB183C7B2600717B6E /* 10-medical.png in Resources */ = {isa = PBXBuildFile; fileRef = 50312DFA183C7B2600717B6E /* 10-medical.png */; };
 		50312DFE183C7C3F00717B6E /* ExamTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50312DFD183C7C3F00717B6E /* ExamTableViewController.m */; };
+		50312E02183CAA6C00717B6E /* DiabetesLogCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50312E01183CAA6C00717B6E /* DiabetesLogCell.m */; };
+		50312E05183CAA7A00717B6E /* HypertensionLogCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50312E04183CAA7A00717B6E /* HypertensionLogCell.m */; };
+		50312E08183CD22600717B6E /* AddHyperTensionLogTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50312E07183CD22600717B6E /* AddHyperTensionLogTableViewController.m */; };
+		50312E0B183CD90E00717B6E /* DiabetesLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50312E0A183CD90E00717B6E /* DiabetesLogViewController.m */; };
+		50312E0E183CD91D00717B6E /* HypertensionLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50312E0D183CD91D00717B6E /* HypertensionLogViewController.m */; };
+		50312E11183CDA3B00717B6E /* MedicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50312E10183CDA3B00717B6E /* MedicationViewController.m */; };
+		50312E14183CDE4400717B6E /* AddMedicationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50312E13183CDE4400717B6E /* AddMedicationTableViewController.m */; };
 		5056747D18386E2300842CC0 /* MedicationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5056747C18386E2300842CC0 /* MedicationTableViewController.m */; };
 		5056748018386EEF00842CC0 /* MedicationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5056747F18386EEF00842CC0 /* MedicationTableViewCell.m */; };
-		50567483183873C000842CC0 /* AddMedicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50567482183873C000842CC0 /* AddMedicationViewController.m */; };
 		505674861838A89100842CC0 /* SplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505674851838A89100842CC0 /* SplashScreenViewController.m */; };
 		5056748B1838D07F00842CC0 /* 179-notepad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5056748A1838D07F00842CC0 /* 179-notepad.png */; };
 		5056748D1838D09000842CC0 /* 94-pill.png in Resources */ = {isa = PBXBuildFile; fileRef = 5056748C1838D09000842CC0 /* 94-pill.png */; };
@@ -98,12 +104,24 @@
 		50312DFA183C7B2600717B6E /* 10-medical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "10-medical.png"; sourceTree = "<group>"; };
 		50312DFC183C7C3F00717B6E /* ExamTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamTableViewController.h; sourceTree = "<group>"; };
 		50312DFD183C7C3F00717B6E /* ExamTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExamTableViewController.m; sourceTree = "<group>"; };
+		50312E00183CAA6C00717B6E /* DiabetesLogCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiabetesLogCell.h; sourceTree = "<group>"; };
+		50312E01183CAA6C00717B6E /* DiabetesLogCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiabetesLogCell.m; sourceTree = "<group>"; };
+		50312E03183CAA7A00717B6E /* HypertensionLogCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HypertensionLogCell.h; sourceTree = "<group>"; };
+		50312E04183CAA7A00717B6E /* HypertensionLogCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HypertensionLogCell.m; sourceTree = "<group>"; };
+		50312E06183CD22600717B6E /* AddHyperTensionLogTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddHyperTensionLogTableViewController.h; sourceTree = "<group>"; };
+		50312E07183CD22600717B6E /* AddHyperTensionLogTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddHyperTensionLogTableViewController.m; sourceTree = "<group>"; };
+		50312E09183CD90E00717B6E /* DiabetesLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiabetesLogViewController.h; sourceTree = "<group>"; };
+		50312E0A183CD90E00717B6E /* DiabetesLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiabetesLogViewController.m; sourceTree = "<group>"; };
+		50312E0C183CD91D00717B6E /* HypertensionLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HypertensionLogViewController.h; sourceTree = "<group>"; };
+		50312E0D183CD91D00717B6E /* HypertensionLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HypertensionLogViewController.m; sourceTree = "<group>"; };
+		50312E0F183CDA3A00717B6E /* MedicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicationViewController.h; sourceTree = "<group>"; };
+		50312E10183CDA3B00717B6E /* MedicationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicationViewController.m; sourceTree = "<group>"; };
+		50312E12183CDE4400717B6E /* AddMedicationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMedicationTableViewController.h; sourceTree = "<group>"; };
+		50312E13183CDE4400717B6E /* AddMedicationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMedicationTableViewController.m; sourceTree = "<group>"; };
 		5056747B18386E2300842CC0 /* MedicationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicationTableViewController.h; sourceTree = "<group>"; };
 		5056747C18386E2300842CC0 /* MedicationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicationTableViewController.m; sourceTree = "<group>"; };
 		5056747E18386EEF00842CC0 /* MedicationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicationTableViewCell.h; sourceTree = "<group>"; };
 		5056747F18386EEF00842CC0 /* MedicationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicationTableViewCell.m; sourceTree = "<group>"; };
-		50567481183873C000842CC0 /* AddMedicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMedicationViewController.h; sourceTree = "<group>"; };
-		50567482183873C000842CC0 /* AddMedicationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMedicationViewController.m; sourceTree = "<group>"; };
 		505674841838A89100842CC0 /* SplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashScreenViewController.h; sourceTree = "<group>"; };
 		505674851838A89100842CC0 /* SplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashScreenViewController.m; sourceTree = "<group>"; };
 		5056748A1838D07F00842CC0 /* 179-notepad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "179-notepad.png"; sourceTree = "<group>"; };
@@ -301,8 +319,10 @@
 				5056747C18386E2300842CC0 /* MedicationTableViewController.m */,
 				5056747E18386EEF00842CC0 /* MedicationTableViewCell.h */,
 				5056747F18386EEF00842CC0 /* MedicationTableViewCell.m */,
-				50567481183873C000842CC0 /* AddMedicationViewController.h */,
-				50567482183873C000842CC0 /* AddMedicationViewController.m */,
+				50312E0F183CDA3A00717B6E /* MedicationViewController.h */,
+				50312E10183CDA3B00717B6E /* MedicationViewController.m */,
+				50312E12183CDE4400717B6E /* AddMedicationTableViewController.h */,
+				50312E13183CDE4400717B6E /* AddMedicationTableViewController.m */,
 			);
 			name = Medication;
 			sourceTree = "<group>";
@@ -320,6 +340,16 @@
 				505674DB183C2F4E00842CC0 /* AddDiabetesLogTableViewController.m */,
 				50312DF6183C701800717B6E /* LogTableViewController.h */,
 				50312DF7183C701800717B6E /* LogTableViewController.m */,
+				50312E00183CAA6C00717B6E /* DiabetesLogCell.h */,
+				50312E01183CAA6C00717B6E /* DiabetesLogCell.m */,
+				50312E03183CAA7A00717B6E /* HypertensionLogCell.h */,
+				50312E04183CAA7A00717B6E /* HypertensionLogCell.m */,
+				50312E06183CD22600717B6E /* AddHyperTensionLogTableViewController.h */,
+				50312E07183CD22600717B6E /* AddHyperTensionLogTableViewController.m */,
+				50312E09183CD90E00717B6E /* DiabetesLogViewController.h */,
+				50312E0A183CD90E00717B6E /* DiabetesLogViewController.m */,
+				50312E0C183CD91D00717B6E /* HypertensionLogViewController.h */,
+				50312E0D183CD91D00717B6E /* HypertensionLogViewController.m */,
 			);
 			name = Logs;
 			sourceTree = "<group>";
@@ -461,18 +491,24 @@
 			files = (
 				5056748018386EEF00842CC0 /* MedicationTableViewCell.m in Sources */,
 				5056749D1838E8FF00842CC0 /* TrendsHomeViewController.m in Sources */,
+				50312E08183CD22600717B6E /* AddHyperTensionLogTableViewController.m in Sources */,
 				505674CF183AD86100842CC0 /* FormPredefinedChoicesCell.m in Sources */,
 				505674DC183C2F4E00842CC0 /* AddDiabetesLogTableViewController.m in Sources */,
 				5016155318382EA4003AAD33 /* LogsHomeViewController.m in Sources */,
 				505674A31838E98900842CC0 /* Medication.m in Sources */,
 				4133688C1837757300617CC1 /* AppDelegate.m in Sources */,
+				50312E02183CAA6C00717B6E /* DiabetesLogCell.m in Sources */,
+				50312E11183CDA3B00717B6E /* MedicationViewController.m in Sources */,
 				505674C81839A2FB00842CC0 /* AddHypertensionLogViewController.m in Sources */,
+				50312E05183CAA7A00717B6E /* HypertensionLogCell.m in Sources */,
+				50312E0E183CD91D00717B6E /* HypertensionLogViewController.m in Sources */,
 				505674A61838E9DD00842CC0 /* Profile.m in Sources */,
 				505674AD1838EAB400842CC0 /* HypertensionLog.m in Sources */,
 				50312DF8183C701800717B6E /* LogTableViewController.m in Sources */,
 				505674861838A89100842CC0 /* SplashScreenViewController.m in Sources */,
 				5056747D18386E2300842CC0 /* MedicationTableViewController.m in Sources */,
 				505674AA1838EA2000842CC0 /* DiabetesLog.m in Sources */,
+				50312E0B183CD90E00717B6E /* DiabetesLogViewController.m in Sources */,
 				41AE2F9A183C5C9A0048B41B /* Exam.m in Sources */,
 				413368881837757300617CC1 /* main.m in Sources */,
 				50312DFE183C7C3F00717B6E /* ExamTableViewController.m in Sources */,
@@ -480,7 +516,7 @@
 				5016156218384016003AAD33 /* SDSegmentedControl.m in Sources */,
 				505674D9183BE11100842CC0 /* SecondaryLogViewController.m in Sources */,
 				505674CB183A491000842CC0 /* FormTextFieldCell.m in Sources */,
-				50567483183873C000842CC0 /* AddMedicationViewController.m in Sources */,
+				50312E14183CDE4400717B6E /* AddMedicationTableViewController.m in Sources */,
 				5016155C18382EBE003AAD33 /* MedicationHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

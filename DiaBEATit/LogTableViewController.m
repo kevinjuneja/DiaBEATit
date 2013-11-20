@@ -7,6 +7,10 @@
 //
 
 #import "LogTableViewController.h"
+#import "DiabetesLogCell.h"
+#import "HypertensionLogCell.h"
+#import "DiabetesLog.h"
+#import "HypertensionLog.h"
 
 @interface LogTableViewController ()
 @end
@@ -55,10 +59,35 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = nil;
+    NSUInteger row = indexPath.row;
     
-    // Configure the cell...
+    if (self.type == 0) {
+        static NSString *CellIdentifier = @"diabetesLogCell";
+        DiabetesLogCell *tempCell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (tempCell == nil) {
+            cell = [[DiabetesLogCell alloc]
+                    initWithStyle:UITableViewCellStyleDefault
+                    reuseIdentifier:CellIdentifier];
+        }
+        
+        DiabetesLog *toAdd = [self.logs objectAtIndex:row];
+        tempCell.testLabel.text = toAdd.glucose;
+        cell = tempCell;
+
+    } else {
+        static NSString *CellIdentifier = @"hypertensionLogCell";
+       HypertensionLogCell *tempCell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (tempCell == nil) {
+            cell = [[HypertensionLogCell alloc]
+                    initWithStyle:UITableViewCellStyleDefault
+                    reuseIdentifier:CellIdentifier];
+        }
+        
+        HypertensionLog *toAdd = [self.logs objectAtIndex:row];
+        tempCell.testLabel.text = toAdd.systolic;
+        cell = tempCell;
+    }
     
     return cell;
 }

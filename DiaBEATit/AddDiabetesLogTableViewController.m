@@ -9,6 +9,7 @@
 #import "AddDiabetesLogTableViewController.h"
 #import "SecondaryLogViewController.h"
 #import "DiabetesLog.h"
+#import "LogsHomeViewController.h"
 
 @interface AddDiabetesLogTableViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *timeOfDayLabel;
@@ -38,11 +39,13 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
-//    self.glucoseCell.selectionStyle = UITableViewCellSelectionStyleNone;
-//    self.insulinCell.selectionStyle = UITableViewCellSelectionStyleNone;
-//    self.a1cCell.selectionStyle = UITableViewCellSelectionStyleNone;
+
     self.timeOfDay = -1;
     self.mealTiming = -1;
+    
+    self.glucoseField.delegate = self; //self references the viewcontroller or view your textField is on
+    self.insulinField.delegate = self;
+    self.a1cField.delegate = self;
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -119,21 +122,12 @@
     }
 }
 
-//// Textfield value changed, store the new value.
-//- (void)textFieldDidEndEditing:(UITextField *)textField {
-//	if ( textField == self.glucoseField ) {
-//		self.log.glucose = textField.text ;
-//	} else if ( textField == self.insulinField ) {
-//		self.log.insulin = textField.text ;
-//	} else if ( textField == self.a1cField ) {
-//		self.log.a1c = textField.text ;
-//	}
-//}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    
+    return YES;
+}
 
-//- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
-//{
-//    [textField resignFirstResponder];
-//    return YES;
-//}
 
 @end
