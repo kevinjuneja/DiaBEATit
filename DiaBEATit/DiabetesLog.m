@@ -46,6 +46,10 @@
     return sqlCheck;
 }
 
+-(int) saveDiabetesLogWithDiabetesObject:(DiabetesLog *)log {
+    return [self saveDiabetesLogWithGlucose:log.glucose insulin:log.insulin a1c:log.a1c timeOfDay:log.timeOfDay mealTiming:log.mealTiming timestamp:log.timestamp comments:log.comments];
+}
+
 -(int) editDiabetesLogWithId:(int)idCode glucose:(NSString *)glucose insulin:(NSString *)insulin a1c:(NSString *)a1c timeOfDay:(NSString *)timeOfDay mealTiming:(NSString *)mealTiming timestamp:(NSString *)timestamp comments:(NSString *)comments
 {
     sqlite3_stmt *statement;

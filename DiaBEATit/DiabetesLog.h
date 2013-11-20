@@ -25,6 +25,8 @@
 
 -(int) saveDiabetesLogWithGlucose:(NSString *)glucose insulin:(NSString *)insulin a1c:(NSString *)a1c timeOfDay:(NSString *)timeOfDay mealTiming:(NSString *)mealTiming timestamp:(NSString *)timestamp comments:(NSString *)comments;
 
+-(int) saveDiabetesLogWithDiabetesObject:(DiabetesLog *)log;
+
 -(int) editDiabetesLogWithId:(int)idCode glucose:(NSString *)glucose insulin:(NSString *)insulin a1c:(NSString *)a1c timeOfDay:(NSString *)timeOfDay mealTiming:(NSString *)mealTiming timestamp:(NSString *)timestamp comments:(NSString *)comments;
 
 -(int) removeDiabetesLogWithId:(int)idCode;
