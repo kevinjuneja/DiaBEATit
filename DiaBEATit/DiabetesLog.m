@@ -126,7 +126,7 @@
     {
         //NSLog(@"Entered 1st if");
         NSString *querySQL = [NSString stringWithFormat:
-                              @"SELECT glucose, insulin, a1c, timeofday, mealtiming, timestamp, comments FROM diabeteslogs"];
+                              @"SELECT id, glucose, insulin, a1c, timeofday, mealtiming, timestamp, comments FROM diabeteslogs"];
         
         const char *query_stmt = [querySQL UTF8String];
         int check = sqlite3_prepare_v2(_diaBEATitDB, query_stmt, -1, &statement, NULL);
@@ -145,48 +145,48 @@
                 NSLog(@"ID: %i", d.idCode);
                 
                 NSString *glucoseField = [[NSString alloc]
-                                       initWithUTF8String:(const char *) sqlite3_column_text(statement, 0)];
+                                       initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
                 
                 d.glucose = glucoseField;
                 NSLog(@"Glucose: %@", d.glucose);
                 
                 NSString *insulinField = [[NSString alloc]
-                                         initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
+                                         initWithUTF8String:(const char *) sqlite3_column_text(statement, 2)];
                 
                 d.insulin = insulinField;
                 NSLog(@"Insulin: %@", d.insulin);
                 
                 NSString *a1cField = [[NSString alloc]
                                            initWithUTF8String:(const char *)
-                                           sqlite3_column_text(statement, 2)];
+                                           sqlite3_column_text(statement, 3)];
                 
                 d.a1c = a1cField;
                 NSLog(@"A1C: %@", d.a1c);
                 
                 NSString *timeOfDayField = [[NSString alloc]
                                            initWithUTF8String:(const char *)
-                                           sqlite3_column_text(statement, 3)];
+                                           sqlite3_column_text(statement, 4)];
                 
                 d.timeOfDay = timeOfDayField;
                 NSLog(@"Time of Day: %@", d.timeOfDay);
                 
                 NSString *mealTimingField = [[NSString alloc]
                                             initWithUTF8String:(const char *)
-                                            sqlite3_column_text(statement, 4)];
+                                            sqlite3_column_text(statement, 5)];
                 
                 d.mealTiming = mealTimingField;
                 NSLog(@"Meal Timing: %@", d.mealTiming);
                 
                 NSString *timestampField = [[NSString alloc]
                                             initWithUTF8String:(const char *)
-                                            sqlite3_column_text(statement, 5)];
+                                            sqlite3_column_text(statement, 6)];
                 
                 d.timestamp = timestampField;
                 NSLog(@"Timestamp: %@", d.timestamp);
                 
                 NSString *commentsField = [[NSString alloc]
                                             initWithUTF8String:(const char *)
-                                            sqlite3_column_text(statement, 6)];
+                                            sqlite3_column_text(statement, 7)];
                 
                 d.comments = commentsField;
                 NSLog(@"Comments: %@", d.comments);
@@ -221,7 +221,7 @@
     {
         //NSLog(@"Entered 1st if");
         NSString *querySQL = [[NSString stringWithFormat:
-                              @"SELECT glucose, insulin, a1c, timeofday, mealtiming, timestamp, comments FROM diabeteslogs "] stringByAppendingString:constraints];
+                              @"SELECT id, glucose, insulin, a1c, timeofday, mealtiming, timestamp, comments FROM diabeteslogs "] stringByAppendingString:constraints];
         
         const char *query_stmt = [querySQL UTF8String];
         int check = sqlite3_prepare_v2(_diaBEATitDB, query_stmt, -1, &statement, NULL);
@@ -240,48 +240,48 @@
                 NSLog(@"ID: %i", d.idCode);
                 
                 NSString *glucoseField = [[NSString alloc]
-                                          initWithUTF8String:(const char *) sqlite3_column_text(statement, 0)];
+                                          initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
                 
                 d.glucose = glucoseField;
                 NSLog(@"Glucose: %@", d.glucose);
                 
                 NSString *insulinField = [[NSString alloc]
-                                          initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
+                                          initWithUTF8String:(const char *) sqlite3_column_text(statement, 2)];
                 
                 d.insulin = insulinField;
                 NSLog(@"Insulin: %@", d.insulin);
                 
                 NSString *a1cField = [[NSString alloc]
                                       initWithUTF8String:(const char *)
-                                      sqlite3_column_text(statement, 2)];
+                                      sqlite3_column_text(statement, 3)];
                 
                 d.a1c = a1cField;
                 NSLog(@"A1C: %@", d.a1c);
                 
                 NSString *timeOfDayField = [[NSString alloc]
                                             initWithUTF8String:(const char *)
-                                            sqlite3_column_text(statement, 3)];
+                                            sqlite3_column_text(statement, 4)];
                 
                 d.timeOfDay = timeOfDayField;
                 NSLog(@"Time of Day: %@", d.timeOfDay);
                 
                 NSString *mealTimingField = [[NSString alloc]
                                              initWithUTF8String:(const char *)
-                                             sqlite3_column_text(statement, 4)];
+                                             sqlite3_column_text(statement, 5)];
                 
                 d.mealTiming = mealTimingField;
                 NSLog(@"Meal Timing: %@", d.mealTiming);
                 
                 NSString *timestampField = [[NSString alloc]
                                             initWithUTF8String:(const char *)
-                                            sqlite3_column_text(statement, 5)];
+                                            sqlite3_column_text(statement, 6)];
                 
                 d.timestamp = timestampField;
                 NSLog(@"Timestamp: %@", d.timestamp);
                 
                 NSString *commentsField = [[NSString alloc]
                                            initWithUTF8String:(const char *)
-                                           sqlite3_column_text(statement, 6)];
+                                           sqlite3_column_text(statement, 7)];
                 
                 d.comments = commentsField;
                 NSLog(@"Comments: %@", d.comments);

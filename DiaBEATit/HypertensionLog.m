@@ -126,7 +126,7 @@
     {
         //NSLog(@"Entered 1st if");
         NSString *querySQL = [NSString stringWithFormat:
-                              @"SELECT systolic, diastolic, heartrate, timeofday, timestamp, comments FROM hypertensionlogs"];
+                              @"SELECT id, systolic, diastolic, heartrate, timeofday, timestamp, comments FROM hypertensionlogs"];
         
         const char *query_stmt = [querySQL UTF8String];
         int check = sqlite3_prepare_v2(_diaBEATitDB, query_stmt, -1, &statement, NULL);
@@ -151,35 +151,35 @@
                 NSLog(@"Systolic: %@", h.systolic);
                 
                 NSString *diastolicField = [[NSString alloc]
-                                          initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
+                                          initWithUTF8String:(const char *) sqlite3_column_text(statement, 2)];
                 
                 h.diastolic = diastolicField;
                 NSLog(@"Diastolic: %@", h.diastolic);
                 
                 NSString *heartrateField = [[NSString alloc]
                                       initWithUTF8String:(const char *)
-                                      sqlite3_column_text(statement, 2)];
+                                      sqlite3_column_text(statement, 3)];
                 
                 h.heartRate = heartrateField;
                 NSLog(@"Heartrate: %@", h.heartRate);
                 
                 NSString *timeOfDayField = [[NSString alloc]
                                             initWithUTF8String:(const char *)
-                                            sqlite3_column_text(statement, 3)];
+                                            sqlite3_column_text(statement, 4)];
                 
                 h.timeOfDay = timeOfDayField;
                 NSLog(@"Time of Day: %@", h.timeOfDay);
                 
                 NSString *timestampField = [[NSString alloc]
                                             initWithUTF8String:(const char *)
-                                            sqlite3_column_text(statement, 4)];
+                                            sqlite3_column_text(statement, 5)];
                 
                 h.timestamp = timestampField;
                 NSLog(@"Timestamp: %@", h.timestamp);
                 
                 NSString *commentsField = [[NSString alloc]
                                            initWithUTF8String:(const char *)
-                                           sqlite3_column_text(statement, 5)];
+                                           sqlite3_column_text(statement, 6)];
                 
                 h.comments = commentsField;
                 NSLog(@"Comments: %@", h.comments);
@@ -215,7 +215,7 @@
     {
         //NSLog(@"Entered 1st if");
         NSString *querySQL = [[NSString stringWithFormat:
-                              @"SELECT systolic, diastolic, heartrate, timeofday, timestamp, comments FROM hypertensionlogs "] stringByAppendingString:constraints];
+                              @"SELECT id, systolic, diastolic, heartrate, timeofday, timestamp, comments FROM hypertensionlogs "] stringByAppendingString:constraints];
         
         const char *query_stmt = [querySQL UTF8String];
         int check = sqlite3_prepare_v2(_diaBEATitDB, query_stmt, -1, &statement, NULL);
@@ -234,41 +234,41 @@
                 NSLog(@"ID: %i", h.idCode);
                 
                 NSString *systolicField = [[NSString alloc]
-                                           initWithUTF8String:(const char *) sqlite3_column_text(statement, 0)];
+                                           initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
                 
                 h.systolic = systolicField;
                 NSLog(@"Systolic: %@", h.systolic);
                 
                 NSString *diastolicField = [[NSString alloc]
-                                            initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
+                                            initWithUTF8String:(const char *) sqlite3_column_text(statement, 2)];
                 
                 h.diastolic = diastolicField;
                 NSLog(@"Diastolic: %@", h.diastolic);
                 
                 NSString *heartrateField = [[NSString alloc]
                                             initWithUTF8String:(const char *)
-                                            sqlite3_column_text(statement, 2)];
+                                            sqlite3_column_text(statement, 3)];
                 
                 h.heartRate = heartrateField;
                 NSLog(@"Heartrate: %@", h.heartRate);
                 
                 NSString *timeOfDayField = [[NSString alloc]
                                             initWithUTF8String:(const char *)
-                                            sqlite3_column_text(statement, 3)];
+                                            sqlite3_column_text(statement, 4)];
                 
                 h.timeOfDay = timeOfDayField;
                 NSLog(@"Time of Day: %@", h.timeOfDay);
                 
                 NSString *timestampField = [[NSString alloc]
                                             initWithUTF8String:(const char *)
-                                            sqlite3_column_text(statement, 4)];
+                                            sqlite3_column_text(statement, 5)];
                 
                 h.timestamp = timestampField;
                 NSLog(@"Timestamp: %@", h.timestamp);
                 
                 NSString *commentsField = [[NSString alloc]
                                            initWithUTF8String:(const char *)
-                                           sqlite3_column_text(statement, 5)];
+                                           sqlite3_column_text(statement, 6)];
                 
                 h.comments = commentsField;
                 NSLog(@"Comments: %@", h.comments);
