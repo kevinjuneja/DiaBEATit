@@ -10,4 +10,7 @@
 
 @interface AddDiabetesLogTableViewController : UITableViewController
 
+@property (nonatomic) NSInteger timeOfDay;
+@property (nonatomic) NSInteger mealTiming;
+
 @end

@@ -12,6 +12,6 @@
 
 
 
--(void) setLabelsFromStrings:(NSArray *)strings andTypeWithString:(NSString *)string;
+-(void) setLabelsFromStrings:(NSArray *)strings andTypeWithInt:(NSInteger)string;
 
 @end
