@@ -198,11 +198,13 @@
         sqlite3_close(_diaBEATitDB);
     }
     
-    //    NSMutableArray *temp = [[NSMutableArray alloc] init];
-    //    int tempPtr = 0;
-    //    for (int i = [medications count]; i >= 0; i--, tempPtr++) {
-    //        [temp addObject:[medications objectAtIndex:i]];
-    //    }
+    //Reverse array
+    NSMutableArray *temp = [[NSMutableArray alloc] init];
+    int tempPtr = 0;
+    for (int i = [diabeteslogs count]; i >= 0; i--, tempPtr++)
+    {
+        [temp addObject:[diabeteslogs objectAtIndex:i]];
+    }
     
     return diabeteslogs;
 }
@@ -293,11 +295,13 @@
         sqlite3_close(_diaBEATitDB);
     }
     
-    //    NSMutableArray *temp = [[NSMutableArray alloc] init];
-    //    int tempPtr = 0;
-    //    for (int i = [medications count]; i >= 0; i--, tempPtr++) {
-    //        [temp addObject:[medications objectAtIndex:i]];
-    //    }
+    //Reverse array
+    NSMutableArray *temp = [[NSMutableArray alloc] init];
+    int tempPtr = 0;
+    for (int i = [diabeteslogs count]; i >= 0; i--, tempPtr++)
+    {
+        [temp addObject:[diabeteslogs objectAtIndex:i]];
+    }
     
     return diabeteslogs;
 }

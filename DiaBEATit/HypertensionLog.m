@@ -191,11 +191,13 @@
         sqlite3_close(_diaBEATitDB);
     }
     
-    //    NSMutableArray *temp = [[NSMutableArray alloc] init];
-    //    int tempPtr = 0;
-    //    for (int i = [medications count]; i >= 0; i--, tempPtr++) {
-    //        [temp addObject:[medications objectAtIndex:i]];
-    //    }
+    //Reverse array
+    NSMutableArray *temp = [[NSMutableArray alloc] init];
+    int tempPtr = 0;
+    for (int i = [hypertensionlogs count]; i >= 0; i--, tempPtr++)
+    {
+        [temp addObject:[hypertensionlogs objectAtIndex:i]];
+    }
     
     return hypertensionlogs;
 }
@@ -280,11 +282,13 @@
         sqlite3_close(_diaBEATitDB);
     }
     
-    //    NSMutableArray *temp = [[NSMutableArray alloc] init];
-    //    int tempPtr = 0;
-    //    for (int i = [medications count]; i >= 0; i--, tempPtr++) {
-    //        [temp addObject:[medications objectAtIndex:i]];
-    //    }
+    //Reverse array
+    NSMutableArray *temp = [[NSMutableArray alloc] init];
+    int tempPtr = 0;
+    for (int i = [hypertensionlogs count]; i >= 0; i--, tempPtr++)
+    {
+        [temp addObject:[hypertensionlogs objectAtIndex:i]];
+    }
     
     return hypertensionlogs;
 }
