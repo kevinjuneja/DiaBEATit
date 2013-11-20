@@ -42,10 +42,8 @@
     return sqlCheck;
 }
 
--(NSArray *) retrieveExams
+-(Exam *) retrieveExamsWithID:(int)idCode
 {
-    NSMutableArray *exams = [[NSMutableArray alloc] init];
-    
     // sql query to get medications
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -53,11 +51,12 @@
     const char *dbpath = [pathToDatabase UTF8String];
     sqlite3_stmt *statement;
     //NSLog(@"Entered function");
+    Exam *e;
     if (sqlite3_open(dbpath, &_diaBEATitDB) == SQLITE_OK)
     {
         //NSLog(@"Entered 1st if");
         NSString *querySQL = [NSString stringWithFormat:
-                              @"SELECT id, name, date FROM exams"];
+                              @"SELECT id, name, date FROM exams WHERE id = '\"%i\"'", idCode];
         
         const char *query_stmt = [querySQL UTF8String];
         int check = sqlite3_prepare_v2(_diaBEATitDB, query_stmt, -1, &statement, NULL);
@@ -65,10 +64,10 @@
         if (check == SQLITE_OK)
         {
             //NSLog(@"Entered 2nd if");
-            while (sqlite3_step(statement) == SQLITE_ROW)
+            if (sqlite3_step(statement) == SQLITE_ROW)
             {
                 //NSLog(@"Entered while");
-                Exam *e = [[Exam alloc] init];
+                e = [[Exam alloc] init];
                 
                 int idField = sqlite3_column_int(statement, 0);
                 e.idCode = idField;
@@ -87,15 +86,24 @@
                 NSLog(@"Date: %@", e.date);
                 
                 
-                [exams addObject:e];
             }
             sqlite3_finalize(statement);
         }
         sqlite3_close(_diaBEATitDB);
     }
     
-    return exams;
+    return e;
 
+}
+
+-(IBAction)changeLastCheckupDate:(id)sender{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+    
+    NSString *dateString = [dateFormatter stringFromDate:[NSDate date]];
+    
+    lastCheckup.text = dateString;
 }
 
 @end
