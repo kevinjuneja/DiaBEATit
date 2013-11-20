@@ -97,7 +97,7 @@
     {
         
         NSString *insertSQL = [NSString stringWithFormat:
-                               @"DELETE FROM DIABETESLOGS WHERE id = '\"%i\"'", idCode];
+                               @"DELETE FROM DIABETESLOGS WHERE ID = \"%i\"", idCode];
         
         
         const char *insert_stmt = [insertSQL UTF8String];
