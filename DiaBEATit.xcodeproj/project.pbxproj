@@ -21,7 +21,7 @@
 		413368A51837757300617CC1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 413368A31837757300617CC1 /* InfoPlist.strings */; };
 		413368A71837757300617CC1 /* DiaBEATitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 413368A61837757300617CC1 /* DiaBEATitTests.m */; };
 		41AE2F8F1839958C0048B41B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 41AE2F8E1839958C0048B41B /* libsqlite3.dylib */; };
-		41AE2F95183AF9F20048B41B /* diaBEATit.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 41AE2F94183AF9F20048B41B /* diaBEATit.sqlite3 */; };
+		41AE2F97183C59DD0048B41B /* diaBEATit.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 41AE2F96183C59DD0048B41B /* diaBEATit.sqlite3 */; };
 		5016155318382EA4003AAD33 /* LogsHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5016155218382EA4003AAD33 /* LogsHomeViewController.m */; };
 		5016155C18382EBE003AAD33 /* MedicationHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5016155B18382EBE003AAD33 /* MedicationHomeViewController.m */; };
 		5016156218384016003AAD33 /* SDSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5016156118384016003AAD33 /* SDSegmentedControl.m */; };
@@ -79,7 +79,7 @@
 		413368A41837757300617CC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		413368A61837757300617CC1 /* DiaBEATitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiaBEATitTests.m; sourceTree = "<group>"; };
 		41AE2F8E1839958C0048B41B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		41AE2F94183AF9F20048B41B /* diaBEATit.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = diaBEATit.sqlite3; sourceTree = "<group>"; };
+		41AE2F96183C59DD0048B41B /* diaBEATit.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = diaBEATit.sqlite3; sourceTree = "<group>"; };
 		5016155118382EA4003AAD33 /* LogsHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogsHomeViewController.h; sourceTree = "<group>"; };
 		5016155218382EA4003AAD33 /* LogsHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogsHomeViewController.m; sourceTree = "<group>"; };
 		5016155A18382EBE003AAD33 /* MedicationHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicationHomeViewController.h; sourceTree = "<group>"; };
@@ -156,7 +156,7 @@
 		4133686F1837757300617CC1 = {
 			isa = PBXGroup;
 			children = (
-				41AE2F94183AF9F20048B41B /* diaBEATit.sqlite3 */,
+				41AE2F96183C59DD0048B41B /* diaBEATit.sqlite3 */,
 				413368811837757300617CC1 /* DiaBEATit */,
 				413368931837757300617CC1 /* Images.xcassets */,
 				413368A01837757300617CC1 /* DiaBEATitTests */,
@@ -403,7 +403,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41AE2F95183AF9F20048B41B /* diaBEATit.sqlite3 in Resources */,
+				41AE2F97183C59DD0048B41B /* diaBEATit.sqlite3 in Resources */,
 				413368941837757300617CC1 /* Images.xcassets in Resources */,
 				5056748D1838D09000842CC0 /* 94-pill.png in Resources */,
 				413368861837757300617CC1 /* InfoPlist.strings in Resources */,
