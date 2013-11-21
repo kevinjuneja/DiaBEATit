@@ -59,7 +59,7 @@
     {
         
         NSString *insertSQL = [NSString stringWithFormat:
-                               @"UPDATE HYPERTENSIONLOGS SET systolic = '\"%@\"', diastolic = '\"%@\"', heartrate = '\"%@\"', timeofday = '\"%@\"',  timestamp = '\"%@\"',  comments = '\"%@\"' WHERE id = '\"%i\"'",
+                               @"UPDATE HYPERTENSIONLOGS SET systolic = '\"%@\"', diastolic = '\"%@\"', heartrate = '\"%@\"', timeofday = '\"%@\"',  timestamp = '\"%@\"',  comments = '\"%@\"' WHERE id = %i",
                                systolic, diastolic, heartRate, timeOfDay, timestamp, comments, idCode];
         
         
@@ -93,8 +93,8 @@
     {
         
         NSString *insertSQL = [NSString stringWithFormat:
-                               @"DELETE FROM HYPERTENSIONLOGS WHERE ID = \"%i\"", idCode];
-        
+                               @"DELETE FROM HYPERTENSIONLOGS WHERE id = %i", idCode];
+
         
         const char *insert_stmt = [insertSQL UTF8String];
         sqlite3_prepare_v2(_diaBEATitDB, insert_stmt,
@@ -341,6 +341,35 @@
     }
     
     return dates;
+}
+
+-(NSArray *) returnGroupingsWithLogs:(NSArray *)logs
+{
+    NSMutableArray *groupings = [[NSMutableArray alloc] init];
+    HypertensionLog *h = [logs objectAtIndex:0];
+    NSString *currentTimestamp = h.timestamp;
+    
+    NSMutableArray *group = [[NSMutableArray alloc] init];
+    [group addObject:currentTimestamp];
+    
+    for(int i = 0; i < [logs count]; i++)
+    {
+        HypertensionLog *h = [logs objectAtIndex:i];
+        if([h.timestamp isEqualToString:currentTimestamp])
+        {
+            [group addObject:h];
+        }
+        else
+        {
+            [groupings addObject:group];
+            group = [[NSMutableArray alloc] init];
+            currentTimestamp = h.timestamp;
+            [group addObject:currentTimestamp];
+            [group addObject:h];
+        }
+    }
+    
+    return groupings;
 }
 
 @end

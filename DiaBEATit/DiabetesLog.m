@@ -63,7 +63,7 @@
     {
         
         NSString *insertSQL = [NSString stringWithFormat:
-                               @"UPDATE DIABETESLOGS SET glucose = '\"%@\"', insulin = '\"%@\"', a1c = '\"%@\"', timeofday = '\"%@\"', mealtiming = '\"%@\"',  timestamp = '\"%@\"',  comments = '\"%@\"' WHERE id = '\"%i\"'",
+                               @"UPDATE DIABETESLOGS SET glucose = '\"%@\"', insulin = '\"%@\"', a1c = '\"%@\"', timeofday = '\"%@\"', mealtiming = '\"%@\"',  timestamp = '\"%@\"',  comments = '\"%@\"' WHERE id = %i",
                                glucose, insulin, a1c, timeOfDay, mealTiming, timestamp, comments, idCode];
         
         
@@ -97,8 +97,7 @@
     {
         
         NSString *insertSQL = [NSString stringWithFormat:
-                               @"DELETE FROM DIABETESLOGS WHERE ID = \"%i\"", idCode];
-        
+                               @"DELETE FROM DIABETESLOGS WHERE id = %i", idCode];
         
         const char *insert_stmt = [insertSQL UTF8String];
         sqlite3_prepare_v2(_diaBEATitDB, insert_stmt,
@@ -146,7 +145,7 @@
                 int idField = sqlite3_column_int(statement, 0);
                 
                 d.idCode = idField;
-//                NSLog(@"ID: %i", d.idCode);
+                NSLog(@"ID: %i", d.idCode);
                 
                 NSString *glucoseField = [[NSString alloc]
                                        initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
@@ -342,6 +341,35 @@
     }
     
     return dates;
+}
+
+-(NSArray *) returnGroupingsWithLogs:(NSArray *)logs
+{
+    NSMutableArray *groupings = [[NSMutableArray alloc] init];
+    DiabetesLog *d = [logs objectAtIndex:0];
+    NSString *currentTimestamp = d.timestamp;
+    
+    NSMutableArray *group = [[NSMutableArray alloc] init];
+    [group addObject:currentTimestamp];
+    
+    for(int i = 0; i < [logs count]; i++)
+    {
+        DiabetesLog *d = [logs objectAtIndex:i];
+        if([d.timestamp isEqualToString:currentTimestamp])
+        {
+            [group addObject:d];
+        }
+        else
+        {
+            [groupings addObject:group];
+            group = [[NSMutableArray alloc] init];
+            currentTimestamp = d.timestamp;
+            [group addObject:currentTimestamp];
+            [group addObject:d];
+        }
+    }
+    
+    return groupings;
 }
 
 

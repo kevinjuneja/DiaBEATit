@@ -10,5 +10,4 @@
 
 @interface DiabetesLogCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *testLabel;
-@property (nonatomic) int dID;
 @end

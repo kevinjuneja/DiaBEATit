@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
-#import "Log.h"
 
 @interface HypertensionLog : NSObject
 
@@ -34,6 +33,8 @@
 -(NSArray *) returnSystolicWithLogs:(NSArray *)logs;
 -(NSArray *) returnDiastolicWithLogs:(NSArray *)logs;
 -(NSArray *) returnDatesWithLogs:(NSArray *)logs;
+
+-(NSArray *) returnGroupingsWithLogs:(NSArray *)logs;
 
 
 @end

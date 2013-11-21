@@ -10,5 +10,4 @@
 
 @interface HypertensionLogCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *testLabel;
-@property (nonatomic) int hID;
 @end
