@@ -142,47 +142,47 @@
                 int idField = sqlite3_column_int(statement, 0);
                 
                 h.idCode = idField;
-                NSLog(@"ID: %i", h.idCode);
+                //NSLog(@"ID: %i", h.idCode);
                 
                 NSString *systolicField = [[NSString alloc]
                                           initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
                 
                 h.systolic = systolicField;
-                NSLog(@"Systolic: %@", h.systolic);
+                //NSLog(@"Systolic: %@", h.systolic);
                 
                 NSString *diastolicField = [[NSString alloc]
                                           initWithUTF8String:(const char *) sqlite3_column_text(statement, 2)];
                 
                 h.diastolic = diastolicField;
-                NSLog(@"Diastolic: %@", h.diastolic);
+                //NSLog(@"Diastolic: %@", h.diastolic);
                 
                 NSString *heartrateField = [[NSString alloc]
                                       initWithUTF8String:(const char *)
                                       sqlite3_column_text(statement, 3)];
                 
                 h.heartRate = heartrateField;
-                NSLog(@"Heartrate: %@", h.heartRate);
+                //NSLog(@"Heartrate: %@", h.heartRate);
                 
                 NSString *timeOfDayField = [[NSString alloc]
                                             initWithUTF8String:(const char *)
                                             sqlite3_column_text(statement, 4)];
                 
                 h.timeOfDay = timeOfDayField;
-                NSLog(@"Time of Day: %@", h.timeOfDay);
+                //NSLog(@"Time of Day: %@", h.timeOfDay);
                 
                 NSString *timestampField = [[NSString alloc]
                                             initWithUTF8String:(const char *)
                                             sqlite3_column_text(statement, 5)];
                 
                 h.timestamp = timestampField;
-                NSLog(@"Timestamp: %@", h.timestamp);
+                //NSLog(@"Timestamp: %@", h.timestamp);
                 
                 NSString *commentsField = [[NSString alloc]
                                            initWithUTF8String:(const char *)
                                            sqlite3_column_text(statement, 6)];
                 
                 h.comments = commentsField;
-                NSLog(@"Comments: %@", h.comments);
+                //NSLog(@"Comments: %@", h.comments);
                 
                 [hypertensionlogs addObject:h];
             }
@@ -285,12 +285,12 @@
     }
     
     //Reverse array
-    NSMutableArray *temp = [[NSMutableArray alloc] init];
-    int tempPtr = 0;
-    for (int i = [hypertensionlogs count]; i >= 0; i--, tempPtr++)
-    {
-        [temp addObject:[hypertensionlogs objectAtIndex:i]];
-    }
+    //NSMutableArray *temp = [[NSMutableArray alloc] init];
+    //int tempPtr = 0;
+    //for (int i = [hypertensionlogs count]; i >= 0; i--, tempPtr++)
+    //{
+    //    [temp addObject:[hypertensionlogs objectAtIndex:i]];
+    //}
     
     return hypertensionlogs;
 }
@@ -307,8 +307,8 @@
         [f setNumberStyle:NSNumberFormatterDecimalStyle];
         NSNumber *tempValue = [f numberFromString:tempString];
         [values addObject:tempValue];
+        NSLog(@"NSNumber: %d", [tempValue integerValue]);
     }
-    
     return values;
 }
 
@@ -337,7 +337,16 @@
     {
         HypertensionLog *h = [logs objectAtIndex:i];
         NSString *tempString = h.timestamp;
-        [dates addObject:tempString];
+        NSLog(@"%@", tempString);
+        NSString *year = [tempString substringWithRange:NSMakeRange(0, 4)];
+        NSLog(@"%@", year);
+        NSString *month = [tempString substringWithRange:NSMakeRange(4, 2)];
+        NSLog(@"%@", month);
+        NSString *day = [tempString substringWithRange:NSMakeRange(6, 2)];
+        NSLog(@"%@", day);
+        NSString *date = [NSString stringWithFormat:@"%@ / %@\n %@", month, day, year];
+        
+        [dates addObject:date];
     }
     
     return dates;

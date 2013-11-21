@@ -302,12 +302,12 @@
     }
     
     //Reverse array
-    NSMutableArray *temp = [[NSMutableArray alloc] init];
-    int tempPtr = 0;
-    for (int i = [diabeteslogs count]; i >= 0; i--, tempPtr++)
-    {
-        [temp addObject:[diabeteslogs objectAtIndex:i]];
-    }
+    //NSMutableArray *temp = [[NSMutableArray alloc] init];
+    //int tempPtr = 0;
+    //for (int i = [diabeteslogs count]; i >= 0; i--, tempPtr++)
+    //{
+     //   [temp addObject:[diabeteslogs objectAtIndex:i]];
+    //}
     
     return diabeteslogs;
 }
@@ -337,7 +337,16 @@
     {
         DiabetesLog *d = [logs objectAtIndex:i];
         NSString *tempString = d.timestamp;
-        [dates addObject:tempString];
+        NSLog(@"%@", tempString);
+        NSString *year = [tempString substringWithRange:NSMakeRange(0, 4)];
+        NSLog(@"%@", year);
+        NSString *month = [tempString substringWithRange:NSMakeRange(4, 2)];
+        NSLog(@"%@", month);
+        NSString *day = [tempString substringWithRange:NSMakeRange(6, 2)];
+        NSLog(@"%@", day);
+        NSString *date = [NSString stringWithFormat:@"%@ / %@\n %@", month, day, year];
+        
+        [dates addObject:date];
     }
     
     return dates;

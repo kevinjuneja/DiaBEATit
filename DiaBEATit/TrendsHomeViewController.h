@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "CorePlot-CocoaTouch.h"
+#import "HypertensionLog.h"
+#import "DiabetesLog.h"
 
 
 @interface TrendsHomeViewController : UIViewController
@@ -16,6 +18,7 @@
 - (NSArray *)Systolic;
 - (NSArray *)Diastolic;
 - (NSArray *)Glucose;
-- (NSArray *)Dates;
+- (NSArray *)HypertensionDates;
+- (NSArray *)DiabetesDates;
 - (float) findMinimumPlot;
 @end

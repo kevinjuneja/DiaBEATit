@@ -20,20 +20,11 @@
 
 - (NSArray *)Systolic
 {
-    static NSArray *Systolic = nil;
+    static NSMutableArray *Systolic = nil;
     if (!Systolic)
     {
-        Systolic = [NSArray arrayWithObjects:
-                    [NSNumber numberWithInt:127],
-                    [NSNumber numberWithInt:131],
-                    [NSNumber numberWithInt:121],
-                    [NSNumber numberWithInt:140],
-                    [NSNumber numberWithInt:116],
-                    [NSNumber numberWithInt:121],
-                    [NSNumber numberWithInt:131],
-                    [NSNumber numberWithInt:101],
-                    [NSNumber numberWithInt:115],
-                    nil];
+        HypertensionLog *h = [[HypertensionLog alloc] init];
+        Systolic = [h returnSystolicWithLogs:[h retrieveHypertensionLogsWithConstraints:@"WHERE systolic != '' AND diastolic != ''"]];
     }
     return Systolic;
 }
@@ -43,17 +34,8 @@
     static NSArray *Diastolic = nil;
     if (!Diastolic)
     {
-        Diastolic = [NSArray arrayWithObjects:
-                     [NSNumber numberWithInt:70],
-                     [NSNumber numberWithInt:80],
-                     [NSNumber numberWithInt:75],
-                     [NSNumber numberWithInt:90],
-                     [NSNumber numberWithInt:68],
-                     [NSNumber numberWithInt:74],
-                     [NSNumber numberWithInt:96],
-                     [NSNumber numberWithInt:72],
-                     [NSNumber numberWithInt:51],
-                     nil];
+        HypertensionLog *h = [[HypertensionLog alloc] init];
+        Diastolic = [h returnDiastolicWithLogs:[h retrieveHypertensionLogsWithConstraints:@"WHERE systolic != '' AND diastolic != ''"]];
     }
     return Diastolic;
 }
@@ -62,36 +44,30 @@
     static NSArray *Glucose = nil;
     if (!Glucose)
     {
-        Glucose = [NSArray arrayWithObjects:
-                   [NSNumber numberWithInt:100],
-                   [NSNumber numberWithInt:120],
-                   [NSNumber numberWithInt:87],
-                   [NSNumber numberWithInt:105],
-                   [NSNumber numberWithInt:113],
-                   [NSNumber numberWithInt:100],
-                   [NSNumber numberWithInt:88],
-                   [NSNumber numberWithInt:80],
-                   [NSNumber numberWithInt:97],
-                   nil];
+        DiabetesLog *d = [[DiabetesLog alloc] init];
+        Glucose = [d returnGlucoseWithLogs:[d retrieveDiabetesLogsWithConstraints:@"WHERE glucose != ''"]];
     }
     return Glucose;
 }
-- (NSArray *)Dates
+- (NSArray *)HypertensionDates
 {
     static NSArray *Dates = nil;
     if (!Dates)
     {
-        Dates = [NSArray arrayWithObjects:
-                 @"Day \n1",
-                 @"Day 2",
-                 @"Day 3",
-                 @"Day 4",
-                 @"Day 5",
-                 @"Day 6",
-                 @"Day 7",
-                 @"Day 8",
-                 @"Day 9",
-                 nil];
+        HypertensionLog *h = [[HypertensionLog alloc] init];
+        Dates = [h returnDatesWithLogs:[h retrieveHypertensionLogsWithConstraints:@"WHERE systolic != '' AND diastolic != ''"]];
+    }
+    NSLog(@"Exiting");
+    return Dates;
+}
+
+- (NSArray *)DiabetesDates
+{
+    static NSArray *Dates = nil;
+    if (!Dates)
+    {
+        DiabetesLog *d = [[DiabetesLog alloc] init];
+        Dates = [d returnDatesWithLogs:[d retrieveDiabetesLogsWithConstraints:@"WHERE glucose != ''"]];
     }
     return Dates;
 }
@@ -330,13 +306,29 @@
     
     
     x.tickDirection = CPTSignNegative;
-    CGFloat dateCount = [self.Dates count];
+    CGFloat dateCount;
+    if(self.segmentedControl.selectedSegmentIndex == 0)
+    {
+        dateCount = [self.DiabetesDates count];
+    }
+    else
+    {
+        dateCount = [self.HypertensionDates count];
+    }
     NSMutableSet *xLabels = [NSMutableSet setWithCapacity:dateCount];
     NSMutableSet *xLocations = [NSMutableSet setWithCapacity:dateCount];
     NSInteger i = 1;
     
-    
-    for (NSString *date in self.Dates) {
+    NSArray *dates;
+    if(self.segmentedControl.selectedSegmentIndex == 0)
+    {
+        dates = self.DiabetesDates;
+    }
+    else
+    {
+        dates = self.HypertensionDates;
+    }
+    for (NSString *date in dates) {
         CPTAxisLabel *label = [[CPTAxisLabel alloc] initWithText:date  textStyle:x.labelTextStyle];
         CGFloat location = i++;
         label.tickLocation = CPTDecimalFromCGFloat(location);
@@ -434,13 +426,33 @@
 
 -(NSUInteger)numberOfRecordsForPlot:(CPTPlot *)plot {
     
-    
-    NSUInteger numberOfPlots = [self.Dates count];
+    int i;
+    if(self.segmentedControl.selectedSegmentIndex == 0)
+    {
+        i = [self.DiabetesDates count];
+        
+    }
+    else
+    {
+        i = [self.HypertensionDates count];
+    }
+    NSUInteger numberOfPlots = i;
     return numberOfPlots;
 }
 
--(NSNumber *)numberForPlot:(CPTPlot *)plot field:(NSUInteger)fieldEnum recordIndex:(NSUInteger)index {
-    NSInteger valueCount = [self.Dates count];
+-(NSNumber *)numberForPlot:(CPTPlot *)plot field:(NSUInteger)fieldEnum recordIndex:(NSUInteger)index
+{
+    int i;
+    if(self.segmentedControl.selectedSegmentIndex == 0)
+    {
+        i = [self.DiabetesDates count];
+        
+    }
+    else
+    {
+        i = [self.HypertensionDates count];
+    }
+    NSInteger valueCount = i;
     switch (fieldEnum) {
         case CPTScatterPlotFieldX:
             if (index < valueCount) {
