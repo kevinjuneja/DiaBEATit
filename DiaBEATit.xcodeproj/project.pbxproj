@@ -23,6 +23,9 @@
 		413ACE4D183DA349004B7310 /* diaBEATit.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 413ACE4C183DA349004B7310 /* diaBEATit.sqlite3 */; };
 		41AE2F8F1839958C0048B41B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 41AE2F8E1839958C0048B41B /* libsqlite3.dylib */; };
 		41AE2F9A183C5C9A0048B41B /* Exam.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AE2F99183C5C9A0048B41B /* Exam.m */; };
+		500B988F183D947500FAC106 /* 171-sun.png in Resources */ = {isa = PBXBuildFile; fileRef = 500B988E183D947500FAC106 /* 171-sun.png */; };
+		500B9891183D949300FAC106 /* 171-morning.png in Resources */ = {isa = PBXBuildFile; fileRef = 500B9890183D949300FAC106 /* 171-morning.png */; };
+		500B9893183D949E00FAC106 /* 126-moon.png in Resources */ = {isa = PBXBuildFile; fileRef = 500B9892183D949E00FAC106 /* 126-moon.png */; };
 		5016155318382EA4003AAD33 /* LogsHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5016155218382EA4003AAD33 /* LogsHomeViewController.m */; };
 		5016155C18382EBE003AAD33 /* MedicationHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5016155B18382EBE003AAD33 /* MedicationHomeViewController.m */; };
 		5016156218384016003AAD33 /* SDSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5016156118384016003AAD33 /* SDSegmentedControl.m */; };
@@ -90,6 +93,9 @@
 		41AE2F8E1839958C0048B41B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		41AE2F98183C5C9A0048B41B /* Exam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exam.h; sourceTree = "<group>"; };
 		41AE2F99183C5C9A0048B41B /* Exam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exam.m; sourceTree = "<group>"; };
+		500B988E183D947500FAC106 /* 171-sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "171-sun.png"; sourceTree = "<group>"; };
+		500B9890183D949300FAC106 /* 171-morning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "171-morning.png"; sourceTree = "<group>"; };
+		500B9892183D949E00FAC106 /* 126-moon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "126-moon.png"; sourceTree = "<group>"; };
 		5016155118382EA4003AAD33 /* LogsHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogsHomeViewController.h; sourceTree = "<group>"; };
 		5016155218382EA4003AAD33 /* LogsHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogsHomeViewController.m; sourceTree = "<group>"; };
 		5016155A18382EBE003AAD33 /* MedicationHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicationHomeViewController.h; sourceTree = "<group>"; };
@@ -230,10 +236,13 @@
 		413368821837757300617CC1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				500B9890183D949300FAC106 /* 171-morning.png */,
 				50312DFA183C7B2600717B6E /* 10-medical.png */,
 				505674901838D11A00842CC0 /* 111-user.png */,
 				505674BA1838EDF200842CC0 /* diabeetus_29.png */,
 				505674BB1838EDF200842CC0 /* diabeetus_40.png */,
+				500B988E183D947500FAC106 /* 171-sun.png */,
+				500B9892183D949E00FAC106 /* 126-moon.png */,
 				505674BC1838EDF200842CC0 /* diabeetus_60.png */,
 				5056748E1838D0B300842CC0 /* 122-stats.png */,
 				5056748C1838D09000842CC0 /* 94-pill.png */,
@@ -439,13 +448,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				413ACE4D183DA349004B7310 /* diaBEATit.sqlite3 in Resources */,
+				500B9891183D949300FAC106 /* 171-morning.png in Resources */,
+				41AE2F97183C59DD0048B41B /* diaBEATit.sqlite3 in Resources */,
 				413368941837757300617CC1 /* Images.xcassets in Resources */,
 				5056748D1838D09000842CC0 /* 94-pill.png in Resources */,
 				413368861837757300617CC1 /* InfoPlist.strings in Resources */,
 				505674BD1838EDF200842CC0 /* diabeetus_29.png in Resources */,
 				5056748F1838D0B300842CC0 /* 122-stats.png in Resources */,
+				500B988F183D947500FAC106 /* 171-sun.png in Resources */,
 				4133688F1837757300617CC1 /* Main.storyboard in Resources */,
+				500B9893183D949E00FAC106 /* 126-moon.png in Resources */,
 				505674BE1838EDF200842CC0 /* diabeetus_40.png in Resources */,
 				5056748B1838D07F00842CC0 /* 179-notepad.png in Resources */,
 				505674BF1838EDF200842CC0 /* diabeetus_60.png in Resources */,
