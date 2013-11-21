@@ -343,6 +343,35 @@
     return dates;
 }
 
+-(NSArray *) returnGroupingsWithLogs:(NSArray *)logs
+{
+    NSMutableArray *groupings = [[NSMutableArray alloc] init];
+    DiabetesLog *d = [logs objectAtIndex:0];
+    NSString *currentTimestamp = d.timestamp;
+    
+    NSMutableArray *group = [[NSMutableArray alloc] init];
+    [group addObject:currentTimestamp];
+    
+    for(int i = 0; i < [logs count]; i++)
+    {
+        DiabetesLog *d = [logs objectAtIndex:i];
+        if([d.timestamp isEqualToString:currentTimestamp])
+        {
+            [group addObject:d];
+        }
+        else
+        {
+            [groupings addObject:group];
+            group = [[NSMutableArray alloc] init];
+            currentTimestamp = d.timestamp;
+            [group addObject:currentTimestamp];
+            [group addObject:d];
+        }
+    }
+    
+    return groupings;
+}
+
 
 
 

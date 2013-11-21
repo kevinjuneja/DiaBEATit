@@ -343,4 +343,33 @@
     return dates;
 }
 
+-(NSArray *) returnGroupingsWithLogs:(NSArray *)logs
+{
+    NSMutableArray *groupings = [[NSMutableArray alloc] init];
+    HypertensionLog *h = [logs objectAtIndex:0];
+    NSString *currentTimestamp = h.timestamp;
+    
+    NSMutableArray *group = [[NSMutableArray alloc] init];
+    [group addObject:currentTimestamp];
+    
+    for(int i = 0; i < [logs count]; i++)
+    {
+        HypertensionLog *h = [logs objectAtIndex:i];
+        if([h.timestamp isEqualToString:currentTimestamp])
+        {
+            [group addObject:h];
+        }
+        else
+        {
+            [groupings addObject:group];
+            group = [[NSMutableArray alloc] init];
+            currentTimestamp = h.timestamp;
+            [group addObject:currentTimestamp];
+            [group addObject:h];
+        }
+    }
+    
+    return groupings;
+}
+
 @end
