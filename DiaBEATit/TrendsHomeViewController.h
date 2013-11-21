@@ -1,4 +1,4 @@
-//
+///Users/appjam/Downloads/DiaBEATit-master/DiaBEATit.xcodeproj
 //  TrendsHomeViewController.h
 //  DiaBEATit
 //
@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CorePlot-CocoaTouch.h"
+
 
 @interface TrendsHomeViewController : UIViewController
-
+<CPTPlotDataSource, UIActionSheetDelegate>
+@property (nonatomic, strong) CPTGraphHostingView *hostView;
+- (NSArray *)Systolic;
+- (NSArray *)Diastolic;
+- (NSArray *)Glucose;
+- (NSArray *)Dates;
+- (float) findMinimumPlot;
 @end
