@@ -352,7 +352,7 @@
     return dates;
 }
 
--(NSArray *) returnGroupingsWithLogs:(NSArray *)logs
+-(NSMutableArray *) returnGroupingsWithLogs:(NSArray *)logs
 {
     NSMutableArray *groupings = [[NSMutableArray alloc] init];
     DiabetesLog *d = [logs objectAtIndex:0];

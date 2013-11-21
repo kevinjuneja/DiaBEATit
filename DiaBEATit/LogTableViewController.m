@@ -42,7 +42,15 @@
 }
 
 -(void) viewWillAppear:(BOOL)animated {
+    [self.tableView beginUpdates];
     [self.tableView reloadData];
+    [self.tableView endUpdates];
+}
+
+-(void) reloadLogs {
+    [self.tableView beginUpdates];
+    [self.tableView reloadData];
+    [self.tableView endUpdates];
 }
 
 - (void)didReceiveMemoryWarning
@@ -83,10 +91,14 @@
     // Return the number of rows in the section.
     
     if ([self.logGroups count] == 0) {
-        return 0;
+        return 1;
     } else {
         return [self.logGroups[section] count] - 1;
     }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 65.0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -96,6 +108,9 @@
     
     NSArray *logData = [self.logGroups objectAtIndex:indexPath.section];
     
+    BOOL ya = [[logData objectAtIndex:1] isKindOfClass:[HypertensionLog class]];
+    NSLog(@"%s", ya ? "true" : "false");
+    NSLog(@"%i",self.type);
     if (self.type == 0) {
         static NSString *CellIdentifier = @"diabetesLogCell";
         DiabetesLogCell *tempCell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -154,6 +169,7 @@
         if ([[self.logGroups objectAtIndex:indexPath.section] count] == 1) {
             [tableView deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationFade];
             [self.logGroups removeObjectAtIndex:indexPath.section];
+//            [tableView insertSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
         }
         [self.tableView reloadData];
         [self.tableView endUpdates];

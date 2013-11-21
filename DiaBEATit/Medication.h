@@ -26,6 +26,6 @@
 
 -(int) removeMedicationWithId:(int)idCode;
 
--(NSArray *) retrieveMedications;
+-(NSMutableArray *) retrieveMedications;
 
 @end

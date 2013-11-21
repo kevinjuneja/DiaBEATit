@@ -35,6 +35,6 @@
 
 -(NSArray *) returnGlucoseWithLogs:(NSArray *)logs;
 -(NSArray *) returnDatesWithLogs:(NSArray *)logs;
--(NSArray *) returnGroupingsWithLogs:(NSArray *)logs;
+-(NSMutableArray *) returnGroupingsWithLogs:(NSArray *)logs;
 
 @end

@@ -12,4 +12,6 @@
 @property (strong, nonatomic) NSArray *logs;
 @property (nonatomic) int type;
 @property (nonatomic, strong) NSMutableArray *logGroups;
+
+-(void) reloadLogs; 
 @end

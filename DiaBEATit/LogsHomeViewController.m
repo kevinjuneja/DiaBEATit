@@ -84,28 +84,26 @@
 }
 
 - (IBAction)segmentSwitch:(SDSegmentedControl *)sender {
-    
-    NSLog(@"selected: %i",sender.selectedSegmentIndex);
-    if (sender.selectedSegmentIndex == 0) {
+    self.segmentIndex = sender.selectedSegmentIndex;
+    if (self.segmentIndex == 0) {
         self.logTable.logs = [self.dLog retrieveDiabetesLogs];
         if ([self.logTable.logs count] > 0) {
             self.logTable.logGroups = [self.dLog returnGroupingsWithLogs:self.logTable.logs];
+        } else {
+            [self.logTable.logGroups removeAllObjects];
         }
         self.logTable.type = 0;
     } else {
         self.logTable.logs = [self.hLog retrieveHypertensionLogs];
         if ([self.logTable.logs count] > 0) {
             self.logTable.logGroups = [self.hLog returnGroupingsWithLogs:self.logTable.logs];
+        } else {
+            [self.logTable.logGroups removeAllObjects];
         }
         self.logTable.type = 1;
+        
     }
-    [self.logTable.tableView beginUpdates];
-//    [self.logTable.tableView reloadData];
-    NSRange range = NSMakeRange(0, [self.logTable.logGroups count]);
-    [self.logTable.tableView reloadSections:[NSIndexSet indexSetWithIndexesInRange:range] withRowAnimation:UITableViewRowAnimationFade];
-
-    [self.logTable.tableView endUpdates];
-    self.segmentIndex = sender.selectedSegmentIndex;
+    [self.logTable.tableView reloadData];
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender

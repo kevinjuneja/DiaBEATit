@@ -113,7 +113,7 @@
     return sqlCheck;
 }
 
--(NSArray *) retrieveMedications {
+-(NSMutableArray *) retrieveMedications {
     NSMutableArray *medications = [[NSMutableArray alloc] init];
     
     // sql query to get medications
