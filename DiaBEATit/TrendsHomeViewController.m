@@ -105,8 +105,42 @@
         
         
     }
-    
-    
+}
+
+-(float)findMaximumPlot
+{
+    if(self.segmentedControl.selectedSegmentIndex == 0)
+    {
+        NSLog(@"ENTERED");
+        float xmax = 0.0;
+        for (NSNumber *num in self.Glucose)
+        {
+            float x = num.floatValue;
+            NSLog(@"Temp: %f", x);
+            if (x > xmax)
+                xmax = x;
+        }
+        return xmax;
+    }
+    else
+    {
+        
+        float xmax = 0.0;
+        for (NSNumber *num in self.Diastolic)
+        {
+            float x = num.floatValue;
+            if (x > xmax)
+                xmax = x;
+        }
+        for (NSNumber *num in self.Systolic)
+        {
+            float x = num.floatValue;
+            if (x > xmax)
+                xmax = x;
+        }
+        NSLog(@"Max: %f", xmax);
+        return xmax;
+    }
 }
 
 
@@ -208,13 +242,23 @@
         [plotSpace scaleToFitPlots:[NSArray arrayWithObjects:glucPlot, nil]];
     }
     
-    
-    
+    float xFactor;
+    float yFactor;
+    if(self.segmentedControl.selectedSegmentIndex == 0)
+    {
+        xFactor = 1.4;
+        yFactor = 1.8;
+    }
+    else
+    {
+        xFactor = 1.6;
+        yFactor = 1.6;
+    }
     CPTMutablePlotRange *xRange = [plotSpace.xRange mutableCopy];
-    [xRange expandRangeByFactor:CPTDecimalFromCGFloat(1.1f)];
+    [xRange expandRangeByFactor:CPTDecimalFromCGFloat(xFactor)];
     plotSpace.xRange = xRange;
     CPTMutablePlotRange *yRange = [plotSpace.yRange mutableCopy];
-    [yRange expandRangeByFactor:CPTDecimalFromCGFloat(1.2f)];
+    [yRange expandRangeByFactor:CPTDecimalFromCGFloat(yFactor)];
     //plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(500) length:CPTDecimalFromFloat(200)   ];
     plotSpace.yRange = yRange;
     
@@ -342,7 +386,8 @@
     }
     x.axisLabels = xLabels;
     x.majorTickLocations = xLocations;
-    axisSet.xAxis.orthogonalCoordinateDecimal = CPTDecimalFromFloat(self.findMinimumPlot - 1);
+    x.visibleRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0.0) length:CPTDecimalFromFloat(150.0f)];
+    axisSet.xAxis.orthogonalCoordinateDecimal = CPTDecimalFromFloat(self.findMinimumPlot - 10);
     
     
     // 4 - Configure y-axis
@@ -365,7 +410,7 @@
     
     NSInteger majorIncrement = 5;
     NSInteger minorIncrement = 1;
-    CGFloat yMax = 200.0f;  // should determine dynamically based on max price
+    CGFloat yMax = self.findMaximumPlot;  // should determine dynamically based on max price
     NSMutableSet *yLabels = [NSMutableSet set];
     NSMutableSet *yMajorLocations = [NSMutableSet set];
     NSMutableSet *yMinorLocations = [NSMutableSet set];
@@ -388,6 +433,7 @@
     y.majorTickLocations = yMajorLocations;
     y.minorTickLocations = yMinorLocations;
     y.visibleRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(self.findMinimumPlot -10) length:CPTDecimalFromFloat(150.0f)];
+    axisSet.yAxis.orthogonalCoordinateDecimal = CPTDecimalFromFloat(0);
     
     CPTGraph *graph = self.hostView.hostedGraph;
     graph.legend = [CPTLegend legendWithGraph:graph];

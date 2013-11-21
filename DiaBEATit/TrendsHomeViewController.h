@@ -21,4 +21,5 @@
 - (NSArray *)HypertensionDates;
 - (NSArray *)DiabetesDates;
 - (float) findMinimumPlot;
+- (float) findMaximumPlot;
 @end
