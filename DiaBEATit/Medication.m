@@ -59,7 +59,7 @@
     {
         
         NSString *insertSQL = [NSString stringWithFormat:
-                               @"UPDATE MEDICINES SET name = '\"%@\"', dosage = '\"%@\"', quantity = '\"%@\"', comments = '\"%@\"' WHERE id = '\"%i\"'",
+                               @"UPDATE MEDICINES SET name = '\"%@\"', dosage = '\"%@\"', quantity = '\"%@\"', comments = '\"%@\"' WHERE id = %i",
                                name, dosage, quantity, comments, idCode];
         
         
@@ -93,7 +93,7 @@
     {
         
         NSString *insertSQL = [NSString stringWithFormat:
-                               @"DELETE FROM MEDICINES WHERE ID = \"%i\"", idCode];
+                               @"DELETE FROM MEDICINES WHERE id = %i", idCode];
         
         
         const char *insert_stmt = [insertSQL UTF8String];

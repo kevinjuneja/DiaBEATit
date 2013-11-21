@@ -58,7 +58,7 @@
 - (IBAction)saveButton:(UIBarButtonItem *)sender {
     // database writing goes here
     Medication *m = [[Medication alloc] init];
-    /*int saveResponse = */[m saveMedicationWithName:self.nameField.text dosage:self.dosageField.text quantity:self.quantityField.text comments:@"tempstring"];
+    /*int saveResponse = */[m saveMedicationWithName:self.nameField.text dosage:self.dosageField.text quantity:self.quantityField.text comments:self.commentsText.text];
     
     // dismisses the modal after saving the info
     [self dismissViewControllerAnimated:YES completion:nil];

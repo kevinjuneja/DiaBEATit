@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
-#import "Log.h"
 
 @interface HypertensionLog : NSObject
 

@@ -59,7 +59,7 @@
     {
         
         NSString *insertSQL = [NSString stringWithFormat:
-                               @"UPDATE PROFILES SET name = '\"%@\"', age = '\"%@\"', gender = '\"%@\"', height = '\"%@\"', weight = '\"%@\"', insulindependency = '\"%@\"', targetglucose = '\"%@\"', targetsystolicbp = '\"%@\"', targetdiastolicbp = '\"%@\"' WHERE id = '\"%i\"'",
+                               @"UPDATE PROFILES SET name = '\"%@\"', age = '\"%@\"', gender = '\"%@\"', height = '\"%@\"', weight = '\"%@\"', insulindependency = '\"%@\"', targetglucose = '\"%@\"', targetsystolicbp = '\"%@\"', targetdiastolicbp = '\"%@\"' WHERE id = %i",
                                name, age, gender, height, weight, insulinDepdency, targetGlucose, targetSystolicBP, targetDiastolicBP, idCode];
         
         

@@ -17,6 +17,13 @@
 @property (weak, nonatomic) IBOutlet UITextField *diastolicField;
 @property (weak, nonatomic) IBOutlet UITextField *heartRateField;
 @property (weak, nonatomic) IBOutlet UITextView *commentsText;
+
+@property (weak, nonatomic) IBOutlet UILabel *timestampLabel;
+
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+
+@property (nonatomic) BOOL editingTime;
+@property (nonatomic, strong) NSString *timestamp;
 @end
 
 @implementation AddHyperTensionLogTableViewController
@@ -47,6 +54,16 @@
     self.systolicField.delegate = self; //self references the viewcontroller or view your textField is on
     self.diastolicField.delegate = self;
     self.heartRateField.delegate = self;
+    
+    self.datePicker.datePickerMode = UIDatePickerModeDate;
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    
+    [formatter setDateFormat:@"yyyyMMdd"];
+    self.timestamp = [formatter stringFromDate:self.datePicker.date];
+    
+    [formatter setDateFormat:@"MMMM dd, yyyy"];
+    self.timestampLabel.text = [formatter stringFromDate:self.datePicker.date];
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -79,7 +96,7 @@
 - (IBAction)saveButton:(UIBarButtonItem *)sender {
     // database writing goes here
     HypertensionLog *hl = [[HypertensionLog alloc] init];
-    /*int saveResponse = */[hl saveHypertensionLogWithSystolicBP:self.systolicField.text diastolicBP:self.diastolicField.text heartRate:self.heartRateField.text timeOfDay:self.timeOfDayLabel.text timestamp:@"tempstring" comments:@"tempstring"];
+    /*int saveResponse = */[hl saveHypertensionLogWithSystolicBP:self.systolicField.text diastolicBP:self.diastolicField.text heartRate:self.heartRateField.text timeOfDay:self.timeOfDayLabel.text timestamp:self.timestamp comments:self.commentsText.text];
 
     // dismisses the modal after saving the info
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -108,5 +125,40 @@
     [textField resignFirstResponder];
     
     return YES;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 1 && indexPath.row == 2) { // this is my picker cell
+        if (self.editingTime) {
+            return 219;
+        } else {
+            return 0;
+        }
+    } else if (indexPath.section == 2 && indexPath.row == 0) {
+        return 60;
+    } else {
+        return self.tableView.rowHeight;
+    }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 1 && indexPath.row == 1) { // this is my date cell above the picker cell
+        self.editingTime = !self.editingTime;
+        [UIView animateWithDuration:.4 animations:^{
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:1 inSection:1]] withRowAnimation:UITableViewRowAnimationFade];
+            [self.tableView reloadData];
+        }];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        
+        [formatter setDateFormat:@"MMMM dd, yyyy"];
+        self.timestampLabel.text = [formatter stringFromDate:self.datePicker.date];
+    }
+}
+
+- (IBAction)dateChanged:(UIDatePicker *)sender {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyyMMdd"];
+    
+    self.timestamp = [formatter stringFromDate:self.datePicker.date];
 }
 @end

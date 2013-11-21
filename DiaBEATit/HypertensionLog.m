@@ -59,7 +59,7 @@
     {
         
         NSString *insertSQL = [NSString stringWithFormat:
-                               @"UPDATE HYPERTENSIONLOGS SET systolic = '\"%@\"', diastolic = '\"%@\"', heartrate = '\"%@\"', timeofday = '\"%@\"',  timestamp = '\"%@\"',  comments = '\"%@\"' WHERE id = '\"%i\"'",
+                               @"UPDATE HYPERTENSIONLOGS SET systolic = '\"%@\"', diastolic = '\"%@\"', heartrate = '\"%@\"', timeofday = '\"%@\"',  timestamp = '\"%@\"',  comments = '\"%@\"' WHERE id = %i",
                                systolic, diastolic, heartRate, timeOfDay, timestamp, comments, idCode];
         
         
@@ -93,8 +93,8 @@
     {
         
         NSString *insertSQL = [NSString stringWithFormat:
-                               @"DELETE FROM HYPERTENSIONLOGS WHERE ID = \"%i\"", idCode];
-        
+                               @"DELETE FROM HYPERTENSIONLOGS WHERE id = %i", idCode];
+
         
         const char *insert_stmt = [insertSQL UTF8String];
         sqlite3_prepare_v2(_diaBEATitDB, insert_stmt,

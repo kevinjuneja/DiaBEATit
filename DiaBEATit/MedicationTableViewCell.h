@@ -12,5 +12,4 @@
 @property (weak, nonatomic) IBOutlet UILabel *medicationNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *medicationDosageLabel;
 @property (weak, nonatomic) IBOutlet UILabel *medicationQuantityLabel;
-@property (nonatomic) int mID;
 @end
