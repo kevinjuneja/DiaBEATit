@@ -24,6 +24,9 @@
 
 @property (nonatomic) BOOL editingTime;
 @property (nonatomic, strong) NSString *timestamp;
+
+@property (nonatomic, strong) UITextField *textFieldToResign;
+@property (nonatomic, strong) UITapGestureRecognizer *tap;
 @end
 
 @implementation AddHyperTensionLogTableViewController
@@ -64,7 +67,22 @@
     
     [formatter setDateFormat:@"MMMM dd, yyyy"];
     self.timestampLabel.text = [formatter stringFromDate:self.datePicker.date];
+    
+    self.tap = [[UITapGestureRecognizer alloc]
+                initWithTarget:self
+                action:@selector(dismissKeyboard)];
+    
 }
+
+-(void)dismissKeyboard {
+    [self.textFieldToResign resignFirstResponder];
+    [self.view removeGestureRecognizer:self.tap];
+}
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    self.textFieldToResign = textField;
+    [self.view addGestureRecognizer:self.tap];
+}
+
 
 -(void) viewWillAppear:(BOOL)animated {
     switch (self.timeOfDay) {

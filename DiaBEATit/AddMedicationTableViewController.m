@@ -15,6 +15,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *quantityField;
 @property (weak, nonatomic) IBOutlet UITextView *commentsText;
 
+@property (nonatomic, strong) UITextField *textFieldToResign;
+@property (nonatomic, strong) UITapGestureRecognizer *tap;
+
 @end
 
 @implementation AddMedicationTableViewController
@@ -42,7 +45,22 @@
     self.nameField.delegate = self; //self references the viewcontroller or view your textField is on
     self.dosageField.delegate = self;
     self.quantityField.delegate = self;
+    
+    self.tap = [[UITapGestureRecognizer alloc]
+                initWithTarget:self
+                action:@selector(dismissKeyboard)];
+    
 }
+
+-(void)dismissKeyboard {
+    [self.textFieldToResign resignFirstResponder];
+    [self.view removeGestureRecognizer:self.tap];
+}
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    self.textFieldToResign = textField;
+    [self.view addGestureRecognizer:self.tap];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
