@@ -23,7 +23,7 @@
     {
         
         NSString *insertSQL = [NSString stringWithFormat:
-                               @"UPDATE EXAMS SET date = '\"%@\"' WHERE id = '\"%i\"'", date, idCode];
+                               @"UPDATE EXAMS SET date = '\"%@\"' WHERE id = %i", date, idCode];
         
         
         const char *insert_stmt = [insertSQL UTF8String];
