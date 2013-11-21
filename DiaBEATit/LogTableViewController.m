@@ -68,7 +68,13 @@
     if ([self.logGroups count] == 0) {
         return @"";
     } else {
-        return [[self.logGroups objectAtIndex:s] objectAtIndex:0];
+        NSDateFormatter* df = [[NSDateFormatter alloc] init];
+        [df setDateFormat:@"yyyyMMdd"];
+        NSDate* d = [df dateFromString:[[self.logGroups objectAtIndex:s] objectAtIndex:0]];
+        
+        [df setDateFormat:@"MMMM dd, yyyy"];
+        NSString *title = [df stringFromDate:d];
+        return title;
     }
 }
 
@@ -101,6 +107,7 @@
         
         DiabetesLog *dlToAdd = [logData objectAtIndex:row+1];
         tempCell.testLabel.text = dlToAdd.glucose;
+        tempCell.analysis.backgroundColor = [UIColor redColor];
         cell = tempCell;
     } else {
         static NSString *CellIdentifier = @"hypertensionLogCell";
@@ -113,6 +120,7 @@
         
         HypertensionLog *hlToAdd = [logData objectAtIndex:row+1];
         tempCell.testLabel.text = hlToAdd.systolic;
+        tempCell.analysis.backgroundColor = [UIColor greenColor];
         cell = tempCell;
     }
     

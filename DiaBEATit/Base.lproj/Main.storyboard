@@ -420,9 +420,17 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swB-qR-4Uv">
+                                            <rect key="frame" x="0.0" y="0.0" width="7" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="analysis" destination="swB-qR-4Uv" id="x3h-Li-xXK"/>
                                     <outlet property="testLabel" destination="XqM-N9-p8R" id="Zsx-CC-Wlu"/>
                                     <segue destination="21d-dq-b6b" kind="push" id="oSg-10-d0r"/>
                                 </connections>
@@ -441,9 +449,17 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzf-rf-CjM">
+                                            <rect key="frame" x="0.0" y="0.0" width="7" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="analysis" destination="fzf-rf-CjM" id="wnX-o0-4TN"/>
                                     <outlet property="testLabel" destination="ops-mL-bkT" id="QTf-Lv-Fg0"/>
                                     <segue destination="oVg-pk-Bgc" kind="push" id="AfM-UJ-4AV"/>
                                 </connections>
@@ -468,11 +484,16 @@
                         <viewControllerLayoutGuide type="bottom" id="1g5-Rf-PUk"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="egE-T2-c6B">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="424"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Diabetes Log" id="pTe-BV-y89"/>
+                    <navigationItem key="navigationItem" title="Diabetes Log" id="pTe-BV-y89">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="BRM-Ah-nPd"/>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Un7-jl-eFC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -487,15 +508,20 @@
                         <viewControllerLayoutGuide type="bottom" id="UCu-W9-5CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="grT-LQ-PDq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="424"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Hypertension Log" id="1Mu-jv-xe3"/>
+                    <navigationItem key="navigationItem" title="Hypertension Log" id="1Mu-jv-xe3">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="ybI-jT-EeD"/>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ML-aM-Ey6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2744" y="-135"/>
+            <point key="canvasLocation" x="2744" y="-144"/>
         </scene>
         <!--Logs Home View Controller - Logs-->
         <scene sceneID="tL6-y2-c3o">
@@ -520,7 +546,7 @@
                                     <action selector="segmentSwitch:" destination="ZzK-tW-qRf" eventType="valueChanged" id="RoE-HP-Tec"/>
                                 </connections>
                             </segmentedControl>
-                            <containerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z3p-aX-OCI">
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z3p-aX-OCI">
                                 <rect key="frame" x="0.0" y="94" width="320" height="424"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -537,6 +563,7 @@
                             <constraint firstItem="vDx-zp-orb" firstAttribute="top" secondItem="RP7-jz-UFT" secondAttribute="bottom" constant="1" id="Pfl-wC-om3"/>
                             <constraint firstItem="z3p-aX-OCI" firstAttribute="trailing" secondItem="vDx-zp-orb" secondAttribute="trailing" id="TO8-dT-nSU"/>
                             <constraint firstItem="z3p-aX-OCI" firstAttribute="leading" secondItem="vDx-zp-orb" secondAttribute="leading" id="sQ4-xW-Gud"/>
+                            <constraint firstItem="z3p-aX-OCI" firstAttribute="top" secondItem="vDx-zp-orb" secondAttribute="bottom" constant="1" id="v8f-pD-0IG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Logs" id="SB9-Pb-Sxi">

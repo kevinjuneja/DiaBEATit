@@ -84,7 +84,7 @@
 }
 
 - (IBAction)segmentSwitch:(SDSegmentedControl *)sender {
-    [self.logTable.tableView beginUpdates];
+    
     NSLog(@"selected: %i",sender.selectedSegmentIndex);
     if (sender.selectedSegmentIndex == 0) {
         self.logTable.logs = [self.dLog retrieveDiabetesLogs];
@@ -99,8 +99,10 @@
         }
         self.logTable.type = 1;
     }
+    [self.logTable.tableView beginUpdates];
 //    [self.logTable.tableView reloadData];
-    [self.logTable.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+    NSRange range = NSMakeRange(0, [self.logTable.logGroups count]);
+    [self.logTable.tableView reloadSections:[NSIndexSet indexSetWithIndexesInRange:range] withRowAnimation:UITableViewRowAnimationFade];
 
     [self.logTable.tableView endUpdates];
     self.segmentIndex = sender.selectedSegmentIndex;

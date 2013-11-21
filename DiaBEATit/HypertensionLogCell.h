@@ -10,4 +10,5 @@
 
 @interface HypertensionLogCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *testLabel;
+@property (weak, nonatomic) IBOutlet UILabel *analysis;
 @end

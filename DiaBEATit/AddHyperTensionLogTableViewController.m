@@ -166,10 +166,10 @@
             [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:1 inSection:1]] withRowAnimation:UITableViewRowAnimationFade];
             [self.tableView reloadData];
         }];
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        
-        [formatter setDateFormat:@"MMMM dd, yyyy"];
-        self.timestampLabel.text = [formatter stringFromDate:self.datePicker.date];
+//        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+//        
+//        [formatter setDateFormat:@"MMMM dd, yyyy"];
+//        self.timestampLabel.text = [formatter stringFromDate:self.datePicker.date];
     }
 }
 
@@ -178,5 +178,8 @@
     [formatter setDateFormat:@"yyyyMMdd"];
     
     self.timestamp = [formatter stringFromDate:self.datePicker.date];
+    
+    [formatter setDateFormat:@"MMMM dd, yyyy"];
+    self.timestampLabel.text = [formatter stringFromDate:self.datePicker.date];
 }
 @end
