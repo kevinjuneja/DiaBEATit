@@ -51,11 +51,12 @@
     self.segmentIndex = self.segmentedControl.selectedSegmentIndex;
     if (self.segmentIndex == 0) {
         self.logTable.logs = [self.dLog retrieveDiabetesLogs];
-        //self.logTable.logs = [self.dlog ret]
+        //self.logTable.logGroups = [self.dLog returnGroupingsWithLogs:self.logTable.logs];
         self.logTable.type = 0;
         [self.logTable.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     } else {
         self.logTable.logs = [self.hLog retrieveHypertensionLogs];
+        //self.logTable.logGroups = [self.hLog returnGroupingsWithLogs:self.logTable.logs];
         self.logTable.type = 1;
         [self.logTable.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     }

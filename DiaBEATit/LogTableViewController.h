@@ -11,4 +11,5 @@
 @interface LogTableViewController : UITableViewController
 @property (strong, nonatomic) NSMutableArray *logs;
 @property (nonatomic) int type;
+@property (nonatomic, strong) NSArray *logGroups;
 @end

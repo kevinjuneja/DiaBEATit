@@ -13,6 +13,7 @@
 #import "HypertensionLog.h"
 
 @interface LogTableViewController ()
+
 @end
 
 @implementation LogTableViewController
@@ -52,13 +53,18 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return [self.logGroups count];
+}
+
+-(NSString *) tableView:(UITableView *)tv titleForHeaderInSection:(NSInteger)s
+{
+    return [[self.logGroups objectAtIndex:s] objectAtIndex:0];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.logs count];
+    return [self.logGroups[section] count] - 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
