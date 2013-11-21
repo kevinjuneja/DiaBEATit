@@ -133,7 +133,7 @@
 - (IBAction)saveButton:(UIBarButtonItem *)sender {
     // database writing goes here
     DiabetesLog *dl = [[DiabetesLog alloc] init];
-    /*int saveResponse = */[dl saveDiabetesLogWithGlucose:self.glucoseField.text insulin:self.insulinField.text a1c:self.a1cField.text timeOfDay:self.timeOfDayLabel.text mealTiming:self.mealTimingLabel.text timestamp:self.timestamp comments:self.commentsText.text];
+    /*int saveResponse = */[dl saveDiabetesLogWithGlucose:self.glucoseField.text insulin:self.insulinField.text a1c:self.a1cField.text timeOfDay:[NSString stringWithFormat:@"%d",self.timeOfDay] mealTiming:self.mealTimingLabel.text timestamp:self.timestamp comments:self.commentsText.text];
     
     // dismisses the modal after saving the info
     [self dismissViewControllerAnimated:YES completion:nil];

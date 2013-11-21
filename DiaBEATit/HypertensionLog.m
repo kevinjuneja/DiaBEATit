@@ -126,7 +126,7 @@
     {
         //NSLog(@"Entered 1st if");
         NSString *querySQL = [NSString stringWithFormat:
-                              @"SELECT id, systolic, diastolic, heartrate, timeofday, timestamp, comments FROM hypertensionlogs"];
+                              @"SELECT id, systolic, diastolic, heartrate, timeofday, timestamp, comments FROM hypertensionlogs ORDER BY timestamp DESC, timeofday"];
         
         const char *query_stmt = [querySQL UTF8String];
         int check = sqlite3_prepare_v2(_diaBEATitDB, query_stmt, -1, &statement, NULL);
@@ -368,7 +368,8 @@
             [group addObject:h];
         }
     }
-    
+    [groupings addObject:group];
+
     return groupings;
 }
 

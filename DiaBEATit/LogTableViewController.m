@@ -36,6 +36,9 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSLog(@"%@",[[self.logGroups objectAtIndex:0] objectAtIndex:0]);
+    [self.tableView reloadData];
+    
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -52,25 +55,40 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
-    return [self.logGroups count];
+    if ([self.logGroups count] == 0) {
+        return 0;
+    } else {
+        // Return the number of sections.
+        return [self.logGroups count];
+    }
 }
 
 -(NSString *) tableView:(UITableView *)tv titleForHeaderInSection:(NSInteger)s
 {
-    return [[self.logGroups objectAtIndex:s] objectAtIndex:0];
+    if ([self.logGroups count] == 0) {
+        return @"";
+    } else {
+        return [[self.logGroups objectAtIndex:s] objectAtIndex:0];
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.logGroups[section] count] - 1;
+    
+    if ([self.logGroups count] == 0) {
+        return 0;
+    } else {
+        return [self.logGroups[section] count] - 1;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = nil;
     NSUInteger row = indexPath.row;
+    
+    NSArray *logData = [self.logGroups objectAtIndex:indexPath.section];
     
     if (self.type == 0) {
         static NSString *CellIdentifier = @"diabetesLogCell";
@@ -81,25 +99,26 @@
                     reuseIdentifier:CellIdentifier];
         }
         
-        DiabetesLog *toAdd = [self.logs objectAtIndex:row];
-        tempCell.testLabel.text = toAdd.glucose;
+        DiabetesLog *dlToAdd = [logData objectAtIndex:row+1];
+        tempCell.testLabel.text = dlToAdd.glucose;
         cell = tempCell;
     } else {
         static NSString *CellIdentifier = @"hypertensionLogCell";
-       HypertensionLogCell *tempCell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        HypertensionLogCell *tempCell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if (tempCell == nil) {
             cell = [[HypertensionLogCell alloc]
                     initWithStyle:UITableViewCellStyleDefault
                     reuseIdentifier:CellIdentifier];
         }
         
-        HypertensionLog *toAdd = [self.logs objectAtIndex:row];
-        tempCell.testLabel.text = toAdd.systolic;
+        HypertensionLog *hlToAdd = [logData objectAtIndex:row+1];
+        tempCell.testLabel.text = hlToAdd.systolic;
         cell = tempCell;
     }
     
     return cell;
 }
+
 
 
 // Override to support conditional editing of the table view.
@@ -115,13 +134,20 @@
         [self.tableView beginUpdates];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
         if (self.type == 0) {
-            DiabetesLog *dl = [self.logs objectAtIndex:indexPath.row];
+            DiabetesLog *dl = [[self.logGroups objectAtIndex:indexPath.section]objectAtIndex:indexPath.row+1];
             [dl removeDiabetesLogWithId:dl.idCode];
         } else {
-            HypertensionLog *hl = [self.logs objectAtIndex:indexPath.row];
+            HypertensionLog *hl = [[self.logGroups objectAtIndex:indexPath.section]objectAtIndex:indexPath.row+1];
             [hl removeHypertensionLogWithId:hl.idCode];
         }
-        [self.logs removeObjectAtIndex:indexPath.row];
+        
+        [[self.logGroups objectAtIndex:indexPath.section] removeObjectAtIndex:indexPath.row+1];
+        
+        if ([[self.logGroups objectAtIndex:indexPath.section] count] == 1) {
+            [tableView deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationFade];
+            [self.logGroups removeObjectAtIndex:indexPath.section];
+        }
+        [self.tableView reloadData];
         [self.tableView endUpdates];
     }
 }

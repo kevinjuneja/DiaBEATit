@@ -114,7 +114,7 @@
 - (IBAction)saveButton:(UIBarButtonItem *)sender {
     // database writing goes here
     HypertensionLog *hl = [[HypertensionLog alloc] init];
-    /*int saveResponse = */[hl saveHypertensionLogWithSystolicBP:self.systolicField.text diastolicBP:self.diastolicField.text heartRate:self.heartRateField.text timeOfDay:self.timeOfDayLabel.text timestamp:self.timestamp comments:self.commentsText.text];
+    /*int saveResponse = */[hl saveHypertensionLogWithSystolicBP:self.systolicField.text diastolicBP:self.diastolicField.text heartRate:self.heartRateField.text timeOfDay:[NSString stringWithFormat:@"%d",self.timeOfDay] timestamp:self.timestamp comments:self.commentsText.text];
 
     // dismisses the modal after saving the info
     [self dismissViewControllerAnimated:YES completion:nil];

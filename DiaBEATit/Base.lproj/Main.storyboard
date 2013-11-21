@@ -402,7 +402,7 @@
             <objects>
                 <tableViewController id="khT-1q-tau" customClass="LogTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="wNI-P1-6Z1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="417"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="424"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
@@ -468,7 +468,7 @@
                         <viewControllerLayoutGuide type="bottom" id="1g5-Rf-PUk"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="egE-T2-c6B">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="417"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="424"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -487,7 +487,7 @@
                         <viewControllerLayoutGuide type="bottom" id="UCu-W9-5CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="grT-LQ-PDq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="417"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="424"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -520,8 +520,8 @@
                                     <action selector="segmentSwitch:" destination="ZzK-tW-qRf" eventType="valueChanged" id="RoE-HP-Tec"/>
                                 </connections>
                             </segmentedControl>
-                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z3p-aX-OCI">
-                                <rect key="frame" x="0.0" y="101" width="320" height="417"/>
+                            <containerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z3p-aX-OCI">
+                                <rect key="frame" x="0.0" y="94" width="320" height="424"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
@@ -531,7 +531,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="z3p-aX-OCI" firstAttribute="top" secondItem="vDx-zp-orb" secondAttribute="bottom" constant="8" id="0Is-ni-bYa"/>
                             <constraint firstItem="uB0-T4-MCK" firstAttribute="top" secondItem="z3p-aX-OCI" secondAttribute="bottom" constant="1" id="1UL-3h-cr1"/>
                             <constraint firstItem="vDx-zp-orb" firstAttribute="leading" secondItem="UPQ-UO-GPr" secondAttribute="leading" id="2in-nj-x7m"/>
                             <constraint firstAttribute="trailing" secondItem="vDx-zp-orb" secondAttribute="trailing" id="EC1-Gu-PNY"/>
@@ -1604,6 +1603,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Kkc-s4-r5u"/>
+        <segue reference="KcD-uu-EEw"/>
     </inferredMetricsTieBreakers>
 </document>

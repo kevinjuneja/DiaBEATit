@@ -39,27 +39,33 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.segmentedControl.arrowHeightFactor *= -1.0;
+//    self.segmentedControl.arrowHeightFactor *= -1.0;
     self.segmentedControl.scrollView.scrollEnabled = NO;
 
     self.dLog = [[DiabetesLog alloc] init];
     self.hLog = [[HypertensionLog alloc] init];
+    
 }
 
 -(void) viewWillAppear:(BOOL)animated {
     [self.segmentedControl.scrollView setContentOffset:CGPointMake(0,64) animated:YES];
     self.segmentIndex = self.segmentedControl.selectedSegmentIndex;
+    
     if (self.segmentIndex == 0) {
         self.logTable.logs = [self.dLog retrieveDiabetesLogs];
-        //self.logTable.logGroups = [self.dLog returnGroupingsWithLogs:self.logTable.logs];
+        if ([self.logTable.logs count] > 0) {
+            self.logTable.logGroups = [self.dLog returnGroupingsWithLogs:self.logTable.logs];
+        }
         self.logTable.type = 0;
-        [self.logTable.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     } else {
         self.logTable.logs = [self.hLog retrieveHypertensionLogs];
-        //self.logTable.logGroups = [self.hLog returnGroupingsWithLogs:self.logTable.logs];
+        if ([self.logTable.logs count] > 0) {
+            self.logTable.logGroups = [self.hLog returnGroupingsWithLogs:self.logTable.logs];
+        }
         self.logTable.type = 1;
-        [self.logTable.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     }
+    [self.logTable.tableView reloadData];
+
 }
 
 -(void) viewDidAppear:(BOOL)animated {
@@ -78,16 +84,25 @@
 }
 
 - (IBAction)segmentSwitch:(SDSegmentedControl *)sender {
+    [self.logTable.tableView beginUpdates];
+    NSLog(@"selected: %i",sender.selectedSegmentIndex);
     if (sender.selectedSegmentIndex == 0) {
         self.logTable.logs = [self.dLog retrieveDiabetesLogs];
+        if ([self.logTable.logs count] > 0) {
+            self.logTable.logGroups = [self.dLog returnGroupingsWithLogs:self.logTable.logs];
+        }
         self.logTable.type = 0;
-        [self.logTable.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     } else {
         self.logTable.logs = [self.hLog retrieveHypertensionLogs];
+        if ([self.logTable.logs count] > 0) {
+            self.logTable.logGroups = [self.hLog returnGroupingsWithLogs:self.logTable.logs];
+        }
         self.logTable.type = 1;
-        [self.logTable.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     }
-    
+//    [self.logTable.tableView reloadData];
+    [self.logTable.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+
+    [self.logTable.tableView endUpdates];
     self.segmentIndex = sender.selectedSegmentIndex;
 }
 

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface LogTableViewController : UITableViewController
-@property (strong, nonatomic) NSMutableArray *logs;
+@property (strong, nonatomic) NSArray *logs;
 @property (nonatomic) int type;
-@property (nonatomic, strong) NSArray *logGroups;
+@property (nonatomic, strong) NSMutableArray *logGroups;
 @end

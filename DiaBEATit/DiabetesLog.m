@@ -129,7 +129,7 @@
     {
         //NSLog(@"Entered 1st if");
         NSString *querySQL = [NSString stringWithFormat:
-                              @"SELECT id, glucose, insulin, a1c, timeofday, mealtiming, timestamp, comments FROM diabeteslogs"];
+                              @"SELECT id, glucose, insulin, a1c, timeofday, mealtiming, timestamp, comments FROM diabeteslogs ORDER BY timestamp DESC, timeofday"];
         
         const char *query_stmt = [querySQL UTF8String];
         int check = sqlite3_prepare_v2(_diaBEATitDB, query_stmt, -1, &statement, NULL);
@@ -348,8 +348,9 @@
     NSMutableArray *groupings = [[NSMutableArray alloc] init];
     DiabetesLog *d = [logs objectAtIndex:0];
     NSString *currentTimestamp = d.timestamp;
-    
+    NSLog(@"%@",currentTimestamp);
     NSMutableArray *group = [[NSMutableArray alloc] init];
+    
     [group addObject:currentTimestamp];
     
     for(int i = 0; i < [logs count]; i++)
@@ -357,6 +358,7 @@
         DiabetesLog *d = [logs objectAtIndex:i];
         if([d.timestamp isEqualToString:currentTimestamp])
         {
+            
             [group addObject:d];
         }
         else
@@ -368,7 +370,9 @@
             [group addObject:d];
         }
     }
-    
+    [groupings addObject:group];
+
+    NSLog(@"result: %@",[[groupings objectAtIndex:0] objectAtIndex:0]);
     return groupings;
 }
 
