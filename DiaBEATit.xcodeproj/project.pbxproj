@@ -21,6 +21,7 @@
 		413368A51837757300617CC1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 413368A31837757300617CC1 /* InfoPlist.strings */; };
 		413368A71837757300617CC1 /* DiaBEATitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 413368A61837757300617CC1 /* DiaBEATitTests.m */; };
 		413ACE4F183DB472004B7310 /* diaBEATit.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 413ACE4E183DB472004B7310 /* diaBEATit.sqlite3 */; };
+		41808FFD183E3412003AEA7D /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41DBF31A183DC20B00685C8F /* libCorePlot-CocoaTouch.a */; };
 		41AE2F8F1839958C0048B41B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 41AE2F8E1839958C0048B41B /* libsqlite3.dylib */; };
 		41AE2F9A183C5C9A0048B41B /* Exam.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AE2F99183C5C9A0048B41B /* Exam.m */; };
 		500B988F183D947500FAC106 /* 171-sun.png in Resources */ = {isa = PBXBuildFile; fileRef = 500B988E183D947500FAC106 /* 171-sun.png */; };
@@ -59,7 +60,6 @@
 		505674C81839A2FB00842CC0 /* AddHypertensionLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505674C71839A2FB00842CC0 /* AddHypertensionLogViewController.m */; };
 		505674D9183BE11100842CC0 /* SecondaryLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505674D8183BE11100842CC0 /* SecondaryLogViewController.m */; };
 		505674DC183C2F4E00842CC0 /* AddDiabetesLogTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505674DB183C2F4E00842CC0 /* AddDiabetesLogTableViewController.m */; };
-		50C99396183DCCE000410345 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41DBF31A183DC20B00685C8F /* libCorePlot-CocoaTouch.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -240,7 +240,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50C99396183DCCE000410345 /* libCorePlot-CocoaTouch.a in Frameworks */,
+				41808FFD183E3412003AEA7D /* libCorePlot-CocoaTouch.a in Frameworks */,
 				41AE2F8F1839958C0048B41B /* libsqlite3.dylib in Frameworks */,
 				501615651838408D003AAD33 /* QuartzCore.framework in Frameworks */,
 				4133687E1837757300617CC1 /* CoreGraphics.framework in Frameworks */,
@@ -808,7 +808,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/kevinjuneja/Development/DiaBEATit/DiaBEATit,
+					/Users/appjam/Desktop/DiaBEATit/DiaBEATit,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -831,7 +831,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/kevinjuneja/Development/DiaBEATit/DiaBEATit,
+					/Users/appjam/Desktop/DiaBEATit/DiaBEATit,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
