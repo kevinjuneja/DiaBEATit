@@ -15,9 +15,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *quantityField;
 @property (weak, nonatomic) IBOutlet UITextView *commentsText;
 
-@property (nonatomic, strong) UITextField *textFieldToResign;
-@property (nonatomic, strong) UITapGestureRecognizer *tap;
-
 @end
 
 @implementation AddMedicationTableViewController
@@ -45,22 +42,7 @@
     self.nameField.delegate = self; //self references the viewcontroller or view your textField is on
     self.dosageField.delegate = self;
     self.quantityField.delegate = self;
-    
-    self.tap = [[UITapGestureRecognizer alloc]
-                initWithTarget:self
-                action:@selector(dismissKeyboard)];
-    
 }
-
--(void)dismissKeyboard {
-    [self.textFieldToResign resignFirstResponder];
-    [self.view removeGestureRecognizer:self.tap];
-}
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    self.textFieldToResign = textField;
-    [self.view addGestureRecognizer:self.tap];
-}
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -76,7 +58,7 @@
 - (IBAction)saveButton:(UIBarButtonItem *)sender {
     // database writing goes here
     Medication *m = [[Medication alloc] init];
-    /*int saveResponse = */[m saveMedicationWithName:self.nameField.text dosage:self.dosageField.text quantity:self.quantityField.text comments:self.commentsText.text];
+    /*int saveResponse = */[m saveMedicationWithName:self.nameField.text dosage:self.dosageField.text quantity:self.quantityField.text comments:@"tempstring"];
     
     // dismisses the modal after saving the info
     [self dismissViewControllerAnimated:YES completion:nil];

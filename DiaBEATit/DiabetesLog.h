@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
+#import "Log.h"
 
 @interface DiabetesLog : NSObject
 
@@ -35,6 +36,5 @@
 
 -(NSArray *) returnGlucoseWithLogs:(NSArray *)logs;
 -(NSArray *) returnDatesWithLogs:(NSArray *)logs;
--(NSArray *) returnGroupingsWithLogs:(NSArray *)logs;
 
 @end

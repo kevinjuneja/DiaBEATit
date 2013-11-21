@@ -89,6 +89,7 @@
     tempCell.medicationNameLabel.text = toAdd.name;
     tempCell.medicationDosageLabel .text = [toAdd.dosage stringByAppendingString: @" mg"];
     tempCell.medicationQuantityLabel.text = [toAdd.quantity stringByAppendingString: @" count"];
+    tempCell.mID = toAdd.idCode;
     cell = tempCell;
     
     return cell;
@@ -104,16 +105,13 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self.tableView beginUpdates];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-
-        Medication *m = [self.medications objectAtIndex:indexPath.row];
-        [m removeMedicationWithId:m.idCode];
         [self.medications removeObjectAtIndex:indexPath.row];
-        [self.tableView endUpdates];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        Medication *m = [[Medication alloc]init];
+        MedicationTableViewCell *mtvc = (MedicationTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+        [m removeMedicationWithId:mtvc.mID];
     }
 }
-
 
 /*
 // Override to support rearranging the table view.

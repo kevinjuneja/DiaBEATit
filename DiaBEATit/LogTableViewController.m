@@ -77,6 +77,7 @@
         
         DiabetesLog *toAdd = [self.logs objectAtIndex:row];
         tempCell.testLabel.text = toAdd.glucose;
+        tempCell.dID = toAdd.idCode;
         cell = tempCell;
     } else {
         static NSString *CellIdentifier = @"hypertensionLogCell";
@@ -89,6 +90,7 @@
         
         HypertensionLog *toAdd = [self.logs objectAtIndex:row];
         tempCell.testLabel.text = toAdd.systolic;
+        tempCell.hID = toAdd.idCode;
         cell = tempCell;
     }
     
@@ -106,17 +108,18 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self.tableView beginUpdates];
+        [self.logs removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
         if (self.type == 0) {
-            DiabetesLog *dl = [self.logs objectAtIndex:indexPath.row];
-            [dl removeDiabetesLogWithId:dl.idCode];
+            DiabetesLog *dl = [[DiabetesLog alloc]init];
+            DiabetesLogCell *dlc = (DiabetesLogCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+            [dl removeDiabetesLogWithId:dlc.dID];
         } else {
-            HypertensionLog *hl = [self.logs objectAtIndex:indexPath.row];
-            [hl removeHypertensionLogWithId:hl.idCode];
+            HypertensionLog *hl = [[HypertensionLog alloc]init];
+            HypertensionLogCell *hlc = (HypertensionLogCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+            NSLog(@"%i",hlc.hID);
+            [hl removeHypertensionLogWithId:hlc.hID];
         }
-        [self.logs removeObjectAtIndex:indexPath.row];
-        [self.tableView endUpdates];
     }
 }
 

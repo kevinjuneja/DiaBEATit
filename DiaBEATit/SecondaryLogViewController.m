@@ -18,7 +18,6 @@
 @property (nonatomic) NSInteger type;
 
 @property (nonatomic) NSInteger selectedRow;
-
 @end
 
 @implementation SecondaryLogViewController
@@ -44,8 +43,6 @@
     self.cell1Label.text = [self.labels objectAtIndex:0];
     self.cell2Label.text = [self.labels objectAtIndex:1];
     self.cell3Label.text = [self.labels objectAtIndex:2];
-    
-    self.selectedRow = -1;
     
 }
 
