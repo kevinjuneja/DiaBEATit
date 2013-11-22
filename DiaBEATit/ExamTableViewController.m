@@ -39,27 +39,27 @@
     NSArray *temp = [[NSMutableArray alloc] init];
     temp = [self retrieveExams];
     for (int i = 0; i < 6; i++) {
-//        if (![temp[i] isEqualToString:@"NULL"]) {
-//            if (i == 0) {
-//                eyeExamDateLabel.text = temp[0];
-//            }
-//            else if(i == 1){
-//                footExamDateLabel.text = temp[1];
-//            }
-//            else if(i == 2){
-//                dentalExamDateLabel.text = temp[2];
-//            }
-//            else if(i == 3){
-//                fastingSerumDateLabel.text = temp[3];
-//            }
-//            else if(i == 4){
-//                urinaryRatioDateLabel.text = temp[4];
-//            }
-//            else if(i == 5){
-//                fluVaccineDateLabel.text = temp[5];
-//            }
-//            
-//        }
+        if (![temp[i] isEqualToString:@"NULL"]) {
+            if (i == 0) {
+                eyeExamDateLabel.text = temp[0];
+            }
+            else if(i == 1){
+                footExamDateLabel.text = temp[1];
+            }
+            else if(i == 2){
+                dentalExamDateLabel.text = temp[2];
+            }
+            else if(i == 3){
+                fastingSerumDateLabel.text = temp[3];
+            }
+            else if(i == 4){
+                urinaryRatioDateLabel.text = temp[4];
+            }
+            else if(i == 5){
+                fluVaccineDateLabel.text = temp[5];
+            }
+            
+        }
     }
     
     

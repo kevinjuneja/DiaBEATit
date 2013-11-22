@@ -28,4 +28,6 @@
 
 -(NSMutableArray *) retrieveMedications;
 
+-(Medication *) retrieveMedicationWithConstraints:(NSString*) name;
+
 @end

@@ -7,11 +7,13 @@
 //
 
 #import "MedicationTableViewController.h"
+#import "MedicationViewController.h"
 #import "MedicationTableViewCell.h"
 #import "Medication.h"
 
 @interface MedicationTableViewController ()
 @property (nonatomic, strong) NSMutableArray *medications;
+@property (nonatomic, strong) NSString *medToCapture;
 @end
 
 @implementation MedicationTableViewController
@@ -55,7 +57,22 @@
     
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"medicationSegue"]){
+        MedicationViewController *mc = [segue destinationViewController];
+        mc.medToPass = self.medToCapture;
+        NSLog(@"medication to Pass: %@",mc.medToPass);
+    }
+}
+
 #pragma mark - Table view data source
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    MedicationTableViewCell *cell = (MedicationTableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
+    self.medToCapture = cell.medicationNameLabel.text;
+    NSLog(@"medication name: %@",self.medToCapture);
+    [self performSegueWithIdentifier:@"medicationSegue" sender:cell];
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
