@@ -12,6 +12,7 @@
 #import "DiabetesLog.h"
 #import "HypertensionLog.h"
 #import "DiabetesLogTableViewController.h"
+#import "HypertensionLogTableViewController.h"
 
 @interface LogTableViewController ()
 @property (nonatomic) int logId;
@@ -72,7 +73,8 @@
         DiabetesLogTableViewController *dtvc = [segue destinationViewController];
         dtvc.logId = self.logId;
     } else {
-        
+        HypertensionLogTableViewController *htvc = [segue destinationViewController];
+        htvc.logId = self.logId;
     }
 }
 
@@ -85,7 +87,10 @@
         
         [self performSegueWithIdentifier:@"diabetesLogSegue" sender:cell];
     } else {
+        HypertensionLogCell *cell = (HypertensionLogCell *)[tableView cellForRowAtIndexPath:indexPath];
+        self.logId = cell.logId;
         
+        [self performSegueWithIdentifier:@"hypertensionLogSegue" sender:cell];
     }
     
 }

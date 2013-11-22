@@ -59,6 +59,8 @@
 		505674DC183C2F4E00842CC0 /* AddDiabetesLogTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505674DB183C2F4E00842CC0 /* AddDiabetesLogTableViewController.m */; };
 		5088BE69183F67D600D4023B /* DiabetesLogTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088BE68183F67D600D4023B /* DiabetesLogTableViewController.m */; };
 		5088BE6C183F864900D4023B /* EditDiabetesLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088BE6B183F864900D4023B /* EditDiabetesLogViewController.m */; };
+		5088BE6F183FA38D00D4023B /* HypertensionLogTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088BE6E183FA38D00D4023B /* HypertensionLogTableViewController.m */; };
+		5088BE72183FA79800D4023B /* EditHypertensionLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088BE71183FA79800D4023B /* EditHypertensionLogViewController.m */; };
 		50C993A0183ED0BD00410345 /* 126-moon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50C9939D183ED0BD00410345 /* 126-moon.jpg */; };
 		50C993A1183ED0BD00410345 /* 171-morning.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50C9939E183ED0BD00410345 /* 171-morning.jpg */; };
 		50C993A2183ED0BD00410345 /* 171-sun.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50C9939F183ED0BD00410345 /* 171-sun.jpg */; };
@@ -236,6 +238,10 @@
 		5088BE68183F67D600D4023B /* DiabetesLogTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiabetesLogTableViewController.m; sourceTree = "<group>"; };
 		5088BE6A183F864900D4023B /* EditDiabetesLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditDiabetesLogViewController.h; sourceTree = "<group>"; };
 		5088BE6B183F864900D4023B /* EditDiabetesLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditDiabetesLogViewController.m; sourceTree = "<group>"; };
+		5088BE6D183FA38D00D4023B /* HypertensionLogTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HypertensionLogTableViewController.h; sourceTree = "<group>"; };
+		5088BE6E183FA38D00D4023B /* HypertensionLogTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HypertensionLogTableViewController.m; sourceTree = "<group>"; };
+		5088BE70183FA79800D4023B /* EditHypertensionLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditHypertensionLogViewController.h; sourceTree = "<group>"; };
+		5088BE71183FA79800D4023B /* EditHypertensionLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditHypertensionLogViewController.m; sourceTree = "<group>"; };
 		50C9939D183ED0BD00410345 /* 126-moon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "126-moon.jpg"; sourceTree = "<group>"; };
 		50C9939E183ED0BD00410345 /* 171-morning.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "171-morning.jpg"; sourceTree = "<group>"; };
 		50C9939F183ED0BD00410345 /* 171-sun.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "171-sun.jpg"; sourceTree = "<group>"; };
@@ -679,6 +685,10 @@
 				5088BE68183F67D600D4023B /* DiabetesLogTableViewController.m */,
 				5088BE6A183F864900D4023B /* EditDiabetesLogViewController.h */,
 				5088BE6B183F864900D4023B /* EditDiabetesLogViewController.m */,
+				5088BE6D183FA38D00D4023B /* HypertensionLogTableViewController.h */,
+				5088BE6E183FA38D00D4023B /* HypertensionLogTableViewController.m */,
+				5088BE70183FA79800D4023B /* EditHypertensionLogViewController.h */,
+				5088BE71183FA79800D4023B /* EditHypertensionLogViewController.m */,
 			);
 			name = Logs;
 			sourceTree = "<group>";
@@ -994,11 +1004,13 @@
 				50312E05183CAA7A00717B6E /* HypertensionLogCell.m in Sources */,
 				505674A61838E9DD00842CC0 /* Profile.m in Sources */,
 				505674AD1838EAB400842CC0 /* HypertensionLog.m in Sources */,
+				5088BE72183FA79800D4023B /* EditHypertensionLogViewController.m in Sources */,
 				50312DF8183C701800717B6E /* LogTableViewController.m in Sources */,
 				505674861838A89100842CC0 /* SplashScreenViewController.m in Sources */,
 				5056747D18386E2300842CC0 /* MedicationTableViewController.m in Sources */,
 				505674AA1838EA2000842CC0 /* DiabetesLog.m in Sources */,
 				41AE2F9A183C5C9A0048B41B /* Exam.m in Sources */,
+				5088BE6F183FA38D00D4023B /* HypertensionLogTableViewController.m in Sources */,
 				413368881837757300617CC1 /* main.m in Sources */,
 				50312DFE183C7C3F00717B6E /* ExamTableViewController.m in Sources */,
 				505674941838D79B00842CC0 /* ProfileViewController.m in Sources */,
