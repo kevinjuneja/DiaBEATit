@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *analysis;
 @property (weak, nonatomic) IBOutlet UILabel *glucoseLabel;
 @property (weak, nonatomic) IBOutlet UILabel *a1cLabel;
+@property (weak, nonatomic) IBOutlet UILabel *a1cNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *timeOfDayImage;
 
 @end

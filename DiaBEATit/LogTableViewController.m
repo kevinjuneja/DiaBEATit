@@ -13,6 +13,7 @@
 #import "HypertensionLog.h"
 
 @interface LogTableViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *a1cNameLabel;
 
 @end
 
@@ -38,6 +39,13 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     NSLog(@"%@",[[self.logGroups objectAtIndex:0] objectAtIndex:0]);
     [self.tableView reloadData];
+    
+    self.tableView.contentOffset = CGPointMake(0.0f, 50.0f);
+    UILabel *testLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, -30, 200, 30)];
+    testLabel.text = @"Hello";
+    testLabel.backgroundColor = [UIColor redColor];
+    
+    self.tableView.tableHeaderView = testLabel;
     
 }
 
@@ -108,9 +116,6 @@
     
     NSArray *logData = [self.logGroups objectAtIndex:indexPath.section];
     
-    BOOL ya = [[logData objectAtIndex:1] isKindOfClass:[HypertensionLog class]];
-    NSLog(@"%s", ya ? "true" : "false");
-    NSLog(@"%i",self.type);
     if (self.type == 0) {
         static NSString *CellIdentifier = @"diabetesLogCell";
         DiabetesLogCell *tempCell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -122,7 +127,11 @@
         
         DiabetesLog *dlToAdd = [logData objectAtIndex:row+1];
         tempCell.glucoseLabel.text = dlToAdd.glucose;
-        tempCell.a1cLabel.text = dlToAdd.a1c;
+        if ([tempCell.a1cLabel.text isEqualToString:@""]) {
+            [tempCell.a1cNameLabel setHidden:YES];
+        } else {
+            tempCell.a1cLabel.text = dlToAdd.a1c;
+        }
         if ([dlToAdd.timeOfDay isEqualToString:@"0"]) {
             UIImage *image = [UIImage imageNamed: @"171-morning.png"];
             [tempCell.timeOfDayImage setImage:image];

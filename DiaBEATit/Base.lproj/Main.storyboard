@@ -514,6 +514,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="a1cLabel" destination="ZHO-Wf-7AE" id="iHP-yY-gTO"/>
+                                    <outlet property="a1cNameLabel" destination="9iY-Wp-s2c" id="nAs-C1-2jo"/>
                                     <outlet property="analysis" destination="swB-qR-4Uv" id="x3h-Li-xXK"/>
                                     <outlet property="glucoseLabel" destination="AaJ-Ug-6Ir" id="W22-Eu-0YJ"/>
                                     <outlet property="timeOfDayImage" destination="K9s-6G-Ie4" id="7NT-Eh-Nha"/>
@@ -1745,6 +1746,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="KcD-uu-EEw"/>
+        <segue reference="Kkc-s4-r5u"/>
     </inferredMetricsTieBreakers>
 </document>
