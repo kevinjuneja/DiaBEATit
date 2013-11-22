@@ -20,7 +20,8 @@
 		4133689D1837757300617CC1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4133687F1837757300617CC1 /* UIKit.framework */; };
 		413368A51837757300617CC1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 413368A31837757300617CC1 /* InfoPlist.strings */; };
 		413368A71837757300617CC1 /* DiaBEATitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 413368A61837757300617CC1 /* DiaBEATitTests.m */; };
-		413ACE4F183DB472004B7310 /* diaBEATit.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 413ACE4E183DB472004B7310 /* diaBEATit.sqlite3 */; };
+		41809004183F76DA003AEA7D /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A917ED183EFF65001CB694 /* libCorePlot-CocoaTouch.a */; };
+		41809006183FE51C003AEA7D /* diaBEATit.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 41809005183FE51C003AEA7D /* diaBEATit.sqlite3 */; };
 		41AE2F8F1839958C0048B41B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 41AE2F8E1839958C0048B41B /* libsqlite3.dylib */; };
 		41AE2F9A183C5C9A0048B41B /* Exam.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AE2F99183C5C9A0048B41B /* Exam.m */; };
 		500B988F183D947500FAC106 /* 171-sun.png in Resources */ = {isa = PBXBuildFile; fileRef = 500B988E183D947500FAC106 /* 171-sun.png */; };
@@ -64,7 +65,6 @@
 		50C993A0183ED0BD00410345 /* 126-moon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50C9939D183ED0BD00410345 /* 126-moon.jpg */; };
 		50C993A1183ED0BD00410345 /* 171-morning.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50C9939E183ED0BD00410345 /* 171-morning.jpg */; };
 		50C993A2183ED0BD00410345 /* 171-sun.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50C9939F183ED0BD00410345 /* 171-sun.jpg */; };
-		B5A91809183EFF73001CB694 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A917ED183EFF65001CB694 /* libCorePlot-CocoaTouch.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,7 +95,7 @@
 		413368A21837757300617CC1 /* DiaBEATitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DiaBEATitTests-Info.plist"; sourceTree = "<group>"; };
 		413368A41837757300617CC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		413368A61837757300617CC1 /* DiaBEATitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiaBEATitTests.m; sourceTree = "<group>"; };
-		413ACE4E183DB472004B7310 /* diaBEATit.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = diaBEATit.sqlite3; sourceTree = "<group>"; };
+		41809005183FE51C003AEA7D /* diaBEATit.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = diaBEATit.sqlite3; sourceTree = "<group>"; };
 		41AE2F8E1839958C0048B41B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		41AE2F98183C5C9A0048B41B /* Exam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exam.h; sourceTree = "<group>"; };
 		41AE2F99183C5C9A0048B41B /* Exam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exam.m; sourceTree = "<group>"; };
@@ -403,7 +403,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5A91809183EFF73001CB694 /* libCorePlot-CocoaTouch.a in Frameworks */,
+				41809004183F76DA003AEA7D /* libCorePlot-CocoaTouch.a in Frameworks */,
 				41AE2F8F1839958C0048B41B /* libsqlite3.dylib in Frameworks */,
 				501615651838408D003AAD33 /* QuartzCore.framework in Frameworks */,
 				4133687E1837757300617CC1 /* CoreGraphics.framework in Frameworks */,
@@ -428,7 +428,7 @@
 		4133686F1837757300617CC1 = {
 			isa = PBXGroup;
 			children = (
-				413ACE4E183DB472004B7310 /* diaBEATit.sqlite3 */,
+				41809005183FE51C003AEA7D /* diaBEATit.sqlite3 */,
 				413368811837757300617CC1 /* DiaBEATit */,
 				413368931837757300617CC1 /* Images.xcassets */,
 				413368A01837757300617CC1 /* DiaBEATitTests */,
@@ -953,7 +953,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				413ACE4F183DB472004B7310 /* diaBEATit.sqlite3 in Resources */,
+				41809006183FE51C003AEA7D /* diaBEATit.sqlite3 in Resources */,
 				50C993A1183ED0BD00410345 /* 171-morning.jpg in Resources */,
 				500B9891183D949300FAC106 /* 171-morning.png in Resources */,
 				413368941837757300617CC1 /* Images.xcassets in Resources */,
@@ -1166,8 +1166,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/kevinjuneja/Development/DiaBEATit/DiaBEATit,
-					"/Users/ben/Desktop/DiaBEATit\\ 7.00.40\\ PM/DiaBEATit",
+					/Users/appjam/Desktop/DiaBEATit/DiaBEATit,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1190,8 +1189,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/kevinjuneja/Development/DiaBEATit/DiaBEATit,
-					"/Users/ben/Desktop/DiaBEATit\\ 7.00.40\\ PM/DiaBEATit",
+					/Users/appjam/Desktop/DiaBEATit/DiaBEATit,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
