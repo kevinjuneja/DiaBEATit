@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface HypertensionLogCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *testLabel;
 @property (weak, nonatomic) IBOutlet UILabel *analysis;
+@property (weak, nonatomic) IBOutlet UILabel *systolicLabel;
+@property (weak, nonatomic) IBOutlet UILabel *diastolicLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *timeOfDayImage;
 @end

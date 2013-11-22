@@ -60,6 +60,9 @@
 		505674D9183BE11100842CC0 /* SecondaryLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505674D8183BE11100842CC0 /* SecondaryLogViewController.m */; };
 		505674DC183C2F4E00842CC0 /* AddDiabetesLogTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505674DB183C2F4E00842CC0 /* AddDiabetesLogTableViewController.m */; };
 		50C99396183DCCE000410345 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41DBF31A183DC20B00685C8F /* libCorePlot-CocoaTouch.a */; };
+		50C993A0183ED0BD00410345 /* 126-moon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50C9939D183ED0BD00410345 /* 126-moon.jpg */; };
+		50C993A1183ED0BD00410345 /* 171-morning.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50C9939E183ED0BD00410345 /* 171-morning.jpg */; };
+		50C993A2183ED0BD00410345 /* 171-sun.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50C9939F183ED0BD00410345 /* 171-sun.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -233,6 +236,9 @@
 		505674D8183BE11100842CC0 /* SecondaryLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondaryLogViewController.m; sourceTree = "<group>"; };
 		505674DA183C2F4E00842CC0 /* AddDiabetesLogTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDiabetesLogTableViewController.h; sourceTree = "<group>"; };
 		505674DB183C2F4E00842CC0 /* AddDiabetesLogTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDiabetesLogTableViewController.m; sourceTree = "<group>"; };
+		50C9939D183ED0BD00410345 /* 126-moon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "126-moon.jpg"; sourceTree = "<group>"; };
+		50C9939E183ED0BD00410345 /* 171-morning.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "171-morning.jpg"; sourceTree = "<group>"; };
+		50C9939F183ED0BD00410345 /* 171-sun.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "171-sun.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -319,6 +325,9 @@
 		413368821837757300617CC1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				50C9939D183ED0BD00410345 /* 126-moon.jpg */,
+				50C9939E183ED0BD00410345 /* 171-morning.jpg */,
+				50C9939F183ED0BD00410345 /* 171-sun.jpg */,
 				500B9890183D949300FAC106 /* 171-morning.png */,
 				50312DFA183C7B2600717B6E /* 10-medical.png */,
 				505674901838D11A00842CC0 /* 111-user.png */,
@@ -617,14 +626,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				413ACE4F183DB472004B7310 /* diaBEATit.sqlite3 in Resources */,
+				50C993A1183ED0BD00410345 /* 171-morning.jpg in Resources */,
 				500B9891183D949300FAC106 /* 171-morning.png in Resources */,
 				413368941837757300617CC1 /* Images.xcassets in Resources */,
+				50C993A2183ED0BD00410345 /* 171-sun.jpg in Resources */,
 				5056748D1838D09000842CC0 /* 94-pill.png in Resources */,
 				413368861837757300617CC1 /* InfoPlist.strings in Resources */,
 				505674BD1838EDF200842CC0 /* diabeetus_29.png in Resources */,
 				5056748F1838D0B300842CC0 /* 122-stats.png in Resources */,
 				500B988F183D947500FAC106 /* 171-sun.png in Resources */,
 				4133688F1837757300617CC1 /* Main.storyboard in Resources */,
+				50C993A0183ED0BD00410345 /* 126-moon.jpg in Resources */,
 				500B9893183D949E00FAC106 /* 126-moon.png in Resources */,
 				505674BE1838EDF200842CC0 /* diabeetus_40.png in Resources */,
 				5056748B1838D07F00842CC0 /* 179-notepad.png in Resources */,

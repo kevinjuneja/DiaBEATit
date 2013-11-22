@@ -41,13 +41,13 @@
     
 }
 
--(void) viewWillAppear:(BOOL)animated {
+-(void) viewDidAppear:(BOOL)animated {
     [self.tableView beginUpdates];
     [self.tableView reloadData];
     [self.tableView endUpdates];
 }
 
--(void) reloadLogs {
+-(void) viewWillAppear:(BOOL)animated {
     [self.tableView beginUpdates];
     [self.tableView reloadData];
     [self.tableView endUpdates];
@@ -98,7 +98,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 65.0;
+    return 60.0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -121,7 +121,19 @@
         }
         
         DiabetesLog *dlToAdd = [logData objectAtIndex:row+1];
-        tempCell.testLabel.text = dlToAdd.glucose;
+        tempCell.glucoseLabel.text = dlToAdd.glucose;
+        if ([dlToAdd.timeOfDay isEqualToString:@"0"]) {
+            UIImage *image = [UIImage imageNamed: @"171-morning.png"];
+            [tempCell.timeOfDayImage setImage:image];
+        } else if ([dlToAdd.timeOfDay isEqualToString:@"1"]) {
+            UIImage *image = [UIImage imageNamed: @"171-sun.png"];
+            [tempCell.timeOfDayImage setImage:image];
+        } else {
+            tempCell.timeOfDayImage.frame = CGRectMake(20.0f, 15.0f, 30.0f, 30.0f);
+            UIImage *image = [UIImage imageNamed: @"126-moon.png"];
+            [tempCell.timeOfDayImage setImage:image];
+        }
+
         tempCell.analysis.backgroundColor = [UIColor redColor];
         cell = tempCell;
     } else {
@@ -134,7 +146,21 @@
         }
         
         HypertensionLog *hlToAdd = [logData objectAtIndex:row+1];
-        tempCell.testLabel.text = hlToAdd.systolic;
+        tempCell.systolicLabel.text = hlToAdd.systolic;
+        tempCell.diastolicLabel.text = hlToAdd.diastolic;
+        
+        if ([hlToAdd.timeOfDay isEqualToString:@"0"]) {
+            UIImage *image = [UIImage imageNamed: @"171-morning.png"];
+            [tempCell.timeOfDayImage setImage:image];
+        } else if ([hlToAdd.timeOfDay isEqualToString:@"1"]) {
+            UIImage *image = [UIImage imageNamed: @"171-sun.png"];
+            [tempCell.timeOfDayImage setImage:image];
+        } else {
+             tempCell.timeOfDayImage.frame = CGRectMake(20.0f, 15.0f, 30.0f, 30.0f);
+            UIImage *image = [UIImage imageNamed: @"126-moon.png"];
+            [tempCell.timeOfDayImage setImage:image];
+        }
+        
         tempCell.analysis.backgroundColor = [UIColor greenColor];
         cell = tempCell;
     }

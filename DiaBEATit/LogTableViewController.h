@@ -13,5 +13,4 @@
 @property (nonatomic) int type;
 @property (nonatomic, strong) NSMutableArray *logGroups;
 
--(void) reloadLogs; 
 @end
