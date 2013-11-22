@@ -42,7 +42,9 @@
     }
     
     Profile *profile = [[Profile alloc] init];
-    [profile saveProfileLogWithName:@"Kevin" age:@"22" gender:@"M" height:@"5'11" weight:@"185" insulinDependency:@"Yes" targetGlucose:@"130" targetSystolicBP:@"140" targetDiastolicBP:@"70"];
+    if ([[profile retrieveProfiles] count] == 0) {
+        [profile saveProfileLogWithName:@"Kevin" age:@"22" gender:@"M" height:@"5'11" weight:@"185" insulinDependency:@"Yes" targetGlucose:@"130" targetSystolicBP:@"140" targetDiastolicBP:@"70"];
+    }
     
     [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(goToNext:) userInfo:nil repeats:NO];
 

@@ -59,7 +59,7 @@
     {
         
         NSString *insertSQL = [NSString stringWithFormat:
-                               @"UPDATE MEDICINES SET name = '\"%@\"', dosage = '\"%@\"', quantity = '\"%@\"', comments = '\"%@\"' WHERE id = %i",
+                               @"UPDATE MEDICINES SET name = '%@', dosage = '%@', quantity = '%@', comments = '%@' WHERE id = %i",
                                name, dosage, quantity, comments, idCode];
         
         

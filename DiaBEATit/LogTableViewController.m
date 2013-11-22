@@ -13,9 +13,11 @@
 #import "HypertensionLog.h"
 #import "DiabetesLogTableViewController.h"
 #import "HypertensionLogTableViewController.h"
+#import "Profile.h"
 
 @interface LogTableViewController ()
 @property (nonatomic) int logId;
+@property (nonatomic, strong) Profile *profile;
 @end
 
 @implementation LogTableViewController
@@ -40,13 +42,23 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     NSLog(@"%@",[[self.logGroups objectAtIndex:0] objectAtIndex:0]);
     [self.tableView reloadData];
+    self.profile = [[Profile alloc] init];
+    self.profile = [[self.profile retrieveProfiles] objectAtIndex:0];
+
     
     self.tableView.contentOffset = CGPointMake(0.0f, 50.0f);
     UILabel *testLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, -30, 200, 30)];
-    testLabel.text = @"Hello";
-    testLabel.backgroundColor = [UIColor redColor];
-    
+    NSString *myNewLineStr = @"\n";
+    NSString *labelText = [NSString stringWithFormat:@"Glucose: %@ +/- 10 | Systolic: %@ +/- 10 | Diastolic: %@ +/- 5",[self.profile targetGlucose], [self.profile targetSystolicBP], [self.profile targetDiastolicBP]];
+    labelText = [labelText stringByReplacingOccurrencesOfString:@"\\n" withString:myNewLineStr];
+
+    testLabel.text = labelText;
     self.tableView.tableHeaderView = testLabel;
+    testLabel.numberOfLines = 1;
+    testLabel.minimumFontSize = 8.;
+    testLabel.adjustsFontSizeToFitWidth = YES;
+    testLabel.textAlignment = NSTextAlignmentCenter;
+    
     
 }
 
@@ -143,6 +155,7 @@
     
     NSArray *logData = [self.logGroups objectAtIndex:indexPath.section];
     
+    
     if (self.type == 0) {
         static NSString *CellIdentifier = @"diabetesLogCell";
         DiabetesLogCell *tempCell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -170,10 +183,11 @@
             UIImage *image = [UIImage imageNamed: @"126-moon.png"];
             [tempCell.timeOfDayImage setImage:image];
         }
-        if (row != 2) {
-            tempCell.analysis.backgroundColor = [UIColor greenColor];
-        } else {
+        if ([dlToAdd.glucose intValue] > [self.profile.targetGlucose intValue] + 10 || [dlToAdd.glucose intValue] < [self.profile.targetGlucose intValue] - 10 ||[dlToAdd.glucose intValue] < 70 || [dlToAdd.glucose intValue] > 170 ||
+            [dlToAdd.a1c intValue] > 8) {
             tempCell.analysis.backgroundColor = [UIColor redColor];
+        } else {
+            tempCell.analysis.backgroundColor = [UIColor greenColor];
         }
         tempCell.logId = dlToAdd.idCode;
         cell = tempCell;
@@ -203,7 +217,13 @@
             [tempCell.timeOfDayImage setImage:image];
         }
         
-        tempCell.analysis.backgroundColor = [UIColor greenColor];
+        if ([hlToAdd.systolic intValue] > [self.profile.targetSystolicBP intValue] + 10 || [hlToAdd.systolic intValue] < [self.profile.targetSystolicBP intValue] - 10 ||[hlToAdd.diastolic intValue] < [self.profile.targetDiastolicBP intValue] - 5 ||[hlToAdd.diastolic intValue] > [self.profile.targetDiastolicBP intValue] + 5 ||
+            [hlToAdd.systolic intValue] < 100 || [hlToAdd.systolic intValue] > 170 ||
+            [hlToAdd.diastolic intValue] > 90 || [hlToAdd.diastolic intValue] < 60) {
+            tempCell.analysis.backgroundColor = [UIColor redColor];
+        } else {
+            tempCell.analysis.backgroundColor = [UIColor greenColor];
+        }
         tempCell.logId = hlToAdd.idCode;
         cell = tempCell;
     }

@@ -58,7 +58,7 @@
     
     if (sqlite3_open(dbpath, &_diaBEATitDB) == SQLITE_OK)
     {
-        
+        NSLog(@"%i",idCode);
         NSString *insertSQL = [NSString stringWithFormat:
                                @"UPDATE PROFILES SET name = '%@', age = '%@', gender = '%@', height = '%@', weight = '%@', insulindependency = '%@', targetglucose = '%@', targetsystolicbp = '%@', targetdiastolicbp = '%@' WHERE id = %i",
                                name, age, gender, height, weight, insulinDepdency, targetGlucose, targetSystolicBP, targetDiastolicBP, idCode];
@@ -72,7 +72,7 @@
         {
             NSLog(@"SUCCEEDED");
         } else {
-            NSLog(@"FAILED");
+            NSLog(@"FAILED %i",sqlCheck);
         }
         sqlite3_finalize(statement);
         sqlite3_close(_diaBEATitDB);
@@ -96,7 +96,7 @@
     {
         //NSLog(@"Entered 1st if");
         NSString *querySQL = [NSString stringWithFormat:
-                              @"SELECT name, age, gender, height, weight, insulindependency, targetglucose, targetsystolicbp, targetdiastolicbp FROM profiles"];
+                              @"SELECT id, name, age, gender, height, weight, insulindependency, targetglucose, targetsystolicbp, targetdiastolicbp FROM profiles"];
         
         const char *query_stmt = [querySQL UTF8String];
         int check = sqlite3_prepare_v2(_diaBEATitDB, query_stmt, -1, &statement, NULL);
@@ -109,25 +109,25 @@
                 //NSLog(@"Entered while");
                 Profile *p = [[Profile alloc] init];
                 
-//                int idField = sqlite3_column_int(statement, 0);
-//                p.idCode = idField;
-//                NSLog(@"ID: %i", p.idCode);
+                int idField = sqlite3_column_int(statement, 0);
+                p.idCode = idField;
+                NSLog(@"ID: %i", p.idCode);
                 
                 NSString *nameField = [[NSString alloc]
-                                       initWithUTF8String:(const char *) sqlite3_column_text(statement, 0)];
+                                       initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
                 
                 p.name = nameField;
                 NSLog(@"Name: %@", p.name);
                 
                 NSString *ageField = [[NSString alloc]
-                                         initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
+                                         initWithUTF8String:(const char *) sqlite3_column_text(statement, 2)];
                 
                 p.age = ageField;
                 NSLog(@"Age: %@", p.age);
                 
                 NSString *genderField = [[NSString alloc]
                                          initWithUTF8String:(const char *)
-                                         sqlite3_column_text(statement, 2)];
+                                         sqlite3_column_text(statement, 3)];
                 
                 p.gender = genderField;
                 NSLog(@"gender: %@", p.gender);
@@ -135,42 +135,42 @@
                 
                 NSString *heightField = [[NSString alloc]
                                            initWithUTF8String:(const char *)
-                                           sqlite3_column_text(statement, 3)];
+                                           sqlite3_column_text(statement, 4)];
                 
                 p.height = heightField;
                 NSLog(@"Height: %@", p.height);
                 
                 NSString *weightField = [[NSString alloc]
                                            initWithUTF8String:(const char *)
-                                           sqlite3_column_text(statement, 4)];
+                                           sqlite3_column_text(statement, 5)];
                 
                 p.weight = weightField;
                 NSLog(@"Weight: %@", p.weight);
                 
                 NSString *insulinDependencyField = [[NSString alloc]
                                          initWithUTF8String:(const char *)
-                                         sqlite3_column_text(statement, 5)];
+                                         sqlite3_column_text(statement, 6)];
                 
                 p.insulinDependency = insulinDependencyField;
                 NSLog(@"Insulin Dependency: %@", p.insulinDependency);
                 
                 NSString *targetGlucoseField = [[NSString alloc]
                                          initWithUTF8String:(const char *)
-                                         sqlite3_column_text(statement, 6)];
+                                         sqlite3_column_text(statement, 7)];
                 
                 p.targetGlucose = targetGlucoseField;
                 NSLog(@"Target Glucose: %@", p.targetGlucose);
                 
                 NSString *targetSystolicField = [[NSString alloc]
                                          initWithUTF8String:(const char *)
-                                         sqlite3_column_text(statement, 7)];
+                                         sqlite3_column_text(statement, 8)];
                 
                 p.targetSystolicBP = targetSystolicField;
                 NSLog(@"Target Systolic: %@", p.targetSystolicBP);
                 
                 NSString *targetDiastolicField = [[NSString alloc]
                                          initWithUTF8String:(const char *)
-                                         sqlite3_column_text(statement, 8)];
+                                         sqlite3_column_text(statement, 9)];
                 
                 p.targetDiastolicBP = targetDiastolicField;
                 NSLog(@"Target Diastolic: %@", p.targetDiastolicBP);

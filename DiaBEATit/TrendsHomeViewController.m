@@ -8,15 +8,125 @@
 
 #import "TrendsHomeViewController.h"
 #import "SDSegmentedControl.h"
+#import "Profile.h"
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
 
-@interface TrendsHomeViewController ()
+
+@interface TrendsHomeViewController () <MFMailComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet SDSegmentedControl *segmentedControl;
-
+-(void)sendEmail;
+-(void)savePhoto;
 @end
 
 @implementation TrendsHomeViewController
 @synthesize hostView = hostView_;
+
+- (IBAction)exportButton:(UIBarButtonItem *)sender {
+    [[[UIActionSheet alloc] initWithTitle:nil
+                                 delegate:self
+                        cancelButtonTitle:@"Close"
+                   destructiveButtonTitle:nil
+                        otherButtonTitles:@"Send Email", @"Save to Photos", nil]
+     showInView:self.view];
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    switch (buttonIndex) {
+        case 0:
+            [self sendEmail]; break;
+        case 1:
+            [self savePhoto];break;
+    }
+}
+
+-(void)savePhoto {
+    UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, self.view.opaque, 0.0);
+    [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage*theImage=UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    NSData*theImageData=UIImagePNGRepresentation(theImage); //you can use PNG too
+    [theImageData writeToFile:@"graph.png" atomically:YES];
+
+    UIImageWriteToSavedPhotosAlbum(theImage, nil, nil, nil);
+
+}
+
+-(void)sendEmail {
+    UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, self.view.opaque, 0.0);
+    [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage*theImage=UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    NSData*theImageData=UIImagePNGRepresentation(theImage); //you can use PNG too
+    [theImageData writeToFile:@"graph.png" atomically:YES];
+    
+    NSString *emailTitle = [NSString stringWithFormat:@"%@ data graph",self.segmentedControl.selectedSegmentIndex == 0 ? @"Glucose" : @"Blood pressure"];
+    NSString *messageBody = @"Attached is my graph.";
+    
+    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+    mc.mailComposeDelegate = self;
+    [mc setSubject:emailTitle];
+    [mc setMessageBody:messageBody isHTML:NO];
+    
+    // Determine the file name and extension
+    NSString *filename = @"graph";
+    NSString *extension = @"png";
+    
+    // Get the resource path and read the file using NSData
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:filename ofType:extension];
+    NSData *fileData = [NSData dataWithContentsOfFile:filePath];
+    
+    // Determine the MIME type
+    NSString *mimeType;
+    if ([extension isEqualToString:@"jpg"]) {
+        mimeType = @"image/jpeg";
+    } else if ([extension isEqualToString:@"png"]) {
+        mimeType = @"image/png";
+    } else if ([extension isEqualToString:@"doc"]) {
+        mimeType = @"application/msword";
+    } else if ([extension isEqualToString:@"ppt"]) {
+        mimeType = @"application/vnd.ms-powerpoint";
+    } else if ([extension isEqualToString:@"html"]) {
+        mimeType = @"text/html";
+    } else if ([extension isEqualToString:@"pdf"]) {
+        mimeType = @"application/pdf";
+    }
+    
+    // Add attachment
+    [mc addAttachmentData:theImageData mimeType:mimeType fileName:filename];
+    
+    // Present mail view controller on screen
+    [self presentViewController:mc animated:YES completion:NULL];
+    
+}
+
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail sent");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
+            break;
+        default:
+            break;
+    }
+    
+    // Close the Mail Interface
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
 
 - (NSArray *)Systolic
 {

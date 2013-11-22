@@ -35,7 +35,13 @@
                             <constraint firstItem="pFs-Dl-p2t" firstAttribute="top" secondItem="9aD-ZW-df7" secondAttribute="bottom" constant="1" id="mKh-0Y-hp7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Trends" id="feB-I7-TND"/>
+                    <navigationItem key="navigationItem" title="Trends" id="feB-I7-TND">
+                        <barButtonItem key="rightBarButtonItem" title="Export" id="cza-8m-lq0">
+                            <connections>
+                                <action selector="exportButton:" destination="9LJ-3M-3ll" id="nNx-U3-d4I"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="segmentedControl" destination="pFs-Dl-p2t" id="mcZ-E4-m7L"/>
                     </connections>
@@ -156,22 +162,24 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Medication Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njS-y5-PNV">
-                                            <rect key="frame" x="15" y="4" width="302" height="21"/>
+                                            <rect key="frame" x="15" y="9" width="302" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dosage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3D-Rj-eQ5">
-                                            <rect key="frame" x="206" y="33" width="65" height="21"/>
+                                            <rect key="frame" x="111" y="33" width="79" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quantity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhL-qH-VcR">
-                                            <rect key="frame" x="59" y="33" width="71" height="21"/>
+                                            <rect key="frame" x="15" y="33" width="88" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
