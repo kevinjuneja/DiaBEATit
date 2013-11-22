@@ -64,6 +64,7 @@
 		5088BE78183FB66100D4023B /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088BE77183FB66100D4023B /* EditProfileViewController.m */; };
 		5088BE7A183FE56800D4023B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5088BE79183FE56800D4023B /* Default.png */; };
 		50BF80DA183FE75C0059B016 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A917ED183EFF65001CB694 /* libCorePlot-CocoaTouch.a */; };
+		50BF80DC1840165E0059B016 /* 86-camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 50BF80DB1840165E0059B016 /* 86-camera.png */; };
 		50C993A0183ED0BD00410345 /* 126-moon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50C9939D183ED0BD00410345 /* 126-moon.jpg */; };
 		50C993A1183ED0BD00410345 /* 171-morning.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50C9939E183ED0BD00410345 /* 171-morning.jpg */; };
 		50C993A2183ED0BD00410345 /* 171-sun.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50C9939F183ED0BD00410345 /* 171-sun.jpg */; };
@@ -247,6 +248,7 @@
 		5088BE76183FB66100D4023B /* EditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
 		5088BE77183FB66100D4023B /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
 		5088BE79183FE56800D4023B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		50BF80DB1840165E0059B016 /* 86-camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "86-camera.png"; sourceTree = "<group>"; };
 		50C9939D183ED0BD00410345 /* 126-moon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "126-moon.jpg"; sourceTree = "<group>"; };
 		50C9939E183ED0BD00410345 /* 171-morning.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "171-morning.jpg"; sourceTree = "<group>"; };
 		50C9939F183ED0BD00410345 /* 171-sun.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "171-sun.jpg"; sourceTree = "<group>"; };
@@ -488,6 +490,7 @@
 		413368821837757300617CC1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				50BF80DB1840165E0059B016 /* 86-camera.png */,
 				5088BE79183FE56800D4023B /* Default.png */,
 				50C9939D183ED0BD00410345 /* 126-moon.jpg */,
 				50C9939E183ED0BD00410345 /* 171-morning.jpg */,
@@ -977,6 +980,7 @@
 				500B9893183D949E00FAC106 /* 126-moon.png in Resources */,
 				505674BE1838EDF200842CC0 /* diabeetus_40.png in Resources */,
 				5056748B1838D07F00842CC0 /* 179-notepad.png in Resources */,
+				50BF80DC1840165E0059B016 /* 86-camera.png in Resources */,
 				505674BF1838EDF200842CC0 /* diabeetus_60.png in Resources */,
 				50312DFB183C7B2600717B6E /* 10-medical.png in Resources */,
 				505674911838D11A00842CC0 /* 111-user.png in Resources */,

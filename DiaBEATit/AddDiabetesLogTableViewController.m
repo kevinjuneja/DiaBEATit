@@ -11,7 +11,7 @@
 #import "DiabetesLog.h"
 #import "LogsHomeViewController.h"
 
-@interface AddDiabetesLogTableViewController ()
+@interface AddDiabetesLogTableViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *timeOfDayLabel;
 @property (weak, nonatomic) IBOutlet UILabel *mealTimingLabel;
 
@@ -31,6 +31,9 @@
 @property (nonatomic, strong) UITextField *textFieldToResign;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
+@property (weak, nonatomic) IBOutlet UIButton *cameraButton;
+@property (weak, nonatomic) IBOutlet UIImageView *imageResult;
+@property (nonatomic) BOOL hasPic;
 @end
 
 @implementation AddDiabetesLogTableViewController
@@ -42,6 +45,42 @@
         // Custom initialization
     }
     return self;
+}
+- (IBAction)camera:(UIButton *)sender {
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    
+	//Use camera if device has one otherwise use photo library
+	if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+	{
+		[imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+	}
+	else
+	{
+		[imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+	}
+    
+	[imagePicker setDelegate:self];
+    
+	//Show image picker
+	[self presentModalViewController:imagePicker animated:YES];
+    
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker
+didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+	//Get image
+	UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+	//Display in ImageView object (if you want to display it
+	[self.imageResult setImage:image];
+    
+	//Take image picker off the screen (required)
+	[self dismissModalViewControllerAnimated:YES];
+    self.hasPic = YES;
+    [self.tableView reloadData];
+    self.saveButton.title = @"Save Draft";
+    self.saveButton.enabled = YES;
 }
 
 - (void)viewDidLoad
@@ -203,6 +242,12 @@
         }
     } else if (indexPath.section == 2 && indexPath.row == 0) {
         return 60;
+    } else if (indexPath.section == 0 && indexPath.row == 1) {
+        if (self.hasPic) {
+            return 115;
+        } else {
+            return 0;
+        }
     } else {
         return self.tableView.rowHeight;
     }

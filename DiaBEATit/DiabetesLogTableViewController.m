@@ -9,7 +9,7 @@
 #import "DiabetesLogTableViewController.h"
 #import "EditDiabetesLogViewController.h"
 
-@interface DiabetesLogTableViewController ()
+@interface DiabetesLogTableViewController () 
 @property (nonatomic, strong) DiabetesLog *log;
 @property (weak, nonatomic) IBOutlet UILabel *glucoseLabel;
 @property (weak, nonatomic) IBOutlet UILabel *insulinLabel;
@@ -41,6 +41,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
 
 -(void) viewWillAppear:(BOOL)animated {
     self.log = [[DiabetesLog alloc] init];
