@@ -122,6 +122,7 @@
         
         DiabetesLog *dlToAdd = [logData objectAtIndex:row+1];
         tempCell.glucoseLabel.text = dlToAdd.glucose;
+        tempCell.a1cLabel.text = dlToAdd.a1c;
         if ([dlToAdd.timeOfDay isEqualToString:@"0"]) {
             UIImage *image = [UIImage imageNamed: @"171-morning.png"];
             [tempCell.timeOfDayImage setImage:image];
@@ -133,9 +134,12 @@
             UIImage *image = [UIImage imageNamed: @"126-moon.png"];
             [tempCell.timeOfDayImage setImage:image];
         }
-
-        tempCell.analysis.backgroundColor = [UIColor redColor];
-        cell = tempCell;
+        if (row != 2) {
+            tempCell.analysis.backgroundColor = [UIColor greenColor];
+        } else {
+            tempCell.analysis.backgroundColor = [UIColor redColor];
+        }
+            cell = tempCell;
     } else {
         static NSString *CellIdentifier = @"hypertensionLogCell";
         HypertensionLogCell *tempCell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
