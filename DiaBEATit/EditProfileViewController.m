@@ -78,7 +78,15 @@
 }
 
 -(void) viewWillAppear:(BOOL)animated {
-    self.nameField;
+    self.nameField.text = self.profile.name;
+    self.ageField.text = self.profile.age;
+    self.genderField.text = self.profile.gender;
+    self.heightField.text = self.profile.height;
+    self.weightField.text = self.profile.weight;
+    self.insulinDependencyField.text = self.profile.insulinDependency;
+    self.glucoseField.text = self.profile.targetGlucose;
+    self.systolicBPField.text = self.profile.targetSystolicBP;
+    self.diastolicBPField.text = self.profile.targetDiastolicBP;
     
     
     if (self.nameField.text.length > 0 && self.ageField.text.length > 0 && self.genderField.text.length > 0 && self.heightField.text.length > 0 && self.weightField.text.length > 0 && self.insulinDependencyField.text.length > 0 && self.glucoseField.text.length > 0 && self.systolicBPField.text.length > 0 && self.diastolicBPField.text.length > 0) {

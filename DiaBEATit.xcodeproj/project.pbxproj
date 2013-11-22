@@ -20,7 +20,6 @@
 		4133689D1837757300617CC1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4133687F1837757300617CC1 /* UIKit.framework */; };
 		413368A51837757300617CC1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 413368A31837757300617CC1 /* InfoPlist.strings */; };
 		413368A71837757300617CC1 /* DiaBEATitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 413368A61837757300617CC1 /* DiaBEATitTests.m */; };
-		41809004183F76DA003AEA7D /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A917ED183EFF65001CB694 /* libCorePlot-CocoaTouch.a */; };
 		41809006183FE51C003AEA7D /* diaBEATit.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 41809005183FE51C003AEA7D /* diaBEATit.sqlite3 */; };
 		41AE2F8F1839958C0048B41B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 41AE2F8E1839958C0048B41B /* libsqlite3.dylib */; };
 		41AE2F9A183C5C9A0048B41B /* Exam.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AE2F99183C5C9A0048B41B /* Exam.m */; };
@@ -64,6 +63,7 @@
 		5088BE75183FB12500D4023B /* ProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088BE74183FB12500D4023B /* ProfileTableViewController.m */; };
 		5088BE78183FB66100D4023B /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088BE77183FB66100D4023B /* EditProfileViewController.m */; };
 		5088BE7A183FE56800D4023B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5088BE79183FE56800D4023B /* Default.png */; };
+		50BF80DA183FE75C0059B016 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A917ED183EFF65001CB694 /* libCorePlot-CocoaTouch.a */; };
 		50C993A0183ED0BD00410345 /* 126-moon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50C9939D183ED0BD00410345 /* 126-moon.jpg */; };
 		50C993A1183ED0BD00410345 /* 171-morning.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50C9939E183ED0BD00410345 /* 171-morning.jpg */; };
 		50C993A2183ED0BD00410345 /* 171-sun.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50C9939F183ED0BD00410345 /* 171-sun.jpg */; };
@@ -408,7 +408,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41809004183F76DA003AEA7D /* libCorePlot-CocoaTouch.a in Frameworks */,
+				50BF80DA183FE75C0059B016 /* libCorePlot-CocoaTouch.a in Frameworks */,
 				41AE2F8F1839958C0048B41B /* libsqlite3.dylib in Frameworks */,
 				501615651838408D003AAD33 /* QuartzCore.framework in Frameworks */,
 				4133687E1837757300617CC1 /* CoreGraphics.framework in Frameworks */,
@@ -1176,7 +1176,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/appjam/Desktop/DiaBEATit/DiaBEATit,
+					/Users/kevinjuneja/Development/DiaBEATit/DiaBEATit,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1199,7 +1199,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/appjam/Desktop/DiaBEATit/DiaBEATit,
+					/Users/kevinjuneja/Development/DiaBEATit/DiaBEATit,
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
