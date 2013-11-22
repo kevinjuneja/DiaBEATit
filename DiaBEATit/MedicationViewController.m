@@ -36,14 +36,29 @@
     count.text = self.med.quantity;
     dose.text = self.med.dosage;
     
-    if ([self.med.comments isEqualToString:@""]) {
-       
-        commentToHide.hidden = YES;
-        comment.hidden = YES;
-    }
-    else{
-        comment.text = self.med.comments;
-    }
+//    if ([self.med.comments isEqualToString:@""]) {
+//       
+//        comments.text = @"No comments";
+//    }
+//    else{
+//        comments.text = self.med.comments;
+//        comments.numberOfLines = 0;
+//        [comments sizeToFit];
+//    }
+    
+    CGRect labelFrame = CGRectMake(117, 98, 183, 75);
+    UILabel *comments = [[UILabel alloc] initWithFrame:labelFrame];
+    [comments setBackgroundColor:[UIColor darkGrayColor]];
+    
+    NSString *labelText = [self.med.comments isEqualToString:@""] ? @"No comments" : self.med.comments;
+    [comments setText:labelText];
+    [comments setTextColor:[UIColor whiteColor]];
+    
+    // Tell the label to use an unlimited number of lines
+    [comments setNumberOfLines:0];
+    [comments sizeToFit];
+    
+    [self.view addSubview:comments];
     
     NSString *fullURL = [NSString stringWithFormat:@"http://goodrx.com/%@",self.medToPass];
     NSURL *url = [NSURL URLWithString:fullURL];

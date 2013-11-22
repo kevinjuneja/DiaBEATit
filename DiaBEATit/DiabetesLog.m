@@ -63,7 +63,7 @@
     {
         
         NSString *insertSQL = [NSString stringWithFormat:
-                               @"UPDATE DIABETESLOGS SET glucose = '\"%@\"', insulin = '\"%@\"', a1c = '\"%@\"', timeofday = '\"%@\"', mealtiming = '\"%@\"',  timestamp = '\"%@\"',  comments = '\"%@\"' WHERE id = %i",
+                               @"UPDATE DIABETESLOGS SET glucose = '%@', insulin = '%@', a1c = '%@', timeofday = '%@', mealtiming = '%@',  timestamp = '%@',  comments = '%@' WHERE id = %i",
                                glucose, insulin, a1c, timeOfDay, mealTiming, timestamp, comments, idCode];
         
         
@@ -239,7 +239,7 @@
             //NSLog(@"Entered 2nd if");
             while (sqlite3_step(statement) == SQLITE_ROW)
             {
-                //NSLog(@"Entered while");
+                NSLog(@"Entered while");
                 DiabetesLog *d = [[DiabetesLog alloc] init];
                 
                 int idField = sqlite3_column_int(statement, 0);

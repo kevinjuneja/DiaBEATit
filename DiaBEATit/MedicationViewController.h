@@ -11,7 +11,6 @@
 @interface MedicationViewController : UIViewController{
     IBOutlet UILabel *count;
     IBOutlet UILabel *dose;
-    IBOutlet UITextView *comment;
     IBOutlet UILabel *commentToHide;
 }
 @property (nonatomic, strong) NSString *medToPass;

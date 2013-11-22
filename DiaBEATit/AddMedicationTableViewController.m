@@ -17,6 +17,7 @@
 
 @property (nonatomic, strong) UITextField *textFieldToResign;
 @property (nonatomic, strong) UITapGestureRecognizer *tap;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 
 @end
 
@@ -53,12 +54,26 @@
 }
 
 -(void)dismissKeyboard {
+    if (self.nameField.text.length > 0 && self.dosageField.text.length > 0 && self.quantityField.text.length > 0) {
+        [self.saveButton setEnabled:YES];
+    } else {
+        [self.saveButton setEnabled:NO];
+    }
     [self.textFieldToResign resignFirstResponder];
     [self.view removeGestureRecognizer:self.tap];
 }
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     self.textFieldToResign = textField;
     [self.view addGestureRecognizer:self.tap];
+}
+
+-(BOOL) textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    if (self.nameField.text.length > 0 && self.dosageField.text.length > 0 && self.quantityField.text.length > 0) {
+        [self.saveButton setEnabled:YES];
+    } else {
+        [self.saveButton setEnabled:NO];
+    }
+    return YES;
 }
 
 
@@ -74,17 +89,28 @@
 }
 
 - (IBAction)saveButton:(UIBarButtonItem *)sender {
-    // database writing goes here
-    Medication *m = [[Medication alloc] init];
-    /*int saveResponse = */[m saveMedicationWithName:self.nameField.text dosage:self.dosageField.text quantity:self.quantityField.text comments:self.commentsText.text];
+    if (self.nameField.text.length > 0 && self.dosageField.text.length > 0 && self.quantityField.text.length > 0) {
+        [self.saveButton setEnabled:YES];
+        // database writing goes here
+        Medication *m = [[Medication alloc] init];
+        /*int saveResponse = */[m saveMedicationWithName:self.nameField.text dosage:self.dosageField.text quantity:self.quantityField.text comments:self.commentsText.text];
+        
+        // dismisses the modal after saving the info
+        [self dismissViewControllerAnimated:YES completion:nil];
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+    } else {
+        [self.saveButton setEnabled:NO];
+    }
     
-    // dismisses the modal after saving the info
-    [self dismissViewControllerAnimated:YES completion:nil];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+    if (self.nameField.text.length > 0 && self.dosageField.text.length > 0 && self.quantityField.text.length > 0) {
+        [self.saveButton setEnabled:YES];
+    } else {
+        [self.saveButton setEnabled:NO];
+    }
     [textField resignFirstResponder];
     
     return YES;

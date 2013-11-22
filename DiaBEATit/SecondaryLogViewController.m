@@ -55,9 +55,14 @@
     AddDiabetesLogTableViewController *parent = (AddDiabetesLogTableViewController *)[self.navigationController.viewControllers objectAtIndex:currentVCIndex];
     
     if (self.type == 0) {
-        parent.timeOfDay = self.selectedRow;
+        //not empty and no selection
+        if (parent.timeOfDay == -1 || self.selectedRow > -1) {
+            parent.timeOfDay = self.selectedRow;
+        }
     } else {
-        parent.mealTiming = self.selectedRow;
+        if (parent.mealTiming == -1 || self.selectedRow > -1) {
+            parent.mealTiming = self.selectedRow;
+        }
     }
 }
 

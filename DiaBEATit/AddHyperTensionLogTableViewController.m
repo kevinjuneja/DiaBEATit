@@ -27,6 +27,7 @@
 
 @property (nonatomic, strong) UITextField *textFieldToResign;
 @property (nonatomic, strong) UITapGestureRecognizer *tap;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 @end
 
 @implementation AddHyperTensionLogTableViewController
@@ -77,6 +78,11 @@
 -(void)dismissKeyboard {
     [self.textFieldToResign resignFirstResponder];
     [self.view removeGestureRecognizer:self.tap];
+    if (self.systolicField.text.length > 0 && self.diastolicField.text.length > 0 && self.heartRateField.text.length > 0 && self.timeOfDay > -1) {
+        [self.saveButton setEnabled:YES];
+    } else {
+        [self.saveButton setEnabled:NO];
+    }
 }
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     self.textFieldToResign = textField;
@@ -103,6 +109,12 @@
             break;
     }
     
+    if (self.systolicField.text.length > 0 && self.diastolicField.text.length > 0 && self.heartRateField.text.length > 0 && self.timeOfDay > -1) {
+        [self.saveButton setEnabled:YES];
+    } else {
+        [self.saveButton setEnabled:NO];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -112,13 +124,19 @@
 }
 
 - (IBAction)saveButton:(UIBarButtonItem *)sender {
-    // database writing goes here
-    HypertensionLog *hl = [[HypertensionLog alloc] init];
-    /*int saveResponse = */[hl saveHypertensionLogWithSystolicBP:self.systolicField.text diastolicBP:self.diastolicField.text heartRate:self.heartRateField.text timeOfDay:[NSString stringWithFormat:@"%d",self.timeOfDay] timestamp:self.timestamp comments:self.commentsText.text];
-
-    // dismisses the modal after saving the info
-    [self dismissViewControllerAnimated:YES completion:nil];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+    if (self.systolicField.text.length > 0 && self.diastolicField.text.length > 0 && self.heartRateField.text.length > 0 && self.timeOfDay > -1) {
+        [self.saveButton setEnabled:YES];
+        // database writing goes here
+        HypertensionLog *hl = [[HypertensionLog alloc] init];
+        /*int saveResponse = */[hl saveHypertensionLogWithSystolicBP:self.systolicField.text diastolicBP:self.diastolicField.text heartRate:self.heartRateField.text timeOfDay:[NSString stringWithFormat:@"%d",self.timeOfDay] timestamp:self.timestamp comments:self.commentsText.text];
+        
+        // dismisses the modal after saving the info
+        [self dismissViewControllerAnimated:YES completion:nil];
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+    } else {
+        [self.saveButton setEnabled:NO];
+    }
+    
 }
 
 - (IBAction)cancelButton:(UIBarButtonItem *)sender {
@@ -138,8 +156,22 @@
     }
 }
 
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    if (self.systolicField.text.length > 0 && self.diastolicField.text.length > 0 && self.heartRateField.text.length > 0 && self.timeOfDay > -1) {
+        [self.saveButton setEnabled:YES];
+    } else {
+        [self.saveButton setEnabled:NO];
+    }
+    return YES;
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+    if (self.systolicField.text.length > 0 && self.diastolicField.text.length > 0 && self.heartRateField.text.length > 0 && self.timeOfDay > -1) {
+        [self.saveButton setEnabled:YES];
+    } else {
+        [self.saveButton setEnabled:NO];
+    }
     [textField resignFirstResponder];
     
     return YES;

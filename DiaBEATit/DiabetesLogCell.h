@@ -14,5 +14,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *a1cLabel;
 @property (weak, nonatomic) IBOutlet UILabel *a1cNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *timeOfDayImage;
-
+@property (nonatomic) int logId;
 @end

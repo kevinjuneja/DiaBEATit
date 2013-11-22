@@ -11,10 +11,10 @@
 #import "HypertensionLogCell.h"
 #import "DiabetesLog.h"
 #import "HypertensionLog.h"
+#import "DiabetesLogTableViewController.h"
 
 @interface LogTableViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *a1cNameLabel;
-
+@property (nonatomic) int logId;
 @end
 
 @implementation LogTableViewController
@@ -67,7 +67,29 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"diabetesLogSegue"]){
+        DiabetesLogTableViewController *dtvc = [segue destinationViewController];
+        dtvc.logId = self.logId;
+    } else {
+        
+    }
+}
+
 #pragma mark - Table view data source
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (self.type == 0) {
+        DiabetesLogCell *cell = (DiabetesLogCell *)[tableView cellForRowAtIndexPath:indexPath];
+        self.logId = cell.logId;
+        
+        [self performSegueWithIdentifier:@"diabetesLogSegue" sender:cell];
+    } else {
+        
+    }
+    
+}
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -148,7 +170,9 @@
         } else {
             tempCell.analysis.backgroundColor = [UIColor redColor];
         }
-            cell = tempCell;
+        tempCell.logId = dlToAdd.idCode;
+        cell = tempCell;
+        
     } else {
         static NSString *CellIdentifier = @"hypertensionLogCell";
         HypertensionLogCell *tempCell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -175,6 +199,7 @@
         }
         
         tempCell.analysis.backgroundColor = [UIColor greenColor];
+        tempCell.logId = hlToAdd.idCode;
         cell = tempCell;
     }
     

@@ -13,4 +13,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *systolicLabel;
 @property (weak, nonatomic) IBOutlet UILabel *diastolicLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *timeOfDayImage;
+@property (nonatomic) int logId;
 @end

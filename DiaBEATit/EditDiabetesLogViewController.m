@@ -1,17 +1,17 @@
 //
-//  AddDiabetesLogTableViewController.m
+//  EditDiabetesLogViewController.m
 //  DiaBEATit
 //
-//  Created by Kevin Juneja on 11/19/13.
+//  Created by Kevin Juneja on 11/22/13.
 //  Copyright (c) 2013 App Jam. All rights reserved.
 //
 
-#import "AddDiabetesLogTableViewController.h"
+#import "EditDiabetesLogViewController.h"
 #import "SecondaryLogViewController.h"
 #import "DiabetesLog.h"
 #import "LogsHomeViewController.h"
 
-@interface AddDiabetesLogTableViewController ()
+@interface EditDiabetesLogViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *timeOfDayLabel;
 @property (weak, nonatomic) IBOutlet UILabel *mealTimingLabel;
 
@@ -31,9 +31,11 @@
 @property (nonatomic, strong) UITextField *textFieldToResign;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
+
+@property (nonatomic) BOOL shouldActNormal;
 @end
 
-@implementation AddDiabetesLogTableViewController
+@implementation EditDiabetesLogViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -49,7 +51,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
-
+    
     self.timeOfDay = -1;
     self.mealTiming = -1;
     
@@ -68,8 +70,8 @@
     self.timestampLabel.text = [formatter stringFromDate:self.datePicker.date];
     
     self.tap = [[UITapGestureRecognizer alloc]
-                                   initWithTarget:self
-                                   action:@selector(dismissKeyboard)];
+                initWithTarget:self
+                action:@selector(dismissKeyboard)];
     
 }
 
@@ -88,41 +90,84 @@
 }
 
 -(void) viewWillAppear:(BOOL)animated {
-    switch (self.timeOfDay) {
-        case 0:
+    if (!self.shouldActNormal) {
+        self.glucoseField.text = self.log.glucose;
+        self.insulinField.text = self.log.insulin;
+        if (self.log.a1c.length > 0) {
+            self.a1cField.text = self.log.a1c;
+        } else {
+            self.a1cField.text = @"";
+        }
+        if ([self.log.timeOfDay isEqualToString:@"0"]) {
             self.timeOfDayLabel.text = @"Morning";
-            break;
-            
-        case 1:
+            self.timeOfDay = 0;
+        } else if ([self.log.timeOfDay isEqualToString:@"1"]) {
             self.timeOfDayLabel.text = @"Afternoon";
-            break;
-            
-        case 2:
+            self.timeOfDay = 1;
+        } else {
             self.timeOfDayLabel.text = @"Night";
-            break;
-            
-        default:
-            self.timeOfDayLabel.text = @" ";
-            break;
+            self.timeOfDay = 2;
+        }
+        if ([self.log.mealTiming isEqualToString:@"0"]) {
+            self.mealTimingLabel.text = @"Before Meal";
+            self.mealTiming = 0;
+        } else if ([self.log.mealTiming isEqualToString:@"1"]) {
+            self.mealTimingLabel.text = @"After Meal";
+            self.mealTiming = 1;
+        } else {
+            self.mealTimingLabel.text = @"No Meal";
+            self.mealTiming = 2;
+        }
+        NSDateFormatter* df = [[NSDateFormatter alloc] init];
+        [df setDateFormat:@"yyyyMMdd"];
+        NSDate* d = [df dateFromString:self.log.timestamp];
+        
+        [df setDateFormat:@"MMMM dd, yyyy"];
+        NSString *dateString = [df stringFromDate:d];
+        self.timestampLabel.text = dateString;
+        self.timestamp = self.log.timestamp;
+        self.commentsText.text = self.log.comments;
+        
+        self.shouldActNormal = YES;
+    } else {
+        switch (self.timeOfDay) {
+            case 0:
+                self.timeOfDayLabel.text = @"Morning";
+                break;
+                
+            case 1:
+                self.timeOfDayLabel.text = @"Afternoon";
+                break;
+                
+            case 2:
+                self.timeOfDayLabel.text = @"Night";
+                break;
+                
+            default:
+                self.timeOfDayLabel.text = @" ";
+                break;
+        }
+        
+        switch (self.mealTiming) {
+            case 0:
+                self.mealTimingLabel.text = @"Before Meal";
+                break;
+                
+            case 1:
+                self.mealTimingLabel.text = @"After Meal";
+                break;
+                
+            case 2:
+                self.mealTimingLabel.text = @"No Meal";
+                break;
+                
+            default:
+                self.mealTimingLabel.text = @" ";
+                break;
+        }
+
     }
     
-    switch (self.mealTiming) {
-        case 0:
-            self.mealTimingLabel.text = @"Before Meal";
-            break;
-            
-        case 1:
-            self.mealTimingLabel.text = @"After Meal";
-            break;
-            
-        case 2:
-            self.mealTimingLabel.text = @"No Meal";
-            break;
-            
-        default:
-            self.mealTimingLabel.text = @" ";
-            break;
-    }
     
     if (self.glucoseField.text.length > 0 && self.insulinField.text.length > 0 && self.timeOfDay > -1 && self.mealTiming > -1) {
         [self.saveButton setEnabled:YES];
@@ -147,7 +192,7 @@
         [self.saveButton setEnabled:YES];
         // database writing goes here
         DiabetesLog *dl = [[DiabetesLog alloc] init];
-        /*int saveResponse = */[dl saveDiabetesLogWithGlucose:self.glucoseField.text insulin:self.insulinField.text a1c:self.a1cField.text timeOfDay:[NSString stringWithFormat:@"%d",self.timeOfDay] mealTiming:[NSString stringWithFormat:@"%d",self.mealTiming] timestamp:self.timestamp comments:self.commentsText.text];
+        /*int saveResponse = */[dl editDiabetesLogWithId:self.log.idCode glucose:self.glucoseField.text insulin:self.insulinField.text a1c:self.a1cField.text timeOfDay:[NSString stringWithFormat:@"%d",self.timeOfDay] mealTiming:[NSString stringWithFormat:@"%d",self.mealTiming]timestamp:self.timestamp comments:self.commentsText.text];
         
         // dismisses the modal after saving the info
         [self dismissViewControllerAnimated:YES completion:nil];
@@ -162,7 +207,7 @@
     // Get reference to the destination view controller
     SecondaryLogViewController *vc = [segue destinationViewController];
     
-    if ([[segue identifier] isEqualToString:@"diabetesTimeOfDaySegue"])
+    if ([[segue identifier] isEqualToString:@"editTimeOfDaySegue"])
     {
         NSArray *array = @[@"Morning",@"Afternoon",@"Night"];
         [vc setLabelsFromStrings:array andTypeWithInt:0];
@@ -215,10 +260,10 @@
             [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:2 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
             [self.tableView reloadData];
         }];
-//        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-//        
-//        [formatter setDateFormat:@"MMMM dd, yyyy"];
-//        self.timestampLabel.text = [formatter stringFromDate:self.datePicker.date];
+        //        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        //
+        //        [formatter setDateFormat:@"MMMM dd, yyyy"];
+        //        self.timestampLabel.text = [formatter stringFromDate:self.datePicker.date];
     }
 }
 
@@ -235,3 +280,4 @@
 
 
 @end
+
