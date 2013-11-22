@@ -46,7 +46,6 @@
 		5056748D1838D09000842CC0 /* 94-pill.png in Resources */ = {isa = PBXBuildFile; fileRef = 5056748C1838D09000842CC0 /* 94-pill.png */; };
 		5056748F1838D0B300842CC0 /* 122-stats.png in Resources */ = {isa = PBXBuildFile; fileRef = 5056748E1838D0B300842CC0 /* 122-stats.png */; };
 		505674911838D11A00842CC0 /* 111-user.png in Resources */ = {isa = PBXBuildFile; fileRef = 505674901838D11A00842CC0 /* 111-user.png */; };
-		505674941838D79B00842CC0 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505674931838D79B00842CC0 /* ProfileViewController.m */; };
 		5056749D1838E8FF00842CC0 /* TrendsHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5056749C1838E8FF00842CC0 /* TrendsHomeViewController.m */; };
 		505674A31838E98900842CC0 /* Medication.m in Sources */ = {isa = PBXBuildFile; fileRef = 505674A21838E98900842CC0 /* Medication.m */; };
 		505674A61838E9DD00842CC0 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 505674A51838E9DD00842CC0 /* Profile.m */; };
@@ -62,6 +61,9 @@
 		5088BE6C183F864900D4023B /* EditDiabetesLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088BE6B183F864900D4023B /* EditDiabetesLogViewController.m */; };
 		5088BE6F183FA38D00D4023B /* HypertensionLogTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088BE6E183FA38D00D4023B /* HypertensionLogTableViewController.m */; };
 		5088BE72183FA79800D4023B /* EditHypertensionLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088BE71183FA79800D4023B /* EditHypertensionLogViewController.m */; };
+		5088BE75183FB12500D4023B /* ProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088BE74183FB12500D4023B /* ProfileTableViewController.m */; };
+		5088BE78183FB66100D4023B /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088BE77183FB66100D4023B /* EditProfileViewController.m */; };
+		5088BE7A183FE56800D4023B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5088BE79183FE56800D4023B /* Default.png */; };
 		50C993A0183ED0BD00410345 /* 126-moon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50C9939D183ED0BD00410345 /* 126-moon.jpg */; };
 		50C993A1183ED0BD00410345 /* 171-morning.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50C9939E183ED0BD00410345 /* 171-morning.jpg */; };
 		50C993A2183ED0BD00410345 /* 171-sun.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50C9939F183ED0BD00410345 /* 171-sun.jpg */; };
@@ -213,8 +215,6 @@
 		5056748C1838D09000842CC0 /* 94-pill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "94-pill.png"; sourceTree = "<group>"; };
 		5056748E1838D0B300842CC0 /* 122-stats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "122-stats.png"; sourceTree = "<group>"; };
 		505674901838D11A00842CC0 /* 111-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "111-user.png"; sourceTree = "<group>"; };
-		505674921838D79B00842CC0 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
-		505674931838D79B00842CC0 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		5056749B1838E8FF00842CC0 /* TrendsHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrendsHomeViewController.h; sourceTree = "<group>"; };
 		5056749C1838E8FF00842CC0 /* TrendsHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrendsHomeViewController.m; sourceTree = "<group>"; };
 		505674A11838E98900842CC0 /* Medication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Medication.h; sourceTree = "<group>"; };
@@ -242,6 +242,11 @@
 		5088BE6E183FA38D00D4023B /* HypertensionLogTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HypertensionLogTableViewController.m; sourceTree = "<group>"; };
 		5088BE70183FA79800D4023B /* EditHypertensionLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditHypertensionLogViewController.h; sourceTree = "<group>"; };
 		5088BE71183FA79800D4023B /* EditHypertensionLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditHypertensionLogViewController.m; sourceTree = "<group>"; };
+		5088BE73183FB12500D4023B /* ProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTableViewController.h; sourceTree = "<group>"; };
+		5088BE74183FB12500D4023B /* ProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTableViewController.m; sourceTree = "<group>"; };
+		5088BE76183FB66100D4023B /* EditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
+		5088BE77183FB66100D4023B /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
+		5088BE79183FE56800D4023B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		50C9939D183ED0BD00410345 /* 126-moon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "126-moon.jpg"; sourceTree = "<group>"; };
 		50C9939E183ED0BD00410345 /* 171-morning.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "171-morning.jpg"; sourceTree = "<group>"; };
 		50C9939F183ED0BD00410345 /* 171-sun.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "171-sun.jpg"; sourceTree = "<group>"; };
@@ -483,6 +488,7 @@
 		413368821837757300617CC1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5088BE79183FE56800D4023B /* Default.png */,
 				50C9939D183ED0BD00410345 /* 126-moon.jpg */,
 				50C9939E183ED0BD00410345 /* 171-morning.jpg */,
 				50C9939F183ED0BD00410345 /* 171-sun.jpg */,
@@ -696,8 +702,10 @@
 		5056749F1838E93A00842CC0 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				505674921838D79B00842CC0 /* ProfileViewController.h */,
-				505674931838D79B00842CC0 /* ProfileViewController.m */,
+				5088BE73183FB12500D4023B /* ProfileTableViewController.h */,
+				5088BE74183FB12500D4023B /* ProfileTableViewController.m */,
+				5088BE76183FB66100D4023B /* EditProfileViewController.h */,
+				5088BE77183FB66100D4023B /* EditProfileViewController.m */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -964,6 +972,7 @@
 				5056748F1838D0B300842CC0 /* 122-stats.png in Resources */,
 				500B988F183D947500FAC106 /* 171-sun.png in Resources */,
 				4133688F1837757300617CC1 /* Main.storyboard in Resources */,
+				5088BE7A183FE56800D4023B /* Default.png in Resources */,
 				50C993A0183ED0BD00410345 /* 126-moon.jpg in Resources */,
 				500B9893183D949E00FAC106 /* 126-moon.png in Resources */,
 				505674BE1838EDF200842CC0 /* diabeetus_40.png in Resources */,
@@ -991,11 +1000,13 @@
 			files = (
 				5056748018386EEF00842CC0 /* MedicationTableViewCell.m in Sources */,
 				5056749D1838E8FF00842CC0 /* TrendsHomeViewController.m in Sources */,
+				5088BE78183FB66100D4023B /* EditProfileViewController.m in Sources */,
 				5088BE6C183F864900D4023B /* EditDiabetesLogViewController.m in Sources */,
 				50312E08183CD22600717B6E /* AddHyperTensionLogTableViewController.m in Sources */,
 				505674DC183C2F4E00842CC0 /* AddDiabetesLogTableViewController.m in Sources */,
 				5016155318382EA4003AAD33 /* LogsHomeViewController.m in Sources */,
 				505674A31838E98900842CC0 /* Medication.m in Sources */,
+				5088BE75183FB12500D4023B /* ProfileTableViewController.m in Sources */,
 				5088BE69183F67D600D4023B /* DiabetesLogTableViewController.m in Sources */,
 				4133688C1837757300617CC1 /* AppDelegate.m in Sources */,
 				50312E02183CAA6C00717B6E /* DiabetesLogCell.m in Sources */,
@@ -1013,7 +1024,6 @@
 				5088BE6F183FA38D00D4023B /* HypertensionLogTableViewController.m in Sources */,
 				413368881837757300617CC1 /* main.m in Sources */,
 				50312DFE183C7C3F00717B6E /* ExamTableViewController.m in Sources */,
-				505674941838D79B00842CC0 /* ProfileViewController.m in Sources */,
 				5016156218384016003AAD33 /* SDSegmentedControl.m in Sources */,
 				505674D9183BE11100842CC0 /* SecondaryLogViewController.m in Sources */,
 				50312E14183CDE4400717B6E /* AddMedicationTableViewController.m in Sources */,

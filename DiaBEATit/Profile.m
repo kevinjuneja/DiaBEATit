@@ -18,14 +18,15 @@
     NSString *pathToDatabase = [documentsDirectory stringByAppendingPathComponent: @"diaBEATit.db"];
     const char *dbpath= [pathToDatabase UTF8String];
     int sqlCheck = 1;
-    
+    NSLog(@"here");
+
     if (sqlite3_open(dbpath, &_diaBEATitDB) == SQLITE_OK)
     {
         
         NSString *insertSQL = [NSString stringWithFormat:
                                @"INSERT INTO PROFILES (name, age, gender, height, weight, insulindependency, targetglucose, tartgetsystolicbp, targetdiastolicbp) VALUES (\"%@\", \"%@\", \"%@\", \"%@\", \"%@\", \"%@\", \"%@\", \"%@\", \"%@\")",
                                name, age, gender, height, weight, insulinDepdency, targetGlucose, targetSystolicBP, targetDiastolicBP];
-        
+        NSLog(@"here");
         
         const char *insert_stmt = [insertSQL UTF8String];
         sqlite3_prepare_v2(_diaBEATitDB, insert_stmt,
@@ -35,7 +36,7 @@
         {
             NSLog(@"SUCCEEDED");
         } else {
-            NSLog(@"FAILED");
+            NSLog(@"FAILED %i", sqlCheck);
             //_status.text = @"Failed to add contact";
         }
         sqlite3_finalize(statement);
@@ -59,7 +60,7 @@
     {
         
         NSString *insertSQL = [NSString stringWithFormat:
-                               @"UPDATE PROFILES SET name = '\"%@\"', age = '\"%@\"', gender = '\"%@\"', height = '\"%@\"', weight = '\"%@\"', insulindependency = '\"%@\"', targetglucose = '\"%@\"', targetsystolicbp = '\"%@\"', targetdiastolicbp = '\"%@\"' WHERE id = %i",
+                               @"UPDATE PROFILES SET name = '%@', age = '%@', gender = '%@', height = '%@', weight = '%@', insulindependency = '%@', targetglucose = '%@', targetsystolicbp = '%@', targetdiastolicbp = '%@' WHERE id = %i",
                                name, age, gender, height, weight, insulinDepdency, targetGlucose, targetSystolicBP, targetDiastolicBP, idCode];
         
         
@@ -95,7 +96,7 @@
     {
         //NSLog(@"Entered 1st if");
         NSString *querySQL = [NSString stringWithFormat:
-                              @"SELECT name, dosage, quantity, comments FROM medicines"];
+                              @"SELECT name, age, gender, height, weight, insulindependency, targetglucose, targetsystolicbp, targetdiastolicbp FROM profiles"];
         
         const char *query_stmt = [querySQL UTF8String];
         int check = sqlite3_prepare_v2(_diaBEATitDB, query_stmt, -1, &statement, NULL);
