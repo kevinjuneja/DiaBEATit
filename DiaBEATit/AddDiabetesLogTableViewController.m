@@ -115,7 +115,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 -(void)dismissKeyboard {
     [self.textFieldToResign resignFirstResponder];
     [self.view removeGestureRecognizer:self.tap];
-    if (self.glucoseField.text.length > 0 && self.insulinField.text.length > 0 && self.timeOfDay > -1 && self.mealTiming > -1) {
+    if (self.glucoseField.text.length > 0 && self.timeOfDay > -1 && self.mealTiming > -1) {
         [self.saveButton setEnabled:YES];
     } else {
         [self.saveButton setEnabled:NO];
@@ -163,7 +163,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
             break;
     }
     
-    if (self.glucoseField.text.length > 0 && self.insulinField.text.length > 0 && self.timeOfDay > -1 && self.mealTiming > -1) {
+    if (self.glucoseField.text.length > 0  && self.timeOfDay > -1 && self.mealTiming > -1) {
         [self.saveButton setEnabled:YES];
     } else {
         [self.saveButton setEnabled:NO];
@@ -182,7 +182,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 }
 
 - (IBAction)saveButton:(UIBarButtonItem *)sender {
-    if ((self.glucoseField.text.length > 0 && self.insulinField.text.length > 0 && self.timeOfDay > -1 && self.mealTiming > -1) || self.hasPic) {
+    if ((self.glucoseField.text.length > 0 &&  self.timeOfDay > -1 && self.mealTiming > -1) || self.hasPic) {
         [self.saveButton setEnabled:YES];
         // database writing goes here
         DiabetesLog *dl = [[DiabetesLog alloc] init];
@@ -213,7 +213,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 }
 
 -(BOOL) textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    if (self.glucoseField.text.length > 0 && self.insulinField.text.length > 0 && self.timeOfDay > -1 && self.mealTiming > -1) {
+    if (self.glucoseField.text.length > 0 && self.timeOfDay > -1 && self.mealTiming > -1) {
         [self.saveButton setEnabled:YES];
     } else {
         [self.saveButton setEnabled:NO];
