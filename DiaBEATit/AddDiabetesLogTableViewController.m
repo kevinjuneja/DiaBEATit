@@ -182,11 +182,12 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 }
 
 - (IBAction)saveButton:(UIBarButtonItem *)sender {
-    if (self.glucoseField.text.length > 0 && self.insulinField.text.length > 0 && self.timeOfDay > -1 && self.mealTiming > -1) {
+    if ((self.glucoseField.text.length > 0 && self.insulinField.text.length > 0 && self.timeOfDay > -1 && self.mealTiming > -1) || self.hasPic) {
         [self.saveButton setEnabled:YES];
         // database writing goes here
         DiabetesLog *dl = [[DiabetesLog alloc] init];
-        /*int saveResponse = */[dl saveDiabetesLogWithGlucose:self.glucoseField.text insulin:self.insulinField.text a1c:self.a1cField.text timeOfDay:[NSString stringWithFormat:@"%d",self.timeOfDay] mealTiming:[NSString stringWithFormat:@"%d",self.mealTiming] timestamp:self.timestamp comments:self.commentsText.text];
+        NSString *string = self.hasPic ? @"Draft" : self.glucoseField.text;
+        /*int saveResponse = */[dl saveDiabetesLogWithGlucose:string insulin:self.insulinField.text a1c:self.a1cField.text timeOfDay:[NSString stringWithFormat:@"%d",self.timeOfDay] mealTiming:[NSString stringWithFormat:@"%d",self.mealTiming] timestamp:self.timestamp comments:self.commentsText.text];
         
         // dismisses the modal after saving the info
         [self dismissViewControllerAnimated:YES completion:nil];

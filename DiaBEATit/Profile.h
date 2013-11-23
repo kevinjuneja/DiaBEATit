@@ -21,6 +21,7 @@
 @property (nonatomic, strong) NSString *targetGlucose;
 @property (nonatomic, strong) NSString *targetSystolicBP;
 @property (nonatomic, strong) NSString *targetDiastolicBP;
+@property (nonatomic) BOOL hasPic;
 
 @property (nonatomic) sqlite3 *diaBEATitDB;
 
